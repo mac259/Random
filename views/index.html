@@ -1,0 +1,186 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>Admin Control</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">  <!--check file address-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Admin Portal</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Dashboard</a></li>
+            <li><a href="manage.html">Manage</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create&nbsp<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Courses</li>
+                <li><a href="#">Curriculum Course</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Electives</li>
+                <li class="button" id="openBtn"><a href="#">Open Elective</a></li>
+                <li><a href="#">Department Elective</a></li>
+              </ul>
+            </li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="popUp" class="popUp">
+      <div class="popUp-content">
+        <div class="popUp-header">
+            <span class="closeBtn">&times;</span>
+            <h2>Header</h2>
+        </div>
+        <div class="popUp-body">
+
+          <div class="fill">
+            <ul>
+              <li class="lefty"><i class="fa fa-level-down"></i> Course Code
+                <ul class="drop-menu input">
+                  <li><input type="number" maxlength=6 min="0" id="area-inp"></li>
+                </ul>
+              </li>
+              <li><i class="fa fa-level-down"></i> Course Name
+                <ul class="drop-menu input">
+                  <li><input type="number" id="year-inp" maxlength=4 min="0"></li>
+                </ul>
+              </li>
+              <li><i class="fa fa-level-down"></i> Department
+                <ul class="drop-menu input">
+                  <li><input type="number" maxlength=6 min="0" id="basement-inp"></li>
+                </ul>
+              </li>
+              <li class="righty"><i class="fa fa-level-down"></i> Strength
+                <ul class="drop-menu input">
+                  <li><input type="number" maxlength=6 min="0" id="basement-inp"></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="popUp-footer">
+          <h3>Footer</h3>
+        </div>
+      </div>
+    </div>
+
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h1>Welcome Admin</h1>
+          </div>
+          <div class="col-md-2">
+            <form class="navbar-form navbar-right">
+              <input type="text" class="form-control" placeholder="Search...">
+            </form>
+          </div>
+    </header>
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">Dashboard</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a href="#" class="list-group-item active color-scheme">
+                <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Dashboard
+              </a>
+              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Manage <span class="badge">35</badge></a>
+              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create</a>
+              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a>
+            </div>
+            <div class="well">
+              <h4>Eligible Students</h4>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:89%">
+                  89%
+                </div>
+              </div>
+              <h4>Forms Filled</h4>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 62%;">
+                  62%
+                </div>
+              </div>
+              <h4>Successful Allotments</h4>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 55%">
+                  55%
+                </div>
+              </div>
+              <h4>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="panel panel-default">
+              <div class="panel-heading color-scheme">
+                <h3 class="panel-title">Overview</h3>
+              </div>
+              <div class="panel-body">
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span></h2>
+                    <h4>Past Electives</h4>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></h2>
+                    <h4>Present Electives</h4>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></h2>
+                    <h4>Student Data</h4>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span></h2>
+                    <h4>Courses</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

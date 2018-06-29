@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Quicksand|Raleway|Roboto');
+
+body{
+  background:#f4f4f4;
+  font-family: 'Raleway', sans-serif !important;
+}
+
+.navbar {
+  min-height: 33px !important;
+  margin-bottom: 0;
+  border-top: 0;
+  border-radius: 0 !important;
+}
+
+.navbar-nav > li > a, .navbar-brand {
+  padding-top: 6px !important;
+  padding-bottom: 0 !important;
+  height: 33px;
+}
+
+.dropdown-header {
+  color: #ccc;
+}
+
+.divider {
+  color: #fff;
+}
+
+.navbar-default {
+  background-color: #fb2525;
+  border-color: #c0392b;
+}
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+.navbar-default .navbar-brand:hover {
+  color: #fff;
+  cursor: default;
+}
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #e74c3c;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  background-color: #c0392b;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
+  background-color: #c0392b;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  background-color: #c0392b;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #c0392b;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #c0392b;
+}
+.navbar-default .navbar-toggle {
+  border-color: #c0392b;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #c0392b;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #c0392b;
+  }
+}
+
+.color-scheme {
+  background-color: #fb2525 !important;
+  border-color: #c0392b !important;
+  color: #fff !important;
+}
+
+#header {
+  background: #333;
+  color: #fff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+#header .navbar-form {
+  padding-top: 15px;
+}
+
+.breadcrumb {
+  background: #ccc;
+  color: #333;
+}
+
+.breadcrumb a {
+  color: #333;
+}
+
+.progress-bar {
+  background: #333;
+  color: #ffc107;
+}
+
+.well h4 {
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+.popUp {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.popUp-content {
+  width: 50%;
+  border-radius: 5px;
+  margin: 15% auto;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.popUp-header h2, .popUp-footer h3{
+  margin: 0;
+}
+
+.popUp-header {
+  background: #f8f8f8;
+  padding: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #333;
+}
+
+.popUp-body {
+  padding: 10px 20px;
+  background: #f4f4f4;
+}
+
+.popUp-footer {
+  background: #f8f8f8;
+  border-bottom: 1px #e7e7e7;
+  /*background: #e74c3c;*/
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #333;
+  text-align: center;
+}
+
+.closeBtn {
+  /*color: #ccc;*/
+  float: right;
+  font-size: 25px;
+  color: #000;
+  margin-top: -12px;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from { opacity: 0}
+  to {opacity: 1}
+}
