@@ -119,6 +119,16 @@ body{
   }
 }
 
+.navbar-nav {
+  font-size: 14px;
+}
+/*
+.udbtn.active {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  transition: all 0.1s ease-in-out;
+}
+*/
 .color-scheme {
   background-color: #fb2525 !important;
   border-color: #c0392b !important;
@@ -145,11 +155,22 @@ body{
   color: #333;
 }
 
-.progress-bar {
-  background: #333;
-  color: #ffc107;
+.badge {
+  color: #000;
+  background: rgb(204,204,204);
+  padding-bottom: 5px;
 }
-
+.progress-bar {
+  background: #fb2525;
+  color: #fff;
+}
+.progress {
+  height: 20px !important;
+  border-radius: 4px;
+}
+.main .container .bars {
+  background: #fff;
+}
 @keyframes progressing {
   0% {width: 0%}
   100% {width: aria-value-now}
