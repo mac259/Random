@@ -13,7 +13,7 @@ body{
 }
 
 .navbar-nav > li > a, .navbar-brand {
-  padding-top: 6px !important;
+  padding-top: 7px !important;
   padding-bottom: 0 !important;
   height: 33px;
 }
@@ -148,6 +148,11 @@ body{
 .progress-bar {
   background: #333;
   color: #ffc107;
+}
+
+@keyframes progressing {
+  0% {width: 0%}
+  100% {width: aria-value-now}
 }
 
 .well h4 {
