@@ -18,12 +18,20 @@ body{
   height: 33px;
 }
 
-.dropdown-header {
-  color: #ccc;
+.navbar-brand {
+  cursor: default;
 }
 
-.divider {
-  color: #fff;
+.dropdown-header {
+  color: #999;
+}
+
+.dropdown .links {
+  color: #333;
+}
+
+.dropdown .divider {
+  color: #333 !important;
 }
 
 .navbar-default {
@@ -31,44 +39,21 @@ body{
   border-color: #c0392b;
 }
 .navbar-default .navbar-brand {
-  color: #fff;
+  color: #ffffff;
 }
-.navbar-default .navbar-brand:hover {
-  color: #fff;
-  cursor: default;
-}
+.navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #ffffff;
 }
 .navbar-default .navbar-text {
-  color: #ecf0f1;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #ecf0f1;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #e74c3c;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #ecf0f1;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #ffffff;
-  background-color: #c0392b;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #c0392b;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #ffffff;
-  background-color: #c0392b;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -90,14 +75,14 @@ body{
   background-color: #c0392b;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #ecf0f1;
+  background-color: #ffffff;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #ecf0f1;
+  border-color: #ffffff;
 }
 .navbar-default .navbar-link {
-  color: #ecf0f1;
+  color: #ffffff;
 }
 .navbar-default .navbar-link:hover {
   color: #ffffff;
@@ -105,7 +90,7 @@ body{
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ecf0f1;
+    color: #ffffff;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -143,7 +128,11 @@ body{
 }
 
 #header .navbar-form {
-  padding-top: 15px;
+  padding-top: 14px;
+}
+
+.form-control {
+  border-radius: 5px !important;
 }
 
 .breadcrumb {
@@ -163,6 +152,10 @@ body{
 .progress-bar {
   background: #fb2525;
   color: #fff;
+  font-size: 13px;
+}
+.dash-box {
+  text-align: center;
 }
 .progress {
   height: 20px !important;
@@ -177,79 +170,41 @@ body{
 }
 
 .well h4 {
-  font-size: 16px;
+  font-size: 15px;
 }
-
-
-
-
-
-
-
-.popUp {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+.table td {
+  font-size: 14px;
 }
-
-.popUp-content {
-  width: 50%;
-  border-radius: 5px;
-  margin: 15% auto;
-  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
-  animation-name: modalopen;
-  animation-duration: 1s;
-}
-
-.popUp-header h2, .popUp-footer h3{
-  margin: 0;
-}
-
-.popUp-header {
-  background: #f8f8f8;
-  padding: 15px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  color: #333;
-}
-
-.popUp-body {
-  padding: 10px 20px;
-  background: #f4f4f4;
-}
-
-.popUp-footer {
-  background: #f8f8f8;
-  border-bottom: 1px #e7e7e7;
-  /*background: #e74c3c;*/
-  padding: 10px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  color: #333;
+.more {
+  color: #999;
   text-align: center;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding-bottom: 10px;
 }
-
-.closeBtn {
-  /*color: #ccc;*/
-  float: right;
-  font-size: 25px;
-  color: #000;
-  margin-top: -12px;
+.more:hover {
+  color: #333;
 }
-
-.closeBtn:hover, .closeBtn:focus {
-  color: #000;
-  text-decoration: none;
+.checkbox {
+  color: #555;
+  font-size: 14px;
+}
+.modal {
+  margin-top: 50px;
+}
+.modal-title { font-size: 22px; }
+.modal-content {color:#333;}
+.modal-footer .btn-primary {
+  background-color: #fb2525;
+  color: #fff;
+  border-color: #c0392b;
+}
+.modal-footer .btn-primary:hover {
+  background-color: #c0392b;
+  color: #fff;
+  border-color: #c0392b;
+}
+.links {
   cursor: pointer;
-}
-
-@keyframes modalopen {
-  from { opacity: 0}
-  to {opacity: 1}
 }

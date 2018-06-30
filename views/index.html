@@ -7,7 +7,7 @@
     <title>Admin Control</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -29,58 +29,143 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create&nbsp<span class="caret"></span></a><!--<img class="udbtn" onclick="this.classList.toggle('active');" src="png/down-arrow.png">-->
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Courses</li>
-                <li><a href="#">Curriculum Course</a></li>
+                <li><a class="links" type="button" data-toggle="modal" data-target="#popup3">Curriculum Course</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Electives</li>
-                <li class="button" id="openBtn"><a href="#">Open Elective</a></li>
-                <li><a href="#">Department Elective</a></li>
+                <li><a class="links" type="button" data-toggle="modal" data-target="#popup">Open Elective</a></li>
+                <li><a class="links" type="button" data-toggle="modal" data-target="#popup2">Department Elective</a></li>
               </ul>
             </li>
             <li><a href="settings.html">Settings</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div id="popUp" class="popUp">
-      <div class="popUp-content">
-        <div class="popUp-header">
-            <span class="closeBtn">&times;</span>
-            <h2>Header</h2>
-        </div>
-        <div class="popUp-body">
 
-          <div class="fill">
-            <ul>
-              <li class="lefty"><i class="fa fa-level-down"></i> Course Code
-                <ul class="drop-menu input">
-                  <li><input type="number" maxlength=6 min="0" id="area-inp"></li>
-                </ul>
-              </li>
-              <li><i class="fa fa-level-down"></i> Course Name
-                <ul class="drop-menu input">
-                  <li><input type="number" id="year-inp" maxlength=4 min="0"></li>
-                </ul>
-              </li>
-              <li><i class="fa fa-level-down"></i> Department
-                <ul class="drop-menu input">
-                  <li><input type="number" maxlength=6 min="0" id="basement-inp"></li>
-                </ul>
-              </li>
-              <li class="righty"><i class="fa fa-level-down"></i> Strength
-                <ul class="drop-menu input">
-                  <li><input type="number" maxlength=6 min="0" id="basement-inp"></li>
-                </ul>
-              </li>
-            </ul>
+    <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Create Open Elective</h4>
           </div>
+          <div class="modal-body">
 
+            <div class="form-group">
+              <label>Course Name</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Course Name">
+            </div>
+            <div class="form-group">
+              <label>Course Code</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
+            </div>
+            <div class="form-group">
+              <label>Department</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Department">
+            </div>
+            <div class="form-group">
+              <label>Course Details</label>
+              <textarea name="editor1" class="form-control" placeholder="Enter any relevant details..."></textarea>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> <weak>Display course details to students</weak>
+              </label>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+          </form>
         </div>
-        <div class="popUp-footer">
-          <h3>Footer</h3>
+      </div>
+    </div>
+    <div class="modal fade" id="popup2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Create Department Elective</h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label>Course Name</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Course Name">
+            </div>
+            <div class="form-group">
+              <label>Course Code</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
+            </div>
+            <div class="form-group">
+              <label>Department</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Department">
+            </div>
+            <div class="form-group">
+              <label>Course Details</label>
+              <textarea name="editor1" class="form-control" placeholder="Enter any relevant details..."></textarea>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> <weak>Display course details to students</weak>
+              </label>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="popup3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Create Curriculum Course</h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label>Course Name</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Course Name">
+            </div>
+            <div class="form-group">
+              <label>Course Code</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
+            </div>
+            <div class="form-group">
+              <label>Department</label>
+              <input type="text" class="form-control" required="required" placeholder="Enter Department">
+            </div>
+            <div class="form-group">
+              <label>Course Details</label>
+              <textarea name="editor1" class="form-control" placeholder="Enter any relevant details..."></textarea>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> <weak>Display course details to students</weak>
+              </label>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -113,26 +198,26 @@
           <div class="col-md-3">
             <div class="list-group">
               <a href="#" class="list-group-item active color-scheme">
-                <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Dashboard
+                <i class="fa fa-info-circle"></i> Dashboard
               </a>
-              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Manage <span class="badge">35</badge></a>
-              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create</a>
-              <a href="#" class="list-group-item"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a>
+              <a href="#" class="list-group-item"><i class="fa fa-user"></i> Manage <span class="badge">35</badge></a>
+              <a href="#" class="list-group-item"><i class="fa fa-plus-circle"></i> Create</a>
+              <a href="#" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
             </div>
             <div class="well bars">
-              <h4><strong>Eligible Students</strong></h4>
+              <h4>Eligible Students</h4>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="min-width: 2.25em; width:89%; animation: progressing 2s linear;">
                   89%
                 </div>
               </div>
-              <h4><strong>Forms Filled</strong></h4>
+              <h4>Forms Filled</h4>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="min-width: 2.25em; width: 62%; animation: progressing 2s linear;">
                   62%
                 </div>
               </div>
-              <h4><strong>Successful Allotments</strong></h4>
+              <h4>Successful Allotments</h4>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="min-width: 2.25em; width: 55%; animation: progressing 2s linear;">
                   55%
@@ -149,28 +234,68 @@
               <div class="panel-body">
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><img src="svg/hourglass.svg"></h2>
+                    <h2><i class="far fa-clock"></i></h2>
                     <h4>Past Electives</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><img src="svg/calendar.svg"></h2>
+                    <h2><i class="far fa-calendar-alt"></i></h2>
                     <h4>Present Electives</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><img src="svg/student-add.svg"></h2>
+                    <h2><i class="fas fa-users"></i></h2>
                     <h4>Student Data</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><img src="svg/bookmark.svg"></h2>
+                    <h2><i class="far fa-bookmark"></i></h2>
                     <h4>Courses</h4>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><strong>Latest Submissions</strong></h3>
+              </div>
+              <div class="panel-body">
+                <table class="table table-striped table-hover">
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Submitted On</th>
+                    </tr>
+                    <tr>
+                      <td>Aniket Mukherjee</td>
+                      <td>aniket@gmail.com</td>
+                      <td>July 1, 2018</td>
+                    </tr>
+                    <tr>
+                      <td>Shivam Thakur</td>
+                      <td>shivamth@yahoo.com</td>
+                      <td>June 28, 2018</td>
+                    </tr>
+                    <tr>
+                      <td>Ankit Mishra</td>
+                      <td>jai_mishra@gmail.com</td>
+                      <td>June 26, 2018</td>
+                    </tr>
+                    <tr>
+                      <td>DJ Denzil</td>
+                      <td>johndawson@gmail.com</td>
+                      <td>June 25, 2018</td>
+                    </tr>
+                    <tr>
+                      <td>Apoorv Mittal</td>
+                      <td>fifafan@ymail.com</td>
+                      <td>June 11, 2018</td>
+                    </tr>
+                  </table>
+                <a class="more" href="#">See More</a>
               </div>
             </div>
           </div>
