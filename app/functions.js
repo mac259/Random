@@ -70,7 +70,8 @@ module.exports = {
                                 else{
                                     user.completed = rows1;
                                     console.log(user);
-                                    res.render('dashboard.ejs',user);
+                                    //res.render('dashboard.ejs',user);
+                                    res.render('admin.ejs');
                                 }
                         });
                 }     
