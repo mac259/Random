@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <title>Admin Control | Dashboard</title>
+    <title>Admin Control | Manage</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -24,10 +24,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Dashboard</a></li>
-            <li><a href="manage.html">Manage</a></li>
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="active"><a href="manage.html">Manage</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle links" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create&nbsp<span class="caret"></span></a><!--<img class="udbtn" onclick="this.classList.toggle('active');" src="png/down-arrow.png">-->
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create&nbsp<span class="caret"></span></a><!--<img class="udbtn" onclick="this.classList.toggle('active');" src="png/down-arrow.png">-->
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Courses</li>
                 <li><a class="links" type="button" data-toggle="modal" data-target="#popup3">Curriculum Course</a></li>
@@ -62,7 +62,7 @@
     <section id="breadcrumb">
       <div class="container">
         <ol class="breadcrumb">
-          <li class="active">Dashboard</li>
+          <li class="active">Manage</li>
         </ol>
       </div>
     </section>
@@ -76,7 +76,14 @@
                 <i class="fa fa-info-circle"></i> Dashboard
               </a>
               <a href="#" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
-              <a href="#" class="list-group-item"><i class="fa fa-plus-circle"></i> Create</a>
+              <a class="list-group-item links" data-toggle="collapse" href="#collapse1"><i class="fa fa-plus-circle"></i> Create</a>
+              <div id="collapse1" class="panel-collapse collapse">
+                <ul class="listi">
+                  <li class="list-group-item sub"><a href="#">Curriculum Course</a></li>
+                  <li class="list-group-item sub"><a href="#">Open Elective</a></li>
+                  <li class="list-group-item sub"><a href="#">Department Elective</a></li>
+                </ul>
+              </div>
               <a href="#" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
             </div>
             <div class="well bars">
@@ -104,73 +111,40 @@
           <div class="col-md-9">
             <div class="panel panel-default">
               <div class="panel-heading color-scheme">
-                <h3 class="panel-title">Overview</h3>
+                <h3 class="panel-title">Student Activities</h3>
               </div>
               <div class="panel-body">
                 <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h2><i class="far fa-clock"></i></h2>
-                    <h4>Past Electives</h4>
+                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup4">
+                    <h2><i class="fa fa-random"></i></h2>
+                    <h4>Change Choices</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><i class="far fa-calendar-alt"></i></h2>
-                    <h4>Present Electives</h4>
+                    <h2><i class="far fa-list-alt"></i></h2>
+                    <h4>Reset Choices</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="well dash-box">
-                    <h2><i class="fas fa-users"></i></h2>
-                    <h4>Student Data</h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h2><i class="far fa-bookmark"></i></h2>
-                    <h4>Courses</h4>
+                    <h2><i class="fas fa-shield-alt"></i></h2>
+                    <h4>Reset Password</h4>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="panel panel-default entries">
-              <div class="panel-heading">
-                <h3 class="panel-title"><strong>Latest Submissions</strong></h3>
+            <div class="panel panel-default">
+              <div class="panel-heading color-scheme">
+                <h3 class="panel-title">Admin Activities</h3>
               </div>
               <div class="panel-body">
-                <table class="table table-striped table-hover">
-                    <tr>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Submitted On</th>
-                    </tr>
-                    <tr>
-                      <td>Aniket Mukherjee</td>
-                      <td>aniket@gmail.com</td>
-                      <td>July 1, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Shivam Thakur</td>
-                      <td>shivamth@yahoo.com</td>
-                      <td>June 28, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Ankit Mishra</td>
-                      <td>jai_mishra@gmail.com</td>
-                      <td>June 26, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>DJ Denzil</td>
-                      <td>johndawson@gmail.com</td>
-                      <td>June 25, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Apoorv Mittal</td>
-                      <td>fifafan@ymail.com</td>
-                      <td>June 11, 2018</td>
-                    </tr>
-                  </table>
-                <a class="more" href="#">See More</a>
+                <div class="col-md-3">
+                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup4">
+                    <h2><i class="far fa-trash-alt"></i></h2>
+                    <h4>Remove Course</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -301,6 +275,38 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="popup4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <form>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Remove Course</h4>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group">
+                  <label>Course Name</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Course Name">
+                </div>
+                <div class="form-group">
+                  <label>Course Code</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
+                </div>
+                <div class="form-group">
+                  <label>Department</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Department">
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Delete</button>
               </div>
               </form>
             </div>
