@@ -6,7 +6,7 @@ body{
 }
 
 .navbar {
-  min-height: 33px !important;
+  min-height: 32px !important;
   margin-bottom: 0;
   border-top: 0;
   border-radius: 0 !important;
@@ -15,7 +15,7 @@ body{
 .navbar-nav > li > a, .navbar-brand {
   padding-top: 7px !important;
   padding-bottom: 0 !important;
-  height: 33px;
+  height: 32px;
 }
 
 .navbar-brand {
@@ -54,6 +54,7 @@ body{
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
+  text-decoration: underline;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -133,6 +134,8 @@ body{
 
 .form-control {
   border-radius: 4px !important;
+  height: 31px;
+  margin-top: 2px;
 }
 
 .breadcrumb {
@@ -191,10 +194,14 @@ body{
   font-size: 14px;
 }
 .modal {
-  margin-top: 50px;
+  margin-top: 45px;
 }
-.modal-title { font-size: 22px; }
-.modal-content {color:#333;}
+.modal-title {
+  font-size: 22px;
+}
+.modal-content {
+  color: #444;
+}
 .modal-footer .btn-primary {
   background-color: #fb2525;
   color: #fff;
@@ -205,6 +212,11 @@ body{
   color: #fff;
   border-color: #c0392b;
 }
+.modal-footer .btn-default {
+  color: #222;
+  border: 1px #bbb solid;
+}
+
 .links {
   cursor: pointer;
 }
