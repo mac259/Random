@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
     <title>Admin Control | Manage</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/admin-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
   </head>
@@ -72,19 +72,19 @@
         <div class="row">
           <div class="col-md-3">
             <div class="list-group">
-              <a href="#" class="list-group-item active color-scheme">
+              <a href="/dashboard" class="list-group-item active color-scheme">
                 <i class="fa fa-info-circle"></i> Dashboard
               </a>
-              <a href="#" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
-              <a class="list-group-item links" data-toggle="collapse" href="#collapse1"><i class="fa fa-plus-circle"></i> Create</a>
+              <a href="/manage" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
+              <a class="list-group-item" data-toggle="collapse" href="#collapse1"><i class="fa fa-plus-circle"></i> Create</a>
               <div id="collapse1" class="panel-collapse collapse">
-                <ul class="listi">
-                  <li class="list-group-item sub"><a href="#">Curriculum Course</a></li>
-                  <li class="list-group-item sub"><a href="#">Open Elective</a></li>
-                  <li class="list-group-item sub"><a href="#">Department Elective</a></li>
+                <ul class="list-group-item listing">
+                  <li class="list-group-item sub"><a class="links" type="button" data-toggle="modal" data-target="#popup3">Curriculum Course</a></li>
+                  <li class="list-group-item sub"><a class="links" type="button" data-toggle="modal" data-target="#popup">Open Elective</a></li>
+                  <li class="list-group-item sub"><a class="links" type="button" data-toggle="modal" data-target="#popup2">Department Elective</a></li>
                 </ul>
               </div>
-              <a href="#" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
+              <a href="/settings" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
             </div>
             <div class="well bars">
               <h4>Eligible Students</h4>
@@ -115,19 +115,19 @@
               </div>
               <div class="panel-body">
                 <div class="col-md-3">
-                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup4">
+                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup7">
                     <h2><i class="fa fa-random"></i></h2>
-                    <h4>Change Choices</h4>
+                    <h4>Change Allotment</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="well dash-box">
+                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup5">
                     <h2><i class="far fa-list-alt"></i></h2>
                     <h4>Reset Choices</h4>
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="well dash-box">
+                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup6">
                     <h2><i class="fas fa-shield-alt"></i></h2>
                     <h4>Reset Password</h4>
                   </div>
@@ -180,6 +180,10 @@
                   <input type="text" class="form-control" required="required" placeholder="Enter Department">
                 </div>
                 <div class="form-group">
+                  <label>Strength</label>
+                  <input type="number" min="0" class="form-control" required="required" placeholder="Enter Strength">
+                </div>
+                <div class="form-group">
                   <label>Course Details</label>
                   <textarea name="editor1" class="form-control" placeholder="Enter any relevant details..."></textarea>
                 </div>
@@ -219,6 +223,10 @@
                 <div class="form-group">
                   <label>Department</label>
                   <input type="text" class="form-control" required="required" placeholder="Enter Department">
+                </div>
+                <div class="form-group">
+                  <label>Strength</label>
+                  <input type="number" min="0" class="form-control" required="required" placeholder="Enter Strength">
                 </div>
                 <div class="form-group">
                   <label>Course Details</label>
@@ -262,6 +270,10 @@
                   <input type="text" class="form-control" required="required" placeholder="Enter Department">
                 </div>
                 <div class="form-group">
+                  <label>Strength</label>
+                  <input type="number" min="0" class="form-control" required="required" placeholder="Enter Strength">
+                </div>
+                <div class="form-group">
                   <label>Course Details</label>
                   <textarea name="editor3" class="form-control" placeholder="Enter any relevant details..."></textarea>
                 </div>
@@ -300,7 +312,7 @@
                 </div>
                 <div class="form-group">
                   <label>Department</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Department">
+                  <input type="text" class="form-control" placeholder="Enter Department">
                 </div>
 
               </div>
@@ -312,11 +324,111 @@
             </div>
           </div>
         </div>
+        <div class="modal fade" id="popup5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <form>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Reset Choices</h4>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group">
+                  <label>Registration No.</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Registration No.">
+                </div>
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label>Branch</label>
+                  <input type="text" class="form-control" placeholder="Enter Branch">
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Reset</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="popup6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <form>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Reset Password</h4>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group">
+                  <label>Registration No.</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Registration No.">
+                </div>
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label>Branch</label>
+                  <input type="text" class="form-control" placeholder="Enter Branch">
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Reset</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="popup7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <form>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Change Allotment</h4>
+              </div>
+              <div class="modal-body">
+
+                <div class="form-group">
+                  <label>Registration No.</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Registration No.">
+                </div>
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label>Previous Allotment</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
+                </div>
+                <div class="form-group">
+                  <label>New Allotment</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Save</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
     <!--Modals-->
 
     <script>CKEDITOR.replace( 'editor1' ); CKEDITOR.replace( 'editor2' ); CKEDITOR.replace( 'editor3' );</script>
-    <script src="js/main.js"></script>
+    <script src="/js/admin-main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </body>
 </html>
