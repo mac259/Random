@@ -5,8 +5,6 @@ var connection = mysql.createConnection(dbconfig.connection);
 
 connection.query('USE ' + dbconfig.database);
 
-
-
 var express  = require('express');
 var app = express();
 
@@ -18,17 +16,15 @@ module.exports = {
 
 
 	loginfunc: function(req, res) {
-       
+
         if (req.isAuthenticated())
         {
             res.redirect('/dashboard');
         }
         else
             res.render('login.ejs');
-       
+
     },
-
-
 
 
 	isLoggedInfunc: function isLoggedIn(req, res, next) {
@@ -40,7 +36,6 @@ module.exports = {
 
 	    res.redirect('/login');
 	},
-
 
 
 	logoutfunc: function(req, res) {
@@ -74,7 +69,7 @@ module.exports = {
                                     //res.render('admin.ejs');
                                 }
                         });
-                }     
+                }
         });
     },
 
@@ -126,8 +121,9 @@ module.exports = {
                                 }
                             });
                         }
-                    });                 
+                    });
     },
+
 
     call_oe_allotment:(req,res)=>{
         connection.query("call oe_allotment()",(err,rows)=>{
@@ -143,7 +139,7 @@ module.exports = {
     create_oe_proc: (req,res)=>{
 
         elective = req.body.elective;
-         
+
 
         createQuery = "create procedure "+name+"() begin   DECLARE regn numeric(10);   DECLARE maximum INTEGER DEFAULT 0;  DECLARE id_one VARCHAR(10); DECLARE id_two VARCHAR(10);    DECLARE  id_three VARCHAR(10);       DECLARE id_four VARCHAR(10);      DECLARE   id_five VARCHAR(10);    DECLARE id_six VARCHAR(10);     DECLARE  temp_preference VARCHAR(10);       CREATE TEMPORARY TABLE tmp1 (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY)  SELECT * FROM oe_preference order by cgpa desc;    SELECT MAX(id) into maximum from tmp1;       CREATE TEMPORARY TABLE tmp_pref (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,pref varchar(10));     set @n = 1;         iter:LOOP       if @n > maximum         then        leave iter;          end if;      select regno,p_one,p_two,p_three,p_four,p_five,p_six into regn,id_one,id_two,id_three,id_four,id_five,id_six from tmp1 where id = @n;               insert into tmp_pref (pref) values(id_one),(id_two),(id_three),(id_four),(id_five),(id_six);          set @flag=true;         set @i=1;           while @flag and @i<7        do          select pref into temp_preference from tmp_pref where id = @i;           call oe_allot(regn,temp_preference,@flag);          set @i = @i +1;             end while;          if @flag and @i=7           then        insert into not_allotted values(regn);      end if;         truncate tmp_pref;        set @n = @n+1;        end loop iter;   end;";
                 connection.query(createQuery,(err,rows)=>{
@@ -153,7 +149,7 @@ module.exports = {
                         connection.query("INSERT INTO admin_elect VALUES(?,?)",[req.body.user,name],(err,rows1)=>{
                             res.send("done");
                         });
-                });  
+                });
     },
 
     elective_stats:(req,res)=>{
@@ -165,10 +161,10 @@ module.exports = {
                 rows = {rows};
                     res.render('elective_stats.ejs',rows);
                 }
-            
+
 
         });
-        
+
     },
 
     student_activity: (req,res)=>{
@@ -221,7 +217,6 @@ module.exports = {
                 }
         });
     }
-
 
 
 }
