@@ -4,6 +4,10 @@ body {
   background:#f4f4f4;
   font-family: 'Raleway', sans-serif !important;
   text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 .navbar {
@@ -226,7 +230,7 @@ body {
 }
 
 #popup4 .modal-body, #popup5 .modal-body, #popup6 .modal-body, #popup7 .modal-body {
-  height: 265px;
+  height: 260px;
 }
 
 #popup4 .modal-content, #popup5 .modal-content, #popup6 .modal-content, #popup7 .modal-content {
@@ -305,6 +309,22 @@ a.list-group-item, button.list-group-item text {
 
 
 
+
+
+
+
+
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 
 ::-moz-selection { /* Firefox */
     background: #fff498;

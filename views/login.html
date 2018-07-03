@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="pics/favicon.png">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/login-style.css">
+  <body class="noselect">
+  <div class="loginbox">
+  <img src="pics/avatar.png" class="avatar" title:"Face unlock" onclick="this.classList.toggle('active');">  <!--openCam();">-->
+  <h1>Login</h1>
+     <form>
+       <p>Username</p>
+       <input type="text" autocomplete="new-password" name="" pattern="[A-Za-z0-9]{5,15}" title="Enter five or more valid(A-Z,a-z,0-9) characters" maxlength=20 required="required" placeholder="Enter Username">
+       <p>Password</p>
+       <input id="loginPassStatus" autocomplete="new-password" type="password" name="" pattern="(?=.*\d)(?=.*[A-Z]).{8,20}" title="Must contain atleast one number, one uppercase letter and atleast 8 or more total characters" maxlength=20 required="required" placeholder ="Enter Password">
+       <div class="toggle">
+         <div class="button" onclick="this.classList.toggle('active'); changeView();">
+           <div class="circle">
+           </div>
+         </div>
+       </div>
+       <div class="g-recaptcha" data-theme="light" style="transform:scale(0.79);-webkit-transform:scale(0.79);transform-origin:0 0;-webkit-transform-origin:0 0;margin-top:16px;" data-sitekey="6Lfg-l4UAAAAAALvo7I0X50fbj6gbMUUK9nQwCAh"></div>
+       <input type="submit" name="" value="Submit"><br><br>
+<!--       <div class="help">
+       <a href="fpindex.html">Forgot password?</a><br>
+       <a href="suindex.html">Don't have an account?</a>      -->
+       </div>
+     </form>
+  </div>
+  <script src="js/login-main.js"></script>
+</body>
+</head>
+</html>
