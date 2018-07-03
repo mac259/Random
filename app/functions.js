@@ -78,6 +78,10 @@ module.exports = {
         });
     },
 
+    manage: (req,res)=>{
+        res.render('manage.ejs');
+    },
+
 
     preference_post_form: (req,res)=>{
 

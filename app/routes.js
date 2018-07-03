@@ -61,6 +61,8 @@ module.exports = function(app, passport) {
 
     app.get('/dashboard', functions.isLoggedInfunc, functions.dashboard);
 
+    app.get('/manage', functions.isLoggedInfunc, functions.manage);
+
     app.get('/elective/:token',functions.isLoggedInfunc, functions.elective_stats);
 
     app.get('/call',functions.isLoggedInfunc, functions.call_oe_allotment);

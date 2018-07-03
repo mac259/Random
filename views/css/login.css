@@ -99,11 +99,11 @@ h1
 .loginbox input[type="submit"]
 {
   font-family: 'Quicksand', sans-serif;
-  margin-top: 3px;
+  margin-top: 4px;
   margin-bottom: 0px;
   border: none;
   outline: none;
-  height: 41px;
+  height: 40px;
   width: 240px;
   background: #fb2525;
   color: #fefefe;
