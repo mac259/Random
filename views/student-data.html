@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <title>Admin Portal | Dashboard</title>
+    <title>Admin Portal | Dashboard | Student Data</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/admin-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -64,7 +64,8 @@
     <section id="breadcrumb">
       <div class="container">
         <ol class="breadcrumb">
-          <li class="active">Dashboard</li>
+          <li><a class="redirect" href="dashboard.html">Dashboard</a></li>
+          <li class="active">Student Data</li>
         </ol>
       </div>
     </section>
@@ -112,73 +113,139 @@
           <div class="col-md-9">
             <div class="panel panel-default">
               <div class="panel-heading color-scheme">
-                <h3 class="panel-title">Overview</h3>
+                <h3 class="panel-title">Student Data</h3>
               </div>
-              <div class="panel-body">
-                <div class="col-md-3">
-                  <a class="redirect" href="past.html"><div class="well dash-box">
-                    <h2><i class="far fa-clock"></i></h2>
-                    <h4>Past Electives</h4>
-                  </div></a>
-                </div>
-                <div class="col-md-3">
-                  <a class="redirect" href="present.html"><div class="well dash-box">
-                    <h2><i class="far fa-calendar-alt"></i></h2>
-                    <h4>Present Electives</h4>
-                  </div></a>
-                </div>
-                <div class="col-md-3">
-                  <a class="redirect" href="student-data.html"><div class="well dash-box">
-                    <h2><i class="fas fa-users"></i></h2>
-                    <h4>Student Data</h4>
-                  </div></a>
-                </div>
-                <div class="col-md-3">
-                  <a class="redirect" href="courses.html"><div class="well dash-box">
-                    <h2><i class="far fa-bookmark"></i></h2>
-                    <h4>Courses</h4>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default entries">
-              <div class="panel-heading">
-                <h3 class="panel-title"><strong>Latest Submissions</strong></h3>
-              </div>
-              <div class="panel-body">
-                <table class="table table-striped table-hover">
+              <div class="panel-body scrolly">
+
+                <table class="table table-striped table-hover"> <!--All Student Data (Whole University)-->
                   <tr>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Submitted On</th>
+                    <th>Registration No.</th>
+                    <th>Form Submitted</th>
+                    <th>Branch/Section</th>
                   </tr>
                   <tr>
                     <td>Aniket Mukherjee</td>
-                    <td>aniket@gmail.com</td>
-                    <td>July 1, 2018</td>
+                    <td>169105033</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>CSE/A</td>
                   </tr>
                   <tr>
                     <td>Shivam Thakur</td>
-                    <td>shivamth@yahoo.com</td>
-                    <td>June 28, 2018</td>
+                    <td>169105031</td>
+                    <td>&nbsp<i class="far fa-times-circle"></i></td>
+                    <td>CCE/B</td>
                   </tr>
                   <tr>
                     <td>Ankit Mishra</td>
-                    <td>jai_mishra@gmail.com</td>
-                    <td>June 26, 2018</td>
+                    <td>169105037</td>
+                    <td>&nbsp<i class="far fa-times-circle"></i></td>
+                    <td>CSE/A</td>
                   </tr>
                   <tr>
                     <td>DJ Denzil</td>
-                    <td>johndawson@gmail.com</td>
-                    <td>June 25, 2018</td>
+                    <td>169102008</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>IT/C</td>
                   </tr>
                   <tr>
                     <td>Apoorv Mittal</td>
-                    <td>fifafan@ymail.com</td>
-                    <td>June 11, 2018</td>
+                    <td>179110141</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>MECH/D</td>
+                  </tr>
+                  <tr>
+                    <td>Aniket Mukherjee</td>
+                    <td>169105033</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>CSE/A</td>
+                  </tr>
+                  <tr>
+                    <td>Shivam Thakur</td>
+                    <td>169105031</td>
+                    <td>&nbsp<i class="far fa-times-circle"></i></td>
+                    <td>CCE/B</td>
+                  </tr>
+                  <tr>
+                    <td>Ankit Mishra</td>
+                    <td>169105037</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>CSE/A</td>
+                  </tr>
+                  <tr>
+                    <td>DJ Denzil</td>
+                    <td>169102008</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>IT/C</td>
+                  </tr>
+                  <tr>
+                    <td>Apoorv Mittal</td>
+                    <td>179110141</td>
+                    <td>&nbsp<i class="far fa-times-circle"></i></td>
+                    <td>MECH/D</td>
+                  </tr>
+                  <tr>
+                    <td>Aniket Mukherjee</td>
+                    <td>169105033</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>CSE/A</td>
+                  </tr>
+                  <tr>
+                    <td>Shivam Thakur</td>
+                    <td>169105031</td>
+                    <td>&nbsp<i class="far fa-times-circle"></i></td>
+                    <td>CCE/B</td>
+                  </tr>
+                  <tr>
+                    <td>Ankit Mishra</td>
+                    <td>169105037</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>CSE/A</td>
+                  </tr>
+                  <tr>
+                    <td>DJ Denzil</td>
+                    <td>169102008</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>IT/C</td>
+                  </tr>
+                  <tr>
+                    <td>Apoorv Mittal</td>
+                    <td>179110141</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>MECH/D</td>
+                  </tr>
+                  <tr>
+                    <td>Aniket Mukherjee</td>
+                    <td>169105033</td>
+                    <td>&nbsp<i class="far fa-times-circle"></i></td>
+                    <td>CSE/A</td>
+                  </tr>
+                  <tr>
+                    <td>Shivam Thakur</td>
+                    <td>169105031</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>CCE/B</td>
+                  </tr>
+                  <tr>
+                    <td>Ankit Mishra</td>
+                    <td>169105037</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>CSE/A</td>
+                  </tr>
+                  <tr>
+                    <td>DJ Denzil</td>
+                    <td>169102008</td>
+                    <td>&nbsp<i class="far fa-times-circle"></i></td>
+                    <td>IT/C</td>
+                  </tr>
+                  <tr>
+                    <td>Apoorv Mittal</td>
+                    <td>179110141</td>
+                    <td>&nbsp<i class="far fa-check-circle"></i></td>
+                    <td>MECH/D</td>
                   </tr>
                 </table>
-                <a class="more links" type="button" data-toggle="modal" data-target="#popup9">See More</a>
+
               </div>
             </div>
           </div>
@@ -321,158 +388,6 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Save</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="popup9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <form>
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Latest Submissions</h4>
-              </div>
-              <div class="modal-body">
-
-                  <table class="table table-striped table-hover">
-                    <tr>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Submitted On</th>
-                    </tr>
-                    <tr>
-                      <td>Aniket Mukherjee</td>
-                      <td>aniket@gmail.com</td>
-                      <td>July 1, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Shivam Thakur</td>
-                      <td>shivamth@yahoo.com</td>
-                      <td>June 28, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Ankit Mishra</td>
-                      <td>jai_mishra@gmail.com</td>
-                      <td>June 26, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>DJ Denzil</td>
-                      <td>johndawson@gmail.com</td>
-                      <td>June 25, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Apoorv Mittal</td>
-                      <td>fifafan@ymail.com</td>
-                      <td>June 11, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Aniket Mukherjee</td>
-                      <td>aniket@gmail.com</td>
-                      <td>July 1, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Shivam Thakur</td>
-                      <td>shivamth@yahoo.com</td>
-                      <td>June 28, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Ankit Mishra</td>
-                      <td>jai_mishra@gmail.com</td>
-                      <td>June 26, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>DJ Denzil</td>
-                      <td>johndawson@gmail.com</td>
-                      <td>June 25, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Apoorv Mittal</td>
-                      <td>fifafan@ymail.com</td>
-                      <td>June 11, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Aniket Mukherjee</td>
-                      <td>aniket@gmail.com</td>
-                      <td>July 1, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Shivam Thakur</td>
-                      <td>shivamth@yahoo.com</td>
-                      <td>June 28, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Ankit Mishra</td>
-                      <td>jai_mishra@gmail.com</td>
-                      <td>June 26, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>DJ Denzil</td>
-                      <td>johndawson@gmail.com</td>
-                      <td>June 25, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Apoorv Mittal</td>
-                      <td>fifafan@ymail.com</td>
-                      <td>June 11, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Aniket Mukherjee</td>
-                      <td>aniket@gmail.com</td>
-                      <td>July 1, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Shivam Thakur</td>
-                      <td>shivamth@yahoo.com</td>
-                      <td>June 28, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Ankit Mishra</td>
-                      <td>jai_mishra@gmail.com</td>
-                      <td>June 26, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>DJ Denzil</td>
-                      <td>johndawson@gmail.com</td>
-                      <td>June 25, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Apoorv Mittal</td>
-                      <td>fifafan@ymail.com</td>
-                      <td>June 11, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Aniket Mukherjee</td>
-                      <td>aniket@gmail.com</td>
-                      <td>July 1, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Shivam Thakur</td>
-                      <td>shivamth@yahoo.com</td>
-                      <td>June 28, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Ankit Mishra</td>
-                      <td>jai_mishra@gmail.com</td>
-                      <td>June 26, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>DJ Denzil</td>
-                      <td>johndawson@gmail.com</td>
-                      <td>June 25, 2018</td>
-                    </tr>
-                    <tr>
-                      <td>Apoorv Mittal</td>
-                      <td>fifafan@ymail.com</td>
-                      <td>June 11, 2018</td>
-                    </tr>
-                  </table>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Okay</button>
               </div>
               </form>
             </div>

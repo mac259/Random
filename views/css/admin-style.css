@@ -188,6 +188,7 @@ body {
 
 .table td {
   font-size: 14px;
+  overflow-y: auto;
 }
 
 .more {
@@ -201,6 +202,10 @@ body {
 
 .more:hover {
   color: #333;
+}
+
+.more:focus {
+  outline: none;
 }
 
 .checkbox {
@@ -275,6 +280,15 @@ body {
   cursor: pointer;
 }
 
+.redirect {
+  color: #333;
+}
+
+.redirect:hover, .redirect:focus {
+  text-decoration: none;
+  color: #333;
+}
+
 .sub {
   padding: 0;
 }
@@ -304,12 +318,49 @@ body {
 }
 
 a.list-group-item, button.list-group-item text {
-  color: #444;
+  color: #484848;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  overflow-y: scroll;
+  height: 58%;
+  padding: 1px 12px 1px 0px;
+}
 
+.flex-container > div {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  width: 110px;
+  margin: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #222;
+  padding: 27px 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
+.scrolly {
+  overflow-y: scroll;
+  height: 64%;
+}
 
+.list-group-item:last-child {
+  border-radius: 0;
+}
+
+table td {
+  text-align: left;
+}
 
 
 
