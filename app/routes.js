@@ -65,9 +65,13 @@ module.exports = function(app, passport) {
 
     app.get('/elective/:token',functions.isLoggedInfunc, functions.elective_stats);
 
-    app.get('/call',functions.isLoggedInfunc, functions.call_oe_allotment);
+    app.get('/past',functions.isLoggedInfunc, functions.past_electives);
 
-    app.get('/student_activity',functions.isLoggedInfunc, functions.student_activity);
+    app.get('/present',functions.isLoggedInfunc, functions.present_electives);
+
+    app.get('/student-data',functions.isLoggedInfunc,functions.student_data)
+
+    app.get('/courses',functions.isLoggedInfunc, functions.display_courses);
 
     app.get('/admin_activity',functions.isLoggedInfunc, functions.admin_activity);
     

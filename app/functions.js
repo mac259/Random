@@ -167,9 +167,23 @@ module.exports = {
 
     },
 
-    student_activity: (req,res)=>{
-        res.render('student_activity.ejs');
+    display_courses: (req,res)=>{
+        res.render('courses.ejs');
     },
+
+
+    past_electives : (req,res)=>{
+        res.render('past.ejs');
+    },
+
+    present_electives : (req,res)=>{
+        res.render('present.ejs');
+    },
+
+    student_data : (req,res)=>{
+        res.render('student-data.ejs');
+    },
+
 
     admin_activity: (req,res)=>{
 

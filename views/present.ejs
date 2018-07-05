@@ -4,9 +4,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <title>Admin Portal | Dashboard | Past Electives</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/admin-style.css" rel="stylesheet">
+    <title>Admin Portal | Dashboard | Present Electives</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/admin-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
   </head>
@@ -24,8 +24,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="manage.html">Manage</a></li>
+            <li class="active"><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/manage">Manage</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle links" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create&nbsp<span class="caret"></span></a><!--<img class="udbtn" onclick="this.classList.toggle('active');" src="png/down-arrow.png">-->
               <ul class="dropdown-menu">
@@ -37,10 +37,10 @@
                 <li><a class="links" type="button" data-toggle="modal" data-target="#popup2">Department Elective</a></li>
               </ul>
             </li>
-            <li><a href="settings.html">Settings</a></li>
+            <li><a href="/settings">Settings</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>  <!--Change accordingly-->
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>  <!--Change accordingly-->
           </ul>
         </div>
       </div>
@@ -64,8 +64,8 @@
     <section id="breadcrumb">
       <div class="container">
         <ol class="breadcrumb">
-          <li><a class="redirect" href="dashboard.html">Dashboard</a></li>
-          <li class="active">Past Electives</li>
+          <li><a class="redirect" href="/dashboard">Dashboard</a></li>
+          <li class="active">Present Electives</li>
         </ol>
       </div>
     </section>
@@ -75,10 +75,10 @@
         <div class="row">
           <div class="col-md-3">
             <div class="list-group">
-              <a href="dashboard.html" class="list-group-item active color-scheme">
+              <a href="/dashboard" class="list-group-item active color-scheme">
                 <i class="fa fa-info-circle"></i> Dashboard
               </a>
-              <a href="manage.html" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
+              <a href="/manage" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
               <a class="list-group-item" data-toggle="collapse" href="#collapse1"><i class="fa fa-plus-circle"></i> Create</a>
               <div id="collapse1" class="panel-collapse collapse">
                 <ul class="list-group-item listing">
@@ -87,7 +87,7 @@
                   <li class="list-group-item sub"><a class="links" type="button" data-toggle="modal" data-target="#popup2">Department Elective</a></li>
                 </ul>
               </div>
-              <a href="settings.html" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
+              <a href="/settings" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
             </div>
             <div class="well bars">
               <h4>Eligible Students</h4>
@@ -113,7 +113,7 @@
           <div class="col-md-9">
             <div class="panel panel-default">
               <div class="panel-heading color-scheme">
-                <h3 class="panel-title">Past Electives</h3>
+                <h3 class="panel-title">Present Electives</h3>
               </div>
               <div class="panel-body">
 
@@ -305,7 +305,7 @@
               <form>
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Past Electives | CM1493</h4>
+                <h4 class="modal-title" id="myModalLabel">Present Electives | CM1493</h4>
               </div>
               <div class="modal-body">
 
@@ -429,8 +429,8 @@
       <!--Modals-->
 
     <script>CKEDITOR.replace( 'editor1' ); CKEDITOR.replace( 'editor2' ); CKEDITOR.replace( 'editor3' );</script>
-    <script src="js/admin-main.js"></script>
+    <script src="/js/admin-main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </body>
 </html>
