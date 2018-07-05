@@ -4,13 +4,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <title>Admin Control | Manage</title>
+    <title>Admin Portal | Manage</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/admin-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
   </head>
-  <body>
+  <body class="noselect">
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -72,7 +72,7 @@
         <div class="row">
           <div class="col-md-3">
             <div class="list-group">
-              <a href="/dashboard" class="list-group-item active color-scheme">
+              <a href="dashboard.html" class="list-group-item active color-scheme">
                 <i class="fa fa-info-circle"></i> Dashboard
               </a>
               <a href="/manage" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
@@ -105,7 +105,6 @@
                   55%
                 </div>
               </div>
-              <h4>
             </div>
           </div>
           <div class="col-md-9">
@@ -116,7 +115,7 @@
               <div class="panel-body">
                 <div class="col-md-3">
                   <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup7">
-                    <h2><i class="fa fa-random"></i></h2>
+                    <h2><i class="fa fa-retweet"></i></h2>
                     <h4>Change Allotment</h4>
                   </div>
                 </div>
@@ -343,8 +342,8 @@
                   <input type="text" class="form-control" required="required" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
-                  <label>Branch</label>
-                  <input type="text" class="form-control" placeholder="Enter Branch">
+                  <label>Elective Type</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Elective Type">
                 </div>
 
               </div>

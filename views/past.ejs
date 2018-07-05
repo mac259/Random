@@ -4,9 +4,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <title>Admin Portal | Manage</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/admin-style.css" rel="stylesheet">
+    <title>Admin Portal | Dashboard | Past Electives</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/admin-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
   </head>
@@ -24,10 +24,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li class="active"><a href="manage.html">Manage</a></li>
+            <li class="active"><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/manage">Manage</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create&nbsp<span class="caret"></span></a><!--<img class="udbtn" onclick="this.classList.toggle('active');" src="png/down-arrow.png">-->
+              <a class="dropdown-toggle links" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Create&nbsp<span class="caret"></span></a><!--<img class="udbtn" onclick="this.classList.toggle('active');" src="png/down-arrow.png">-->
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Courses</li>
                 <li><a class="links" type="button" data-toggle="modal" data-target="#popup3">Curriculum Course</a></li>
@@ -37,10 +37,10 @@
                 <li><a class="links" type="button" data-toggle="modal" data-target="#popup2">Department Elective</a></li>
               </ul>
             </li>
-            <li><a href="settings.html">Settings</a></li>
+            <li><a href="/settings">Settings</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>  <!--Change accordingly-->
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>  <!--Change accordingly-->
           </ul>
         </div>
       </div>
@@ -57,12 +57,15 @@
               <input type="text" class="form-control" placeholder="Search...">
             </form>
           </div>
+        </div>
+      </div>
     </header>
 
     <section id="breadcrumb">
       <div class="container">
         <ol class="breadcrumb">
-          <li class="active">Manage</li>
+          <li><a class="redirect" href="/dashboard">Dashboard</a></li>
+          <li class="active">Past Electives</li>
         </ol>
       </div>
     </section>
@@ -72,10 +75,10 @@
         <div class="row">
           <div class="col-md-3">
             <div class="list-group">
-              <a href="dashboard.html" class="list-group-item active color-scheme">
+              <a href="/dashboard" class="list-group-item active color-scheme">
                 <i class="fa fa-info-circle"></i> Dashboard
               </a>
-              <a href="manage.html" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
+              <a href="/manage" class="list-group-item"><i class="fa fa-user-circle"></i> Manage <span class="badge">35</span></a>
               <a class="list-group-item" data-toggle="collapse" href="#collapse1"><i class="fa fa-plus-circle"></i> Create</a>
               <div id="collapse1" class="panel-collapse collapse">
                 <ul class="list-group-item listing">
@@ -84,7 +87,7 @@
                   <li class="list-group-item sub"><a class="links" type="button" data-toggle="modal" data-target="#popup2">Department Elective</a></li>
                 </ul>
               </div>
-              <a href="settings.html" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
+              <a href="/settings" class="list-group-item"><i class="fa fa-cog"></i> Settings</a>
             </div>
             <div class="well bars">
               <h4>Eligible Students</h4>
@@ -110,40 +113,45 @@
           <div class="col-md-9">
             <div class="panel panel-default">
               <div class="panel-heading color-scheme">
-                <h3 class="panel-title">Student Activities</h3>
+                <h3 class="panel-title">Past Electives</h3>
               </div>
               <div class="panel-body">
-                <div class="col-md-3">
-                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup7">
-                    <h2><i class="fa fa-retweet"></i></h2>
-                    <h4>Change Allotment</h4>
-                  </div>
+
+                <div class="flex-container">
+                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup8">CM1493</div>
+                  <div>Communication Systems</div>
+                  <div>Social Entrepreneurship</div>
+                  <div>HS1401</div>
+                  <div>Bio-statistics</div>
+                  <div>French</div>
+                  <div>CS1303</div>
+                  <div>International Relations</div>
+                  <div>Digital Image Processing</div>
+                  <div>IT1404</div>
+                  <div>Social Entrepreneurship</div>
+                  <div>MA1101</div>
+                  <div>Bio-statistics</div>
+                  <div>French</div>
+                  <div>Financial Markets</div>
+                  <div>International Relations</div>
+                  <div>ME1998</div>
+                  <div>Communication Systems</div>
+                  <div>Social Entrepreneurship</div>
+                  <div>Project Management</div>
+                  <div>Bio-statistics</div>
+                  <div>French</div>
+                  <div>Financial Markets</div>
+                  <div>International Relations</div>
+                  <div>Digital Image Processing</div>
+                  <div>Communication Systems</div>
+                  <div>Social Entrepreneurship</div>
+                  <div>Project Management</div>
+                  <div>Bio-statistics</div>
+                  <div>French</div>
+                  <div>Financial Markets</div>
+                  <div>International Relations</div>
                 </div>
-                <div class="col-md-3">
-                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup5">
-                    <h2><i class="far fa-list-alt"></i></h2>
-                    <h4>Reset Choices</h4>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup6">
-                    <h2><i class="fas fa-shield-alt"></i></h2>
-                    <h4>Reset Password</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading color-scheme">
-                <h3 class="panel-title">Admin Activities</h3>
-              </div>
-              <div class="panel-body">
-                <div class="col-md-3">
-                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup4">
-                    <h2><i class="far fa-trash-alt"></i></h2>
-                    <h4>Remove Course</h4>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -155,7 +163,7 @@
       <p>ALL CONTENT COPYRIGHT &copy; 2018</p>
     </footer>
 
-    <!--Modals-->
+      <!--Modals-->
         <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -291,143 +299,138 @@
             </div>
           </div>
         </div>
-        <div class="modal fade" id="popup4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="popup8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <form>
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Remove Course</h4>
+                <h4 class="modal-title" id="myModalLabel">Past Electives | CM1493</h4>
               </div>
               <div class="modal-body">
 
-                <div class="form-group">
-                  <label>Course Name</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Course Name">
-                </div>
-                <div class="form-group">
-                  <label>Course Code</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
-                </div>
-                <div class="form-group">
-                  <label>Department</label>
-                  <input type="text" class="form-control" placeholder="Enter Department">
-                </div>
+                <table class="table table-striped table-hover">
+                  <tr>
+                    <th>Name</th>
+                    <th>Registration No.</th>
+                    <th>Section</th>
+                  </tr>
+                  <tr>
+                    <td>Aniket Mukherjee</td>
+                    <td>169105033</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>Shivam Thakur</td>
+                    <td>169105031</td>
+                    <td>B</td>
+                  </tr>
+                  <tr>
+                    <td>Ankit Mishra</td>
+                    <td>169105037</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>DJ Denzil</td>
+                    <td>169102008</td>
+                    <td>C</td>
+                  </tr>
+                  <tr>
+                    <td>Apoorv Mittal</td>
+                    <td>179110141</td>
+                    <td>D</td>
+                  </tr>
+                  <tr>
+                    <td>Aniket Mukherjee</td>
+                    <td>169105033</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>Shivam Thakur</td>
+                    <td>169105031</td>
+                    <td>B</td>
+                  </tr>
+                  <tr>
+                    <td>Ankit Mishra</td>
+                    <td>169105037</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>DJ Denzil</td>
+                    <td>169102008</td>
+                    <td>C</td>
+                  </tr>
+                  <tr>
+                    <td>Apoorv Mittal</td>
+                    <td>179110141</td>
+                    <td>D</td>
+                  </tr>
+                  <tr>
+                    <td>Aniket Mukherjee</td>
+                    <td>169105033</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>Shivam Thakur</td>
+                    <td>169105031</td>
+                    <td>B</td>
+                  </tr>
+                  <tr>
+                    <td>Ankit Mishra</td>
+                    <td>169105037</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>DJ Denzil</td>
+                    <td>169102008</td>
+                    <td>C</td>
+                  </tr>
+                  <tr>
+                    <td>Apoorv Mittal</td>
+                    <td>179110141</td>
+                    <td>D</td>
+                  </tr>
+                  <tr>
+                    <td>Aniket Mukherjee</td>
+                    <td>169105033</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>Shivam Thakur</td>
+                    <td>169105031</td>
+                    <td>B</td>
+                  </tr>
+                  <tr>
+                    <td>Ankit Mishra</td>
+                    <td>169105037</td>
+                    <td>A</td>
+                  </tr>
+                  <tr>
+                    <td>DJ Denzil</td>
+                    <td>169102008</td>
+                    <td>C</td>
+                  </tr>
+                  <tr>
+                    <td>Apoorv Mittal</td>
+                    <td>179110141</td>
+                    <td>D</td>
+                  </tr>
+                </table>
 
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Delete</button>
+                <button type="submit" class="btn btn-primary">Okay</button>
               </div>
               </form>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="popup5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <form>
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Reset Choices</h4>
-              </div>
-              <div class="modal-body">
-
-                <div class="form-group">
-                  <label>Registration No.</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Registration No.">
-                </div>
-                <div class="form-group">
-                  <label>Name</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Name">
-                </div>
-                <div class="form-group">
-                  <label>Elective Type</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Elective Type">
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Reset</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="popup6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <form>
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Reset Password</h4>
-              </div>
-              <div class="modal-body">
-
-                <div class="form-group">
-                  <label>Registration No.</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Registration No.">
-                </div>
-                <div class="form-group">
-                  <label>Name</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Name">
-                </div>
-                <div class="form-group">
-                  <label>Branch</label>
-                  <input type="text" class="form-control" placeholder="Enter Branch">
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Reset</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="popup7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <form>
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Change Allotment</h4>
-              </div>
-              <div class="modal-body">
-
-                <div class="form-group">
-                  <label>Registration No.</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Registration No.">
-                </div>
-                <div class="form-group">
-                  <label>Name</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Name">
-                </div>
-                <div class="form-group">
-                  <label>Previous Allotment</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
-                </div>
-                <div class="form-group">
-                  <label>New Allotment</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" onclick="checkIfSure();">Save</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-    <!--Modals-->
+      <!--Modals-->
 
     <script>CKEDITOR.replace( 'editor1' ); CKEDITOR.replace( 'editor2' ); CKEDITOR.replace( 'editor3' );</script>
-    <script src="js/admin-main.js"></script>
+    <script src="/js/admin-main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </body>
 </html>
