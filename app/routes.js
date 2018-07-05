@@ -77,5 +77,10 @@ module.exports = function(app, passport) {
     
     app.get('/reset/:id', functions.isLoggedInfunc,functions.reset_archive);
 
+    app.get('/download', function(req, res){
+          var file = 'G:/Elective/Random/views/pics/avatar.png';
+          res.download(file); // Set disposition and send it.
+    });
+
 }
 

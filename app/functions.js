@@ -168,7 +168,16 @@ module.exports = {
     },
 
     display_courses: (req,res)=>{
-        res.render('courses.ejs');
+        SelectQuery = "SELECT courseID FROM courses";
+        connection.query(SelectQuery,(err,rows)=>{
+            if(err)
+                throw err;
+            else{
+                rows.courses = rows;
+                console.log(rows);
+                res.render('courses.ejs',rows);
+            }
+        });
     },
 
 
