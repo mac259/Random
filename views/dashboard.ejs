@@ -194,7 +194,7 @@
         <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <form>
+              <form action="/create" method="post">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Create Open Elective</h4>
@@ -202,21 +202,23 @@
               <div class="modal-body">
 
                 <div class="form-group">
-                  <label>Course Name</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Course Name">
+                  <label>Elective Name</label>
+                  <input type="text" class="form-control" required="required" placeholder="Enter Course Name" name="elective_name">
+                </div>                
+                <div class="form-group">
+                  <label>Type</label>
+                  <select type="text" class="form-control" required="required" placeholder="Enter Department">
+                    <option value="University">Univeristy</option>
+                    <option value="Engineering">Only Engineering</option>
+                  </select>
                 </div>
                 <div class="form-group">
-                  <label>Course Code</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Course Code">
+                  <label>Included Semesters</label>
+                  <select type="text" class="form-control"  placeholder="Enter Department" >
+                    
+                  </select>
                 </div>
-                <div class="form-group">
-                  <label>Department</label>
-                  <input type="text" class="form-control" required="required" placeholder="Enter Department">
-                </div>
-                <div class="form-group">
-                  <label>Strength</label>
-                  <input type="number" min="0" class="form-control" required="required" placeholder="Enter Strength">
-                </div>
+                
                 <div class="form-group">
                   <label>Course Details</label>
                   <textarea name="editor1" class="form-control" placeholder="Enter any relevant details..."></textarea>

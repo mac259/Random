@@ -20,15 +20,32 @@
            </div>
          </div>
        </div>
-       <div class="g-recaptcha" data-theme="light" style="transform:scale(0.79);-webkit-transform:scale(0.79);transform-origin:0 0;-webkit-transform-origin:0 0;margin-top:16px;" data-sitekey="6Lfg-l4UAAAAAALvo7I0X50fbj6gbMUUK9nQwCAh"></div>
-       <input type="submit" name="" value="Submit"><br><br>
+       <div class="g-recaptcha" id ="gg" data-theme="light" style="transform:scale(0.79);-webkit-transform:scale(0.79);transform-origin:0 0;-webkit-transform-origin:0 0;margin-top:16px;" data-sitekey="6Lfg-l4UAAAAAALvo7I0X50fbj6gbMUUK9nQwCAh"></div>
+       <input type="submit" name="submit" value="Submit" ><br><br>
 <!--       <div class="help">
        <a href="fpindex.html">Forgot password?</a><br>
-       <a href="suindex.html">Don't have an account?</a>      -->
-       </div>
+       <a href="suindex.html">Don't have an account?</a>      
+       </div>-->
      </form>
   </div>
   <script src="/js/login-main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+        
+            $("form").on('submit', function (e) {
+                  var googleResponse = jQuery('#g-recaptcha-response').val();                 
+                  if (!googleResponse) {
+                      $('<p style="color:red !important" class="error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#html_element");
+                      alert('Please check');
+                      e.preventDefault();
+                  } else {            
+                      return true;
+                  }
+                   
+                });
+
+
+  </script>
 </body>
 </head>
 </html>

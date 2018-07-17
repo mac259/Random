@@ -118,38 +118,10 @@
               <div class="panel-body">
 
                 <div class="flex-container">
-                  <div class="well dash-box links" type="button" data-toggle="modal" data-target="#popup8">CM1493</div>
-                  <div>Communication Systems</div>
-                  <div>Social Entrepreneurship</div>
-                  <div>HS1401</div>
-                  <div>Bio-statistics</div>
-                  <div>French</div>
-                  <div>CS1303</div>
-                  <div>International Relations</div>
-                  <div>Digital Image Processing</div>
-                  <div>IT1404</div>
-                  <div>Social Entrepreneurship</div>
-                  <div>MA1101</div>
-                  <div>Bio-statistics</div>
-                  <div>French</div>
-                  <div>Financial Markets</div>
-                  <div>International Relations</div>
-                  <div>ME1998</div>
-                  <div>Communication Systems</div>
-                  <div>Social Entrepreneurship</div>
-                  <div>Project Management</div>
-                  <div>Bio-statistics</div>
-                  <div>French</div>
-                  <div>Financial Markets</div>
-                  <div>International Relations</div>
-                  <div>Digital Image Processing</div>
-                  <div>Communication Systems</div>
-                  <div>Social Entrepreneurship</div>
-                  <div>Project Management</div>
-                  <div>Bio-statistics</div>
-                  <div>French</div>
-                  <div>Financial Markets</div>
-                  <div>International Relations</div>
+                  
+                 <% for(i=0;i<past.length;i++){ %> 
+                  <div><%= past[i].elective_name %></div>
+                  <% } %>
                 </div>
 
               </div>

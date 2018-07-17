@@ -106,8 +106,8 @@ module.exports = {
     create_oe_post_form: (req,res)=>{
         date = new Date();
         year = date.getFullYear();
-        name = "open_"+year;
-        allotted_table_name = name+"_allotted";
+        name = req.body.elective_name;
+        allotted_table_name = name.replace(/ /g,'')+"_allotted_"+year;
                 connection.query("INSERT INTO elective_data(userID,elective_name,allotted_table) VALUES(?,?,?)",[req.session.user,name,allotted_table_name],(err1,rows1)=>{
                        if(err1)
                             throw err1;
@@ -180,17 +180,55 @@ module.exports = {
         });
     },
 
+    elective_courses: (req,res)=>{
+
+        e_id = req.params.id;
+        SelectQuery = "SELECT courseID FROM courses where elective_id = ?";
+        connection.query(SelectQuery,[e_id],(err,rows)=>{
+            if(err)
+                throw err;
+            else{
+                rows.courses = rows;
+                console.log(rows);
+                res.render('courses.ejs',rows);
+            }
+        });
+    },
+
 
     past_electives : (req,res)=>{
-        res.render('past.ejs');
+
+        SelectQuery = "SELECT * FROM elective_data where userID = ? and current_status = 'completed'";
+        connection.query(SelectQuery,[req.session.user],(err,rows)=>{
+                if(err)
+                    throw err;
+                else{
+                    rows.past = rows;
+                    res.render('past.ejs',rows);
+                }
+        });        
     },
 
     present_electives : (req,res)=>{
-        res.render('present.ejs');
+        
+        SelectQuery = "SELECT * FROM elective_data where userID = ? and current_status != 'completed'";
+        connection.query(SelectQuery,[req.session.user],(err,rows)=>{
+                if(err)
+                    throw err;
+                else{
+                    rows.present = rows;
+                    res.render('present.ejs',rows);
+                }
+        });        
     },
 
     student_data : (req,res)=>{
         res.render('student-data.ejs');
+    },
+
+
+    settings : (req,res)=>{
+        res.render('settings.ejs');
     },
 
 

@@ -12,6 +12,8 @@ function changeView() {
         loginPassStatus = false;
     }
 }
+
+
 /*
 function openCam() {
 // Grab elements, create settings, etc.

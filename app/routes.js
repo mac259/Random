@@ -35,6 +35,9 @@ module.exports = function(app, passport) {
             //this is when login is successful
             req.logIn(user, function(err) {
                 if (err) { return next(err); }
+                console.log(req.body);
+                afdss = "  fff jju ggg ii         hjj   ";
+                console.log(afdss.replace(/ /g,''));
                 return res.redirect('/dashboard');
             });
             
@@ -73,9 +76,13 @@ module.exports = function(app, passport) {
 
     app.get('/courses',functions.isLoggedInfunc, functions.display_courses);
 
+    app.get('/courses/:id',functions.isLoggedInfunc, functions.elective_courses);
+
     app.get('/admin_activity',functions.isLoggedInfunc, functions.admin_activity);
     
     app.get('/reset/:id', functions.isLoggedInfunc,functions.reset_archive);
+
+    app.get('/settings',functions.isLoggedInfunc, functions.settings);
 
     app.get('/download', function(req, res){
           var file = 'G:/Elective/Random/views/pics/avatar.png';
