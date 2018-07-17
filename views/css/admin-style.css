@@ -267,6 +267,19 @@ body {
   background: #eee;
 }
 
+.modal-footer .btn-download {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: #fff;
+  float: left;
+}
+
+.modal-footer .btn-download:hover {
+  background-color: #2e6da4;
+  color: #fff;
+  border-color: #2e6da4;
+}
+
 #footer {
   background: #222;
   color: #fff;
