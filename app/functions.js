@@ -74,7 +74,8 @@ module.exports = {
     },
 
     manage: (req,res)=>{
-        res.render('manage.ejs');
+        //res.render('manage.ejs');
+        res.render('Student Pro 2/student-index.ejs');
     },
 
 
