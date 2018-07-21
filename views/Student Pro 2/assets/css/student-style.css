@@ -365,7 +365,7 @@ template {
 }
 
 .contact-form {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 @media print {
@@ -10981,7 +10981,7 @@ label {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
-/*           Animations              */
+/* Animations */
 
 .animation-transition-general,
 .carousel .carousel-indicators li {
@@ -14603,6 +14603,16 @@ textarea {
 
 .sub-info a {
   color: #999999;
+  transition: color 0.2s linear; /* vendorless fallback */
+  -o-transition: color 0.2s linear; /* opera */
+  -ms-transition: color 0.2s linear; /* IE 10 */
+  -moz-transition: color 0.2s linear; /* Firefox */
+  -webkit-transition: color 0.2s linear; /*safari and chrome */
+}
+
+.sub-info a:hover {
+  color: #3C4858;
+  cursor: pointer;
 }
 
 .info-horizontal .icon {
@@ -16631,9 +16641,7 @@ footer .pull-center {
   background-color: transparent;
 }
 
-/*
-  Datetimepicker for Bootstrap
-*/
+/* Datetimepicker for Bootstrap */
 
 .sr-only,
 .bootstrap-datetimepicker-widget .btn[data-action="incrementHours"]::after,
@@ -17034,9 +17042,7 @@ footer .pull-center {
   cursor: pointer;
 }
 
-/*
-  Functional styling
-*/
+/* Functional styling */
 
 .noUi-target,
 .noUi-target * {
@@ -17105,9 +17111,7 @@ footer .pull-center {
   cursor: inherit !important;
 }
 
-/* Painting and performance;
- * Browsers can paint handles in their own layer.
- */
+/* Painting and performance */
 
 .noUi-base,
 .noUi-handle {
@@ -17115,8 +17119,7 @@ footer .pull-center {
   transform: translate3d(0, 0, 0);
 }
 
-/* Slider size and handle placement;
- */
+/* Slider size and handle placement */
 
 .noUi-horizontal {
   height: 2px;
@@ -17134,8 +17137,7 @@ footer .pull-center {
   top: -17px;
 }
 
-/* Styling;
- */
+/* Styling */
 
 .noUi-target {
   background: #c8c8c8;
@@ -17148,8 +17150,7 @@ footer .pull-center {
   transition: background 450ms;
 }
 
-/* Handles and cursors;
- */
+/* Handles and cursors */
 
 .noUi-draggable {
   cursor: w-resize;
@@ -17189,8 +17190,7 @@ footer .pull-center {
   top: 17px;
 }
 
-/* Disabled state;
- */
+/* Disabled state */
 
 [disabled] .noUi-connect {
   background: #B8B8B8;
@@ -17287,6 +17287,10 @@ footer .pull-center {
 .landing-page .brand h3 {
   font-size: 1.313rem;
   margin: 5px auto 0;
+}
+
+.redirect-page {
+  margin-top:100px;
 }
 
 .index-page .brand h3 {

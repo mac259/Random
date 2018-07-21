@@ -1,0 +1,2 @@
+put bootstrap notify in student
+use tooltips for notification and logout icons
