@@ -89,5 +89,17 @@ module.exports = function(app, passport) {
           res.download(file); // Set disposition and send it.
     });
 
+
+
+  // #########################################################################################
+  // ######################    STUDENT ROUTES   ###########################################
+  // #########################################################################################
+
+
+  app.get('/upcoming', functions.isLoggedInfunc, functions.upcoming_electives);
+
+
+
+
 }
 
