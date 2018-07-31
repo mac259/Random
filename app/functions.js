@@ -74,8 +74,7 @@ module.exports = {
     },
 
     manage: (req,res)=>{
-        //res.render('manage.ejs');
-        res.render('Student Pro 2/student-index.ejs');
+        res.render('manage.ejs');
     },
 
 
@@ -289,7 +288,10 @@ module.exports = {
 
     upcoming_electives: (req,res)=>{
         res.render('Student Pro 2/upcoming-redirect-index.ejs');
-    } 
+    }, 
 
-
+    student_dashboard: (req,res)=>{
+        
+        res.render('Student Pro 2/student-index.ejs');
+    },
 }

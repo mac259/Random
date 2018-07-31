@@ -84,6 +84,8 @@ module.exports = function(app, passport) {
 
     app.get('/settings',functions.isLoggedInfunc, functions.settings);
 
+    app.get('/students',functions.isLoggedInfunc, functions.student_dashboard);
+
     app.get('/download', function(req, res){
           var file = 'G:/Elective/Random/views/pics/avatar.png';
           res.download(file); // Set disposition and send it.
