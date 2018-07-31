@@ -10182,9 +10182,13 @@ h2.title {
   top: 0;
   height: 100vh; }
 
+  /*.sidebar.collapsed {
+      transform: translateX(-100%);
+      position: absolute;
+  }*/
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 0;    /*transition: all 2s;*/
   bottom: 0;
   left: 0;
   z-index: 2;
@@ -10318,7 +10322,22 @@ h2.title {
     padding-right: 10px;
     text-transform: capitalize;
     font-size: 13px;
-    padding: 10px 15px; }
+    padding: 10px 10px; } /* TODO:  15 here maybe  */
+
+    .sub-info {
+      background-color: inherit;
+      transition: background-color 0.2s linear; /* vendorless fallback */
+      -o-transition: background-color 0.2s linear; /* opera */
+      -ms-transition: background-color 0.2s linear; /* IE 10 */
+      -moz-transition: background-color 0.2s linear; /* Firefox */
+      -webkit-transition: background-color 0.2s linear; /*safari and chrome */
+    }
+
+    .sub-info:hover {
+      background-color: #f9f9f9;
+      cursor: pointer;
+    }
+
   .sidebar .sidebar-background {
     position: absolute;
     z-index: 1;
