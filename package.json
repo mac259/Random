@@ -9,6 +9,7 @@
   "author": "Shivam",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.8",

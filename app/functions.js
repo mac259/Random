@@ -10,6 +10,7 @@ var app = express();
 
 
 var path = require('path');
+var bcrypt = require('bcrypt-nodejs');
 
 
 module.exports = {
@@ -29,6 +30,15 @@ module.exports = {
         else
             res.render('login.ejs');
 
+    },
+
+    student_loginfunc: (req,res)=>{
+        if (req.isAuthenticated())
+        {
+            res.redirect('/main');
+        }
+        else
+            res.render('student_login.ejs');
     },
 
 
@@ -70,11 +80,17 @@ module.exports = {
         res.render('manage.ejs');
     },
 
+    create_admin: (req,res)=>{
+
+        res.render("Admin Pro 4/create-admin-index.ejs");
+    },
+
 
     create_new_admin: (req,res)=>{
 
+        password = bcrypt.hashSync(req.body.password, null, null);
         insertQuery = "INSERT INTO admin(userID,first_name,last_name,department,privilages,email,pass,SOA) VALUES(?,?,?,?,?,?,?,?)";
-        connection.query(insertQuery,[req.body.userid,req.body.password,req.body.first,req.body.last,req.body.dept,req.body.privilages,req.body.email,req.body.soa],(err,rows)=>{
+        connection.query(insertQuery,[req.body.userid,req.body.first,req.body.last,req.body.dept,req.body.privilages,req.body.email,password,req.body.soa],(err,rows)=>{
                 if(err)
                     throw err;
                 else{
@@ -282,6 +298,7 @@ module.exports = {
             }
         });
     },
+
 
     reset_archive: (req,res)=>{
         SelectQuery = "SELECT * from elective_data where elective_id = ?";

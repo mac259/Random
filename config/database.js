@@ -6,7 +6,7 @@ module.exports = {
         'password': 'qwerty'
 
     },
-	'database': 'elective',
+	'database': 'muj_electives',
     'users_table': 'account'
 };
 

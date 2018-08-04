@@ -17,6 +17,41 @@ var functions = require('./functions');
 // ==========================================
 module.exports = function(app, passport) {
 
+    app.get('/', functions.student_loginfunc);
+
+    app.post('/student_login', function(req, res, next){
+        passport.authenticate('local-login-student', function (err, user, info) {
+            //this function is called when LocalStrategy returns done function with parameters
+
+            //if any error , throw error to default error handler
+            if(err) throw err;
+
+            //if username or password doesn't match
+            if(!user){
+                return res.send(info);
+            }
+
+            //this is when login is successful
+            req.logIn(user, function(err) {
+                if (err) { return next(err); }
+                console.log(req.body);
+                afdss = "  fff jju ggg ii         hjj   ";
+                console.log(afdss.replace(/ /g,''));
+                return res.redirect('/main');
+            });
+            
+        })(req,res,next),
+        function(req, res) {
+            if (req.body.remember) {
+              req.session.cookie.maxAge = 1000 * 60 * 3;
+            } else {
+              req.session.cookie.expires = false;
+            }
+        res.redirect('/main');
+        }
+    });
+
+
     app.get('/login', functions.loginfunc);
 
 
@@ -84,12 +119,16 @@ module.exports = function(app, passport) {
 
     app.get('/settings',functions.isLoggedInfunc, functions.settings);
 
-    app.get('/students',functions.isLoggedInfunc, functions.student_dashboard);
+    app.get('/main',functions.isLoggedInfunc, functions.student_dashboard);
 
     app.get('/download', function(req, res){
           var file = 'G:/Elective/Random/views/pics/avatar.png';
           res.download(file); // Set disposition and send it.
     });
+
+    app.get('/create_admin', functions.isLoggedInfunc, functions.create_admin);
+
+    app.post('/create_admin', functions.isLoggedInfunc, functions.create_new_admin);
 
 
 
