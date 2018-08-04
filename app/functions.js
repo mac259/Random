@@ -61,26 +61,9 @@ module.exports = {
 
     dashboard: function(req, res){
 
-        SelectQuery = "SELECT * FROM elective_data where userID = ? and current_status != 'completed'";
-        connection.query(SelectQuery,[req.session.user],(err,rows)=>{
-                if(err)
-                    throw err;
-                else{
-                        user = {rows};
-                        user.name = req.session.user;
-                        SelectQuery = "SELECT * FROM elective_data where userID = ? and current_status = 'completed'";
-                        connection.query(SelectQuery,[req.session.user],(err,rows1)=>{
-                                if(err)
-                                    throw err;
-                                else{
-                                    user.completed = rows1;
-                                    console.log(user);
-                                    res.render('dashboard.ejs',user);
+          res.render('Admin Pro 4/dashboard-index.ejs');
                                     
-                                }
-                        });
-                }
-        });
+
     },
 
     manage: (req,res)=>{
@@ -390,7 +373,14 @@ module.exports = {
                                 res.send("NOT ALLOWED:\n Choices should be distinct");
                             }
                             else{
-                                insertQuery = "INSERT INTO "+rows[0].pref_table+" VALUES";
+                                insertQuery = "INSERT INTO "+rows[0].pref_table+" VALUES(?,?,?,?,?,?,?,?)";
+                                connection.query(insertQuery,[req.session.user,arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],req.session.cgpa],(err,rows)=>{
+                                    if(err)
+                                        throw err;
+                                    else{
+                                        res.redirect("/students");
+                                    }
+                                })
                             }
     
                 }
