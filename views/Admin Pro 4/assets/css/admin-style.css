@@ -13165,3 +13165,116 @@ label {
   .nav-mobile-menu,
   .sidebar .navbar-form {
     display: none !important; } }
+
+
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #ffffff;
+  background-color: #2196f3;
+}
+
+
+.card-header-pills {
+  margin-right: -0.625rem;
+  margin-left: -0.625rem;
+}
+
+.nav-tabs,
+.nav-pills {
+  border: 0;
+  border-radius: 3px;
+  padding: 0 15px;
+}
+
+.nav-tabs .nav-link,
+.nav-pills .nav-link {
+  padding: 1.4286em 0.8575em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 0;
+}
+
+.nav-pills:not(.flex-column) .nav-item+.nav-item:not(:first-child) {
+  margin-left: 5px;
+}
+
+.nav-pills.flex-column .nav-item+.nav-item {
+  margin-top: 5px;
+}
+
+.nav-pills .nav-item .nav-link {
+  line-height: 24px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 100px;
+  text-align: center;
+  color: #555;
+  transition: all .3s;
+  border-radius: 30px;
+  padding: 10px 15px;
+}
+
+.nav-pills .nav-item .nav-link:hover {
+  background-color: rgba(200, 200, 200, 0.2);
+}
+
+.nav-pills .nav-item .nav-link.active {
+  color: #fff;
+  background-color: #9c27b0;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6);
+}
+
+.nav-pills .nav-item i {
+  display: block;
+  font-size: 30px;
+  padding: 15px 0;
+}
+
+.nav-pills.nav-pills-info .nav-item .nav-link.active,
+.nav-pills.nav-pills-info .nav-item .nav-link.active:focus,
+.nav-pills.nav-pills-info .nav-item .nav-link.active:hover {
+  background-color: #00bcd4;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(0, 188, 212, 0.6);
+  color: #fff;
+}
+
+.nav-pills.nav-pills-rose .nav-item .nav-link.active,
+.nav-pills.nav-pills-rose .nav-item .nav-link.active:focus,
+.nav-pills.nav-pills-rose .nav-item .nav-link.active:hover {
+  background-color: #e91e63;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(233, 30, 99, 0.6);
+  color: #fff;
+}
+
+.nav-pills.nav-pills-success .nav-item .nav-link.active,
+.nav-pills.nav-pills-success .nav-item .nav-link.active:focus,
+.nav-pills.nav-pills-success .nav-item .nav-link.active:hover {
+  background-color: #4caf50;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(76, 175, 80, 0.6);
+  color: #fff;
+}
+
+.nav-pills.nav-pills-warning .nav-item .nav-link.active,
+.nav-pills.nav-pills-warning .nav-item .nav-link.active:focus,
+.nav-pills.nav-pills-warning .nav-item .nav-link.active:hover {
+  background-color: #ff9800;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(255, 152, 0, 0.6);
+  color: #fff;
+}
+
+.nav-pills.nav-pills-danger .nav-item .nav-link.active,
+.nav-pills.nav-pills-danger .nav-item .nav-link.active:focus,
+.nav-pills.nav-pills-danger .nav-item .nav-link.active:hover {
+  background-color: #f44336;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(244, 67, 54, 0.6);
+  color: #fff;
+}
+
+.nav-pills.nav-pills-icons .nav-item .nav-link {
+  border-radius: 4px;
+}
