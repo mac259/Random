@@ -54,12 +54,18 @@ module.exports = {
 
 
 	logoutfunc: function(req, res) {
+        admin = false
+        if(req.session.user)
+            admin = true;
         req.logout();
         req.session.destroy(function(err) {
             if(err) {
               console.log(err);
             } else {
-              res.redirect('/login');
+                if(admin)  
+                    res.redirect('/login');
+                else
+                    res.redirect('/');
             }
         });
     },
@@ -102,19 +108,6 @@ module.exports = {
 
 
 
-    preference_post_form: (req,res)=>{
-
-        insertQuery = "INSERT INTO preference VALUES(?,?,?,?,?,?,?,?)";
-        connection.query(insertQuery,[],(err,rows)=>{
-            if(err)
-                throw err;
-            else{
-                res.redirect('/dashboard');
-            }
-        });
-    },
-
-
     create_open_elective: (req,res)=>{
 
         SelectQuery = "SELECT * FROM courses where elective_id = ?";
@@ -133,16 +126,24 @@ module.exports = {
         name = req.body.elective_name;
         allotted_table_name = name.replace(/ /g,'')+"_allotted_"+year;
         course_table_name = name.replace(/ /g,'')+"_courses_"+year;
-        insertQuery = "INSERT INTO electives(userID,elective_name,scheduled_live,scheduled_allottment,course_table,allotted_table,type) VALUES(?,?,?,?,?,?,?)"
+        pref_table_name = name.replace(/ /g,'')+"_pref_"+year;
+        insertQuery = "INSERT INTO electives(userID,elective_name,scheduled_live,scheduled_allottment,course_table,allotted_table,pref_table,elective_type) VALUES(?,?,?,?,?,?,?,?)"
 
-                connection.query(insertQuery,[req.session.user,name,req.body.slive,req.body.sallott,course_table_name,allotted_table_name,"open"],(err1,rows1)=>{
+                connection.query(insertQuery,[req.session.user,name,req.body.slive,req.body.sallott,course_table_name,allotted_table_name,pref_table_name,"open"],(err1,rows1)=>{
                        if(err1)
                             throw err1;
                         else{
                             //To do : create method to insert multiple sm_id maybe in trigger
-                            insertQuery2 = "INSERT INTO elective_data values (?)";
-                            connection.query(insertQuery2,[rows1.insertId],(err2,rows2)=>{
-                                if(err1)
+                            sm_ids = [];
+                            console.log(req.body.sm_ids);
+                            for(i=0;i<req.body.sm_ids.length;i++)
+                            {
+                                sm_ids.push([rows1.insertId,req.body.sm_ids[i]])
+                            }
+                            console.log(sm_ids);
+                            insertQuery2 = "INSERT INTO elective_data values ?";
+                            connection.query(insertQuery2,[sm_ids],(err2,rows2)=>{
+                                if(err2)
                                     throw err2;
                                 else{
                                     res.redirect("/dashboard");
@@ -159,6 +160,7 @@ module.exports = {
         name = req.body.elective_name;
         allotted_table_name = name.replace(/ /g,'')+"_allotted_"+year;
         course_table_name = name.replace(/ /g,'')+"_courses_"+year;
+        pref_table_name = name.replace(/ /g,'')+"_pref_"+year;
         insertQuery = "INSERT INTO electives(userID,elective_name,scheduled_live,scheduled_allottment,course_table,allotted_table,type) VALUES(?,?,?,?,?,?,?)"
 
                 connection.query(insertQuery,[req.session.user,name,req.body.slive,req.body.sallott,course_table_name,allotted_table_name],(err1,rows1)=>{
@@ -190,21 +192,6 @@ module.exports = {
     },
 
 
-    create_oe_proc: (req,res)=>{
-
-        elective = req.body.elective;
-
-
-        createQuery = "create procedure "+name+"() begin   DECLARE regn numeric(10);   DECLARE maximum INTEGER DEFAULT 0;  DECLARE id_one VARCHAR(10); DECLARE id_two VARCHAR(10);    DECLARE  id_three VARCHAR(10);       DECLARE id_four VARCHAR(10);      DECLARE   id_five VARCHAR(10);    DECLARE id_six VARCHAR(10);     DECLARE  temp_preference VARCHAR(10);       CREATE TEMPORARY TABLE tmp1 (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY)  SELECT * FROM oe_preference order by cgpa desc;    SELECT MAX(id) into maximum from tmp1;       CREATE TEMPORARY TABLE tmp_pref (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,pref varchar(10));     set @n = 1;         iter:LOOP       if @n > maximum         then        leave iter;          end if;      select regno,p_one,p_two,p_three,p_four,p_five,p_six into regn,id_one,id_two,id_three,id_four,id_five,id_six from tmp1 where id = @n;               insert into tmp_pref (pref) values(id_one),(id_two),(id_three),(id_four),(id_five),(id_six);          set @flag=true;         set @i=1;           while @flag and @i<7        do          select pref into temp_preference from tmp_pref where id = @i;           call oe_allot(regn,temp_preference,@flag);          set @i = @i +1;             end while;          if @flag and @i=7           then        insert into not_allotted values(regn);      end if;         truncate tmp_pref;        set @n = @n+1;        end loop iter;   end;";
-                connection.query(createQuery,(err,rows)=>{
-                    if(err)
-                        throw err;
-                    else
-                        connection.query("INSERT INTO admin_elect VALUES(?,?)",[req.body.user,name],(err,rows1)=>{
-                            res.send("done");
-                        });
-                });
-    },
 
     elective_stats:(req,res)=>{
         SelectQuery = "SELECT courseID FROM courses where elective_id = ? ";
@@ -348,7 +335,7 @@ module.exports = {
     student_dashboard: (req,res)=>{
 
         SelectQuery = "SELECT * FROM electives,elective_data WHERE electives.elective_id = elective_data.elective_id  AND sm_id = (SELECT sm_id FROM students WHERE regno = ?)"
-        connection.query(SelectQuery,[req.session.regno],(err,rows)=>{
+        connection.query(SelectQuery,[req.session.regNO],(err,rows)=>{
             if(err)
                 throw err;
             else{
@@ -391,7 +378,7 @@ module.exports = {
                             }
                             else{
                                 insertQuery = "INSERT INTO "+rows[0].pref_table+" VALUES(?,?,?,?,?,?,?,?)";
-                                connection.query(insertQuery,[req.session.user,arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],req.session.cgpa],(err,rows)=>{
+                                connection.query(insertQuery,[req.session.regNO,arr[1],arr[2],arr[3],arr[4],arr[5],arr[6],req.session.cgpa],(err,rows)=>{
                                     if(err)
                                         throw err;
                                     else{

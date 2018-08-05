@@ -97,7 +97,7 @@ module.exports = function(passport) {
                 }
 
                 else{
-                req.session.regno = rows[0].regNO;
+                req.session.regNO = rows[0].regNO;
                 req.session.dept = rows[0].dept;
                 req.session.cgpa = rows[0].cgpa;
                 return done(null, rows[0], "Welcome");}
