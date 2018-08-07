@@ -164,7 +164,90 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-8 col-md-12" style="margin-top: 10px;">
+            <div class="col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Session Stats</h4>
+                  <p class="card-category">All Sessions</p>
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-primary">
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Created By</th>
+                      <th>Status</th>
+                      <th class="text-right">Start Date</th>
+                      <th class="text-right">End Date</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>OE '19 Even Sem</td>
+                        <td>Open Elective</td>
+                        <td>@admin_1191</td>
+                        <td>Inactive</td>
+                        <td class="text-right">13th Dec '19</td>
+                        <td class="text-right">&nbsp;--&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>OE '19 Odd Sem</td>
+                        <td>Department Elective</td>
+                        <td>@admin_1191</td>
+                        <td>Inactive</td>
+                        <td class="text-right">11th May '19</td>
+                        <td class="text-right">&nbsp;--&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>DE '18 Odd Sem</td>
+                        <td>Department Elective</td>
+                        <td>@brainy.admin21</td>
+                        <td>Active</td>
+                        <td class="text-right">24th May '18</td>
+                        <td class="text-right">8th June '18</td>
+                      </tr>
+                      <tr>
+                        <td>OE '18 Odd Sem</td>
+                        <td>Department Elective</td>
+                        <td>@bossadmin</td>
+                        <td>Active</td>
+                        <td class="text-right">20th May '18</td>
+                        <td class="text-right">3rd June '18</td>
+                      </tr>
+                      <tr>
+                        <td>DE '17 Even Sem</td>
+                        <td>Open Elective</td>
+                        <td>@admin1986</td>
+                        <td>Expired</td>
+                        <td class="text-right">5th Dec '17</td>
+                        <td class="text-right">16th Jan '18</td>
+                      </tr>
+                    </tbody>
+                  </table><!--<a class="text-center see-more" href="#">See more</a>-->
+                </div>
+                <div class="col-md-12">
+                  <ul class="pagination pagination-primary justify-content-center">
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active pagination-primary">
+                      <a href="javascript:void(0);" class="page-link">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Next</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-md-12">
               <div class="card card-nav-tabs">
                 <div class="card-header card-header-rose">
                   <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
@@ -229,14 +312,14 @@
                           <br>
                           <div class="row">
                             <div class="col-md-12">
-                              <button type="submit" class="btn btn-rose pull-right">Create Session</button>
+                              <button type="submit" class="btn btn-rose ">Create Session</button>
                               <div class="clearfix"></div>
                             </div>
                           </div>
                         </form>
                       </div>
                       <div class="tab-pane" id="depts">
-                        <form>
+                        <form style="margin-top: 9px;">
                           <div class="row">
                             <div class="col-md-6">
                               <div class="form-check form-check-inline float-left">
@@ -492,259 +575,11 @@
                               </div>
                             </div>
                           </div>
+                          <br>
                           <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-left">
-                                <p style="font-size: 14px; color: #999;">
-                                  Mechanical Engineering
-                                </p>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> VII
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> VI
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> V
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4"> IV
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5"> III
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-left">
-                                <p style="font-size: 14px; color: #999;">
-                                  Mechatronics Engineering
-                                </p>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> VII
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> VI
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> V
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4"> IV
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5"> III
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-left">
-                                <p style="font-size: 14px; color: #999;">
-                                  Chemical Engineering
-                                </p>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> VII
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> VI
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> V
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4"> IV
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5"> III
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-left">
-                                <p style="font-size: 14px; color: #999;">
-                                  Civil Engineering
-                                </p>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> VII
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> VI
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> V
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4"> IV
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5"> III
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-left">
-                                <p style="font-size: 14px; color: #999;">
-                                  Automobile Engineering
-                                </p>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> VII
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> VI
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> V
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4"> IV
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                              <div class="form-check form-check-inline float-right">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5"> III
-                                  <span class="circle">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                            <div class="col-md-12">
+                              <button type="submit" class="btn btn-rose">Create Session</button>
+                              <div class="clearfix"></div>
                             </div>
                           </div>
                         </form>
@@ -755,34 +590,17 @@
               </div>
             </div>
             <div class="col-lg-4 col-md-12">
-              <div class="card">
-              <div class="card-header card-header-warning">
-                <h4 class="card-title">Session Stats</h4>
-                <p class="card-category">Expired Sessions</p>
+              <div class="card card-nav-tabs">
+                <div class="card-header card-header-success">
+                  <h4 class="card-title">Quote</h4>
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-3">
+                    <p style="font-size: 15px;">Education is what remains after one has forgotten what one has learned in school.</p>
+                    <footer class="blockquote-footer" style="margin-top: 2px;">Albert Einstein</footer>
+                  </blockquote>
+                </div>
               </div>
-              <div class="card-body table-responsive">
-                <table class="table table-hover">
-                  <thead class="text-warning">
-                    <th>Name</th>
-                    <th>Date</th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>OE '18 Odd Sem</td>
-                      <td>23rd May '18'</td>
-                    </tr>
-                    <tr>
-                      <td>OE '17 Even Sem</td>
-                      <td>18th Dec '17</td>
-                    </tr>
-                    <tr>
-                      <td>DE '17 Odd Sem</td>
-                      <td>16th Dec '17</td>
-                    </tr>
-                  </tbody>
-                </table><!--<a class="text-center see-more" href="#">See more</a>-->
-              </div>
-            </div>
             </div>
           </div>
         </div>
