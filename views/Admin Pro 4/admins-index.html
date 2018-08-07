@@ -35,7 +35,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./admins-index.html">
               <i class="material-icons">person</i>
               <p>Admins</p>
@@ -78,7 +78,7 @@
               <p>Broadcast</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="./notifications-index.html">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
@@ -163,130 +163,156 @@
       </nav>
       <div class="content">
         <div class="container-fluid">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h3 class="card-title">Notifications</h3>
-              <p class="card-category">Messages and Requests</p>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <h4 class="card-title">Messages</h4>
-                  <div class="alert alert-info alert-with-icon" data-notify="container">
-                    <i class="material-icons" data-notify="icon">add_alert</i>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span data-notify="message">This is a with reference to the latest OE decision taken by the SCIT department and we wish to inform yout that your request for specialisation in OEs has been taken under consideration. We will keep you in the loop for any upcoming changes.</span>
-                  </div>
-                  <div class="alert alert-info alert-with-icon" data-notify="container">
-                    <i class="material-icons" data-notify="icon">add_alert</i>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span data-notify="message">Sir, I am replying to your request for new room allocation for Python OE. The new room as of tomorrow is 1-AB 110.</span>
-                  </div>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Admin Profile</h4>
+                  <p class="card-category">Create New Admin</p>
                 </div>
-                <div class="col-md-6">
-                  <h4 class="card-title">Requests</h4>
-                  <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span>
-                      <b> OE Change </b><br>Respected sir, kindly alot me a new OE due to conflict in interests.<br><b> Aniket Mukherjee, 169105033 </b></span>
-                  </div>
-                  <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span>
-                      <b> Form Reset </b><br>Respected sir, kindly reset my form as I would like to make modifications to the sequence.<br><b> Prerit Pathak, 169105131 </b></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="places-buttons">
-                <div class="row">
-                  <div class="col-lg-4 col-md-10 ml-auto mr-auto">
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Campus (Disabled)</label>
+                          <input type="text" class="form-control" disabled>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email Address</label>
+                          <input type="email" class="form-control">
+                        </div>
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-md-6">
-                        <button class="btn btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">First Name</label>
+                          <input type="text" class="form-control">
+                        </div>
                       </div>
                       <div class="col-md-6">
-                        <button class="btn btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Last Name</label>
+                          <input type="text" class="form-control">
+                        </div>
                       </div>
                     </div>
-                  </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Department</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="label-control">SOA</label>
+                          <input type="text" class="form-control datetimepicker" value="07/26/2018" />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Password</label>
+                          <input type="password" min="0" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">About</label>
+                          <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </div><br>
+                    <div class="row">
+                      <div class="col-md-4" style="padding-left: 0px;">
+                        <select class="selectpicker col-md-12 pull-left" data-style="btn btn-primary" title="Single Select">
+                          <option disabled selected>Privileges</option>
+                          <option value="2">All Access</option>
+                          <option value="3">Course Management</option>
+                          <option value="4">Data Analysis</option>
+                          <option value="5">Help & Support</option>
+                        </select>
+                      </div>
+                      <div class="col-md-8">
+                        <button type="submit" class="btn btn-primary pull-right">Grant Access</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-<!--  Modals  -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Create</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="material-icons">clear</i>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="contact-form">
-                <div class="row" style="padding-bottom: 10px;">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Subject</label>
-                      <input type="text" required="required" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="label-control">Suited Date & Time</label>
-                      <input type="text" class="form-control datetimepicker" value="08/04/2018">
-                    </div>
-                  </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header card-header-rose">
+                  <h4 class="card-title">Admin Stats</h4>
+                  <p class="card-category">Authorized Admins</p>
                 </div>
-                <div class="form-group">
-                  <label for="exampleMessage" class="bmd-label-floating">Description</label>
-                  <textarea type="text" class="form-control" rows="3" id="exampleMessage"></textarea>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-rose">
+                      <th>Username</th>
+                      <th>Privileges</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>@bossadmin</td>
+                        <td>Data Analysis</td>
+                      </tr>
+                      <tr>
+                        <td>@brainy.admin21</td>
+                        <td>Help & Support</td>
+                      </tr>
+                      <tr>
+                        <td>@admin1986</td>
+                        <td>Course Management</td>
+                      </tr>
+                      <tr>
+                        <td>@admin_1191</td>
+                        <td>All Access</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-link">Save</button>
-              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+<!--                <div class="col-md-12">
+                  <ul class="pagination pagination-rose justify-content-center">
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active pagination-rose">
+                      <a href="javascript:void(0);" class="page-link">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Next</a>
+                    </li>
+                  </ul>
+                </div>            -->
+              </div>
             </div>
           </div>
         </div>
       </div>
       <footer class="footer footer-default">
         <div class="container">
-    <!--
+<!--    <button class="btn btn-primary btn-fill" onclick='swal({ title:"Good job!", text: "You clicked the button!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Grant Access</button>   -->
+      <!--
           <nav class="float-left">
             <ul>
               <li>
@@ -296,7 +322,7 @@
               </li>
             </ul>
           </nav>
-    -->
+      -->
           <div class="copyright float-right"><a>
             &copy;
             <script>
@@ -324,11 +350,11 @@
   <script src="assets/js/admin-main.js" type="text/javascript"></script>
   <script src="assets/js/admin-main2.js"></script>
   <script>
-    $(document).ready(function() {
+  $(document).ready(function() {
 
-      md.initDashboardPageCharts();
+    md.initDashboardPageCharts();
 
-    });
+  });
   </script>
 </body>
 </html>
