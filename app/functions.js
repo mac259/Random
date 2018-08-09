@@ -88,7 +88,7 @@ module.exports = {
 
     create_admin: (req,res)=>{
 
-        res.render("Admin Pro 4/create-admin-index.ejs");
+        res.render("Admin Pro 4/admins-index.ejs");
     },
 
 
@@ -100,7 +100,7 @@ module.exports = {
                 if(err)
                     throw err;
                 else{
-                    res.render("create-admin-index");
+                    res.render("Admin Pro 4/admins-index.ejs");
                 }
         });
 
@@ -108,15 +108,10 @@ module.exports = {
 
 
 
-    create_open_elective: (req,res)=>{
+    create_elective: (req,res)=>{
 
-        SelectQuery = "SELECT * FROM courses where elective_id = ?";
-        connection.query(SelectQuery,[undefined],(err,rows)=>{
-            rows={rows};
-            console.log(rows);
-            res.render("create_elective.ejs",rows);
+            res.render("Admin Pro 4/sessions-index.ejs");
 
-        });
     },
 
 

@@ -93,7 +93,7 @@ module.exports = function(app, passport) {
     // LOGOUT ==============================
     app.get('/logout', functions.logoutfunc);
 
-    app.get('/create', functions.isLoggedInfunc, admin_access, functions.create_open_elective);
+    app.get('/sessions', functions.isLoggedInfunc, admin_access, functions.create_elective);
 
     app.post('/create_oe',functions.isLoggedInfunc, admin_access, functions.create_oe_post_form);
     // =====================================
