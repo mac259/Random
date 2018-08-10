@@ -773,16 +773,23 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 709px) {
+  .actions {
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+  }
+}
+
+@media screen and (max-width: 761px) and (min-width: 710px) {
   .actions {
     margin-top: 1.1725px !important;
     margin-bottom: 1.1725px !important;
   }
 }
 
-@media screen and (max-width: 709px) {
+@media screen and (max-width: 1021px) and (min-width: 992px) {
   .actions {
-    margin-top: 1px !important;
-    margin-bottom: 1px !important;
+    margin-top: 1.1725px !important;
+    margin-bottom: 1.1725px !important;
   }
 }
