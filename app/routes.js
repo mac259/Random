@@ -11,6 +11,20 @@ connection.query('USE ' + dbconfig.database);
 var express  = require('express');
 var app = express();
 
+const multer = require('multer');
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    console.log("sdcfjhklnkdsjnvjhdbhfjbvjbdfjvj");
+    cb(null, './views/excel/');
+  },
+  filename: function(req, file, cb) {
+    console.log("sdcfjhklnkdsjnvjhdbhfjbvjbdfjvj");
+    cb(null, file.originalname + '-' + Date.now() + '.xls');
+  }
+});
+
+var upload = multer({ storage: storage });
+
 var functions = require('./functions');
 
 
@@ -128,6 +142,9 @@ module.exports = function(app, passport) {
     app.get('/create_admin', functions.isLoggedInfunc, admin_access, functions.create_admin);
 
     app.post('/create_admin', functions.isLoggedInfunc, admin_access, functions.create_new_admin);
+
+    app.get('/upload', (req,res)=>{res.render("upload.ejs")});
+    app.post('/upload',upload.single('media'), functions.upload);
 
 
 

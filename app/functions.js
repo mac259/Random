@@ -12,6 +12,10 @@ var app = express();
 var path = require('path');
 var bcrypt = require('bcrypt-nodejs');
 
+const XLSX = require('xlsx');
+
+const fs = require('fs');
+
 
 module.exports = {
 
@@ -211,7 +215,7 @@ module.exports = {
             else{
                 rows.courses = rows;
                 console.log(rows);
-                res.render('courses.ejs',rows);
+                res.render('Admin Pro 4/courses-index.ejs',rows);
             }
         });
     },
@@ -315,6 +319,34 @@ module.exports = {
                 }
         });
     },
+
+
+    upload: function(req,res)
+    {
+
+
+        fl = req.file.filename;
+        const workbook = XLSX.readFile(path.resolve('./views/excel/'+fl));
+            const sheet_name_list = workbook.SheetNames;
+            details = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]],{header:["regno","cgpa","pref_1","pref_2","pref_3","pref_4","pref_5","pref_6","Date/time","gpa"], range:1});
+
+            var mysql_data = [];
+            for(i=0;i<details.length;i++)
+                 {
+                      mysql_data.push([details[i]["regno"],details[i]["cgpa"],details[i]["pref_1"],details[i]["pref_2"],details[i]["pref_3"],details[i]["pref_4"],details[i]["pref_5"],details[i]["pref_6"],details[i]["gpa"]]);
+                 }
+            connection.query("INSERT INTO oe_pref_hlpr values ?",[mysql_data],(err,rows)=>{
+                if(err)
+                    throw err;
+                else{
+                    res.send("done");
+                }
+            });
+            fs.unlink(path.resolve('./views/excel/'+fl), (err) => {
+                  if (err) throw err;
+                  console.log('successfully deleted');
+});
+},
 
 
 
