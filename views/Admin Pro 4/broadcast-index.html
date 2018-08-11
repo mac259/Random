@@ -29,7 +29,7 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar">
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="./dashboard-index.html">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -42,37 +42,46 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./student-data-index.html">  <!--collapsed" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
-              <i class="material-icons">content_paste</i>
-              <p>Student Data<!-- <b class="caret"></b>--></p>
-            </a>
-      <!--  <div class="collapse" id="collapse">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
-                </li>
-              </ul>
-            </div>  -->
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./student-data-index.html">
               <i class="material-icons">library_books</i>
+              <p>Student Data</p>
+            </a>
+          </li>
+<!--          <li class="nav-item ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">content_paste</i>
               <p>Forms</p>
             </a>
-          </li>
+          </li>           -->
           <li class="nav-item ">
-            <a class="nav-link" href="./sessions-index.html">
-              <i class="material-icons">access_alarm</i><!--timer-->
-              <p>Sessions</p>
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <i class="material-icons">access_alarm</i>
+              <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
+          <div class="collapse" id="collapseExample">
+            <ul class="nav nav-inner">
+              <li class="nav-item ">
+                <a class="nav-link" href="./create-session-index.html">
+                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-normal">Create Session</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="./existing-sessions-index.html">
+                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-normal">Existing Sessions</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <li class="nav-item ">
             <a class="nav-link" href="./courses-index.html">
               <i class="material-icons">collections_bookmark</i>
               <p>Courses</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./broadcast-index.html">
               <i class="material-icons">mail_outline</i>
               <p>Broadcast</p>
@@ -96,12 +105,6 @@
     <div class="main-panel">
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-<!--          <div class="navbar-wrapper">
-            <button class="btn btn-just-icon btn-white btn-fab btn-round" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed')">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <a class="navbar-brand" href="">Courses</a>
-          </div>          -->
           <div class="navbar-wrapper">
 <!--            <button class="btn btn-just-icon btn-white btn-fab btn-round" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed')">
               <i class="material-icons">more_vert</i>
@@ -170,22 +173,16 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-6">
               <div class="card">
-                <div class="card-header card-header-success">
-                  <h4 class="card-title">Create Message</h4>
-                  <p class="card-category">Broadcast / Personal Message</p>
+                <div class="card-header card-header-rose">
+                  <h4 class="card-title">Broadcast Message</h4>
+                  <p class="card-category">Create Message</p>
                 </div>
                 <div class="card-body">
                   <form>
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Registration No.</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Subject</label>
                           <input type="text" class="form-control">
@@ -195,8 +192,8 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating">About</label>
-                          <textarea class="form-control" rows="3"></textarea>
+                          <label class="bmd-label-floating">Description</label>
+                          <textarea class="form-control" rows="4"></textarea>
                         </div>
                       </div>
                     </div><br>
@@ -210,8 +207,48 @@
                           <option value="5">OE '19 Odd Sem</option>
                         </select>
                       </div>
-                      <div class="col-md-8 grant-div">
-                        <button type="submit" class="btn btn-success pull-right grant-access">Send</button>
+                      <div class="col-md-8 grant-div send-message-div">
+                        <button type="submit" class="btn btn-rose pull-right grant-access send-message">Send Message</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header card-header-info">
+                  <h4 class="card-title">Personal Message</h4>
+                  <p class="card-category">Create Message</p>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Subject</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Registration No.</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                      </div>
+                    </div><br>
+                    <div class="row">
+                      <div class="col-md-12 grant-div">
+                        <button type="submit" class="btn btn-info pull-right grant-access">Send Message</button>
                         <div class="clearfix"></div>
                       </div>
                     </div>

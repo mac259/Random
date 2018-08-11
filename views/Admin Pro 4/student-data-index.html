@@ -41,7 +41,7 @@
               <p>Admins</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./student-data-index.html">
               <i class="material-icons">library_books</i>
               <p>Student Data</p>
@@ -54,12 +54,12 @@
             </a>
           </li>           -->
           <li class="nav-item ">
-            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
               <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
-          <div class="collapse" id="collapseExample">
+          <div class="collapse " id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
@@ -93,7 +93,7 @@
               <p>Notifications</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="./settings-index.html">
               <i class="material-icons">settings</i>
               <p>Settings</p>
@@ -116,7 +116,7 @@
               <a class="dropdown-item" href="#">Upload Files</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Settings</a>
+            <a class="navbar-brand" href="">Student Data</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -172,50 +172,140 @@
       </nav>
       <div class="content">
         <div class="container-fluid">
+
           <div class="row">
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h4 class="card-title">Reset Password</h4>
-                  <div class="col-md-12">
-                    <div class="form-group text-left">
-                      <label class="bmd-label-floating">Registration No.</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                  <a href="#" class="btn btn-primary">Reset</a>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Students</h4>
+                  <p class="card-category">Eligible Students</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
                 <div class="card-body">
-                  <h4 class="card-title">Reset Form</h4>
-                  <div class="col-md-12">
-                    <div class="form-group text-left">
-                      <label class="bmd-label-floating">Registration No.</label>
-                      <input type="text" class="form-control">
-                    </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="text-primary">
+                          <th class="text-left">Reg. No.</th>
+                          <th>Name</th>
+                          <th>Branch</th>
+                          <th class="text-center">Semester</th>
+                          <th class="text-right">Session</th>
+                          <th class="text-right">Submission</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">169105033</td>
+                          <td><b>Aniket Mukherjee</b></td>
+                          <td>CSE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right">OE '18 Odd Sem</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">169105031</td>
+                          <td><b>Amrit Srivastava</b></td>
+                          <td>CSE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right">DE '18 Odd Sem</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">169103033</td>
+                          <td><b>Shivam Thakur</b></td>
+                          <td>CCE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right">DE '18 Odd Sem</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">169105037</td>
+                          <td><b>Ankit Mishra</b></td>
+                          <td>CSE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right">OE '18 Odd Sem</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">169102008</td>
+                          <td><b>Apoorv Gaurav</b></td>
+                          <td>IT</td>
+                          <td class="text-center">VII</td>
+                          <td class="text-right">OE '18 Odd Sem</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <a href="#" class="btn btn-primary">Reset</a>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h4 class="card-title">Change Allotment</h4>
-                    <div class="col-md-12">
-                      <div class="form-group text-left">
-                        <label class="bmd-label-floating">Registration No.</label>
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  <a href="#" class="btn btn-primary">Change</a>
+                <div class="col-md-12">
+                  <ul class="pagination pagination-primary justify-content-center">
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active pagination-primary">
+                      <a href="javascript:void(0);" class="page-link">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Next</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
       <footer class="footer footer-default">

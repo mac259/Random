@@ -53,13 +53,13 @@
               <p>Forms</p>
             </a>
           </li>           -->
-          <li class="nav-item ">
-            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <li class="nav-item active">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
               <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
-          <div class="collapse" id="collapseExample">
+          <div class="collapse show" id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
@@ -67,7 +67,7 @@
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
-              <li class="nav-item ">
+              <li class="nav-item active">
                 <a class="nav-link" href="./existing-sessions-index.html">
                   <span class="sidebar-mini" style="">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
@@ -93,7 +93,7 @@
               <p>Notifications</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="./settings-index.html">
               <i class="material-icons">settings</i>
               <p>Settings</p>
@@ -116,7 +116,7 @@
               <a class="dropdown-item" href="#">Upload Files</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Settings</a>
+            <a class="navbar-brand" href="">Existing Sessions</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -173,45 +173,84 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h4 class="card-title">Reset Password</h4>
-                  <div class="col-md-12">
-                    <div class="form-group text-left">
-                      <label class="bmd-label-floating">Registration No.</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                  <a href="#" class="btn btn-primary">Reset</a>
+            <div class="col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Session Stats</h4>
+                  <p class="card-category">All Sessions</p>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h4 class="card-title">Reset Form</h4>
-                  <div class="col-md-12">
-                    <div class="form-group text-left">
-                      <label class="bmd-label-floating">Registration No.</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                  <a href="#" class="btn btn-primary">Reset</a>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-primary">
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Created By</th>
+                      <th>Status</th>
+                      <th class="text-right">Start Date</th>
+                      <th class="text-right">End Date</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>OE '19 Even Sem</td>
+                        <td>Open Elective</td>
+                        <td>@admin_1191</td>
+                        <td>Upcoming</td>
+                        <td class="text-right">13th Dec '19</td>
+                        <td class="text-right">&nbsp;--&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>OE '19 Odd Sem</td>
+                        <td>Department Elective</td>
+                        <td>@admin_1191</td>
+                        <td>Upcoming</td>
+                        <td class="text-right">11th May '19</td>
+                        <td class="text-right">&nbsp;--&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>DE '18 Odd Sem</td>
+                        <td>Department Elective</td>
+                        <td>@brainy.admin21</td>
+                        <td>Ongoing</td>
+                        <td class="text-right">24th May '18</td>
+                        <td class="text-right">8th June '18</td>
+                      </tr>
+                      <tr>
+                        <td>OE '18 Odd Sem</td>
+                        <td>Department Elective</td>
+                        <td>@bossadmin</td>
+                        <td>Ongoing</td>
+                        <td class="text-right">20th May '18</td>
+                        <td class="text-right">3rd June '18</td>
+                      </tr>
+                      <tr>
+                        <td>DE '17 Even Sem</td>
+                        <td>Open Elective</td>
+                        <td>@admin1986</td>
+                        <td>Completed</td>
+                        <td class="text-right">5th Dec '17</td>
+                        <td class="text-right">16th Jan '18</td>
+                      </tr>
+                    </tbody>
+                  </table><!--<a class="text-center see-more" href="#">See more</a>-->
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h4 class="card-title">Change Allotment</h4>
-                    <div class="col-md-12">
-                      <div class="form-group text-left">
-                        <label class="bmd-label-floating">Registration No.</label>
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  <a href="#" class="btn btn-primary">Change</a>
+                <div class="col-md-12">
+                  <ul class="pagination pagination-primary justify-content-center">
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active pagination-primary">
+                      <a href="javascript:void(0);" class="page-link">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Next</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

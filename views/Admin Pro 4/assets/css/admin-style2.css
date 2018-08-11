@@ -793,3 +793,75 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 1.1725px !important;
   }
 }
+
+.sidebar-mini {
+  width: 30px;
+  margin-right: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  float: left;
+  display: inherit;
+  position: relative;
+}
+
+.sidebar-normal {
+  margin: 0;
+  position: relative;
+  transform: translateX(0);
+  opacity: 1;
+  white-space: nowrap;
+  display: block;
+}
+
+.nav-inner {
+  margin-top: 10px !important;
+}
+
+.submission {
+  margin: 0 !important;
+}
+
+@media screen and (max-width: 950px) {
+  .send-message {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 769px) {
+  .send-message-div {
+    margin-left: 0.5px;
+  }
+}
+
+@media screen and (max-width: 1210px) and (min-width: 992px) {
+  .send-message-div {
+    margin-left: 0.5px;
+  }
+  .send-message {
+    float: left;
+  }
+}
+
+.create-session-pagination {
+  margin-bottom: 0px !important;
+}
+
+.admins-pagination {
+  margin-top: -10px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-date-time {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1335px) and (min-width: 992px) {
+  .oe-de-radios {
+    margin-top: 7px !important;
+  }
+}
+
+.oe-de-radios {
+  margin-top: 33px;
+}

@@ -42,30 +42,39 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./student-data-index.html">  <!--collapsed" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
-              <i class="material-icons">content_paste</i>
-              <p>Student Data<!-- <b class="caret"></b>--></p>
-            </a>
-      <!--  <div class="collapse" id="collapse">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
-                </li>
-              </ul>
-            </div>  -->
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./student-data-index.html">
               <i class="material-icons">library_books</i>
+              <p>Student Data</p>
+            </a>
+          </li>
+<!--          <li class="nav-item ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">content_paste</i>
               <p>Forms</p>
             </a>
-          </li>
+          </li>           -->
           <li class="nav-item ">
-            <a class="nav-link" href="./sessions-index.html">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
-              <p>Sessions</p>
+              <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
+          <div class="collapse" id="collapseExample">
+            <ul class="nav nav-inner">
+              <li class="nav-item ">
+                <a class="nav-link" href="./create-session-index.html">
+                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-normal">Create Session</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="./existing-sessions-index.html">
+                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-normal">Existing Sessions</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <li class="nav-item ">
             <a class="nav-link" href="./courses-index.html">
               <i class="material-icons">collections_bookmark</i>
@@ -259,42 +268,37 @@
                   <h4 class="card-title">Admin Stats</h4>
                   <p class="card-category">Authorized Admins</p>
                 </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-rose">
-                      <th>Username</th>
-                      <th>Privileges</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>@bossadmin</td>
-                        <td>Data Analysis</td>
-                      </tr>
-                      <tr>
-                        <td>@brainy.admin21</td>
-                        <td>Help & Support</td>
-                      </tr>
-                      <tr>
-                        <td>@admin1986</td>
-                        <td>Course Management</td>
-                      </tr>
-                      <tr>
-                        <td>@admin_1191</td>
-                        <td>All Access</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="text-rose">
+                        <th>Username</th>
+                        <th>Privileges</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>@bossadmin</td>
+                          <td>Data Analysis</td>
+                        </tr>
+                        <tr>
+                          <td>@brainy.admin21</td>
+                          <td>Help & Support</td>
+                        </tr>
+                        <tr>
+                          <td>@admin1986</td>
+                          <td>Course Management</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-<!--                <div class="col-md-12">
-                  <ul class="pagination pagination-rose justify-content-center">
+                <div class="col-md-12">
+                  <ul class="pagination pagination-rose justify-content-center admins-pagination">
                     <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                      <a href="javascript:void(0);" class="page-link">Prev</a>
                     </li>
                     <li class="page-item active pagination-rose">
                       <a href="javascript:void(0);" class="page-link">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">2</a>
                     </li>
                     <li class="page-item">
                       <a href="javascript:void(0);" class="page-link">3</a>
@@ -303,7 +307,7 @@
                       <a href="javascript:void(0);" class="page-link">Next</a>
                     </li>
                   </ul>
-                </div>            -->
+                </div>
               </div>
             </div>
           </div>

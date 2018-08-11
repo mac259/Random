@@ -42,30 +42,39 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./student-data-index.html">  <!--collapsed" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
-              <i class="material-icons">content_paste</i>
-              <p>Student Data<!-- <b class="caret"></b>--></p>
-            </a>
-      <!--  <div class="collapse" id="collapse">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
-                </li>
-              </ul>
-            </div>  -->
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./student-data-index.html">
               <i class="material-icons">library_books</i>
+              <p>Student Data</p>
+            </a>
+          </li>
+<!--          <li class="nav-item ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">content_paste</i>
               <p>Forms</p>
             </a>
-          </li>
+          </li>           -->
           <li class="nav-item ">
-            <a class="nav-link" href="./sessions-index.html">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
-              <p>Sessions</p>
+              <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
+          <div class="collapse" id="collapseExample">
+            <ul class="nav nav-inner">
+              <li class="nav-item ">
+                <a class="nav-link" href="./create-session-index.html">
+                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-normal">Create Session</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="./existing-sessions-index.html">
+                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-normal">Existing Sessions</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <li class="nav-item ">
             <a class="nav-link" href="./courses-index.html">
               <i class="material-icons">collections_bookmark</i>
@@ -264,7 +273,7 @@
                       <input type="text" required="required" class="form-control">
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 modal-date-time">
                     <div class="form-group">
                       <label class="label-control">Suited Date & Time</label>
                       <input type="text" class="form-control datetimepicker" value="08/04/2018">
