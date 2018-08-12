@@ -42,30 +42,39 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">  <!--collapsed" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
-              <i class="material-icons">content_paste</i>
-              <p>Student Data<!-- <b class="caret"></b>--></p>
-            </a>
-      <!--  <div class="collapse" id="collapse">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
-                </li>
-              </ul>
-            </div>  -->
-          </li>
-          <li class="nav-item ">
             <a class="nav-link" href="#">
               <i class="material-icons">library_books</i>
+              <p>Student Data</p>
+            </a>
+          </li>
+<!--          <li class="nav-item ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">content_paste</i>
               <p>Forms</p>
             </a>
-          </li>
+          </li>           -->
           <li class="nav-item ">
-            <a class="nav-link" href="/sessions">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
-              <p>Sessions</p>
+              <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
+          <div class="collapse" id="collapseExample">
+            <ul class="nav nav-inner">
+              <li class="nav-item ">
+                <a class="nav-link" href="/create-ession">
+                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-normal">Create Session</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/Sessions">
+                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-normal">Existing Sessions</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <li class="nav-item ">
             <a class="nav-link" href="/courses">
               <i class="material-icons">collections_bookmark</i>
@@ -73,7 +82,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/broadcast">
               <i class="material-icons">mail_outline</i>
               <p>Broadcast</p>
             </a>
@@ -85,7 +94,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/settings">
               <i class="material-icons">settings</i>
               <p>Settings</p>
             </a>
@@ -107,7 +116,7 @@
               <a class="dropdown-item" href="#">Upload Files</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Dashboard</a>
+            <a class="navbar-brand" href="">Admins</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -126,14 +135,14 @@
               </div>
             </form>
             <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/dashboard">
+<!--              <li class="nav-item">
+                <a class="nav-link" href="./dashboard-index.html">
                   <i class="material-icons">dashboard</i>
                   <p class="d-lg-none d-md-block">
                     Dashboard
                   </p>
                 </a>
-              </li>
+              </li>           -->
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
@@ -235,8 +244,8 @@
                       </div>
                     </div><br>
                     <div class="row">
-                      <div class="col-md-4" style="padding-left: 0px;">
-                        <select class="selectpicker col-md-12 pull-left" data-style="btn btn-primary" title="Single Select">
+                      <div class="col-md-4">
+                        <select class="selectpicker pull-left" data-style="btn btn-secondary" title="Single Select">
                           <option disabled selected>Privileges</option>
                           <option value="2">All Access</option>
                           <option value="3">Course Management</option>
@@ -244,8 +253,8 @@
                           <option value="5">Help & Support</option>
                         </select>
                       </div>
-                      <div class="col-md-8">
-                        <button type="submit" class="btn btn-primary pull-right">Grant Access</button>
+                      <div class="col-md-8 grant-div">
+                        <button type="submit" class="btn btn-primary pull-right grant-access">Grant Access</button>
                         <div class="clearfix"></div>
                       </div>
                     </div>
@@ -259,42 +268,37 @@
                   <h4 class="card-title">Admin Stats</h4>
                   <p class="card-category">Authorized Admins</p>
                 </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-rose">
-                      <th>Username</th>
-                      <th>Privileges</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>@bossadmin</td>
-                        <td>Data Analysis</td>
-                      </tr>
-                      <tr>
-                        <td>@brainy.admin21</td>
-                        <td>Help & Support</td>
-                      </tr>
-                      <tr>
-                        <td>@admin1986</td>
-                        <td>Course Management</td>
-                      </tr>
-                      <tr>
-                        <td>@admin_1191</td>
-                        <td>All Access</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="text-rose">
+                        <th>Username</th>
+                        <th>Privileges</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>@bossadmin</td>
+                          <td>Data Analysis</td>
+                        </tr>
+                        <tr>
+                          <td>@brainy.admin21</td>
+                          <td>Help & Support</td>
+                        </tr>
+                        <tr>
+                          <td>@admin1986</td>
+                          <td>Course Management</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-<!--                <div class="col-md-12">
-                  <ul class="pagination pagination-rose justify-content-center">
+                <div class="col-md-12">
+                  <ul class="pagination pagination-rose justify-content-center admins-pagination">
                     <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                      <a href="javascript:void(0);" class="page-link">Prev</a>
                     </li>
                     <li class="page-item active pagination-rose">
                       <a href="javascript:void(0);" class="page-link">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">2</a>
                     </li>
                     <li class="page-item">
                       <a href="javascript:void(0);" class="page-link">3</a>
@@ -303,7 +307,7 @@
                       <a href="javascript:void(0);" class="page-link">Next</a>
                     </li>
                   </ul>
-                </div>            -->
+                </div>
               </div>
             </div>
           </div>

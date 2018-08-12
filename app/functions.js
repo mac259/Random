@@ -114,12 +114,12 @@ module.exports = {
 
     create_elective: (req,res)=>{
 
-            res.render("Admin Pro 4/sessions-index.ejs");
+            res.render("Admin Pro 4/create-session-index.ejs");
 
     },
 
 
-    create_oe_post_form: (req,res)=>{
+    create_session_post_form: (req,res)=>{
         date = new Date();
         year = date.getFullYear();
         name = req.body.elective_name;
@@ -128,7 +128,7 @@ module.exports = {
         pref_table_name = name.replace(/ /g,'')+"_pref_"+year;
         insertQuery = "INSERT INTO electives(userID,elective_name,scheduled_live,scheduled_allottment,course_table,allotted_table,pref_table,elective_type) VALUES(?,?,?,?,?,?,?,?)"
 
-                connection.query(insertQuery,[req.session.user,name,req.body.slive,req.body.sallott,course_table_name,allotted_table_name,pref_table_name,"open"],(err1,rows1)=>{
+                connection.query(insertQuery,[req.session.user,name,req.body.slive,req.body.sallott,course_table_name,allotted_table_name,pref_table_name,req.body.type],(err1,rows1)=>{
                        if(err1)
                             throw err1;
                         else{
@@ -283,6 +283,10 @@ module.exports = {
                  res.render('admin_activity.ejs',courses);
             }
         });
+    },
+
+    broadcast: (req,res)=>{
+        res.render('Admin Pro 4/broadcast-index.ejs');
     },
 
 

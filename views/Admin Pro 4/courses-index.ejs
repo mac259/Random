@@ -30,62 +30,71 @@
       <div class="sidebar-wrapper" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard">
+            <a class="nav-link" href="./dashboard-index.html">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/create_admin">
+            <a class="nav-link" href="./admins-index.html">
               <i class="material-icons">person</i>
               <p>Admins</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">  <!--collapsed" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
-              <i class="material-icons">content_paste</i>
-              <p>Student Data<!-- <b class="caret"></b>--></p>
-            </a>
-      <!--  <div class="collapse" id="collapse">
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
-                </li>
-              </ul>
-            </div>  -->
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./student-data-index.html">
               <i class="material-icons">library_books</i>
+              <p>Student Data</p>
+            </a>
+          </li>
+<!--          <li class="nav-item ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">content_paste</i>
               <p>Forms</p>
             </a>
-          </li>
+          </li>           -->
           <li class="nav-item ">
-            <a class="nav-link" href="/sessions">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
-              <p>Sessions</p>
+              <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
+          <div class="collapse" id="collapseExample">
+            <ul class="nav nav-inner">
+              <li class="nav-item ">
+                <a class="nav-link" href="./create-session-index.html">
+                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-normal">Create Session</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="./existing-sessions-index.html">
+                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-normal">Existing Sessions</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <li class="nav-item active">
-            <a class="nav-link" href="/courses">
+            <a class="nav-link" href="./courses-index.html">
               <i class="material-icons">collections_bookmark</i>
               <p>Courses</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./broadcast-index.html">
               <i class="material-icons">mail_outline</i>
               <p>Broadcast</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/notifications">
+            <a class="nav-link" href="./notifications-index.html">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./settings-index.html">
               <i class="material-icons">settings</i>
               <p>Settings</p>
             </a>
@@ -107,7 +116,7 @@
               <a class="dropdown-item" href="#">Upload Files</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Dashboard</a>
+            <a class="navbar-brand" href="">Courses</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -126,14 +135,14 @@
               </div>
             </form>
             <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/dashboard">
+<!--              <li class="nav-item">
+                <a class="nav-link" href="./dashboard-index.html">
                   <i class="material-icons">dashboard</i>
                   <p class="d-lg-none d-md-block">
                     Dashboard
                   </p>
                 </a>
-              </li>
+              </li>           -->
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
@@ -150,7 +159,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/logout">
+                <a class="nav-link" href="./login.html">
                   <i class="material-icons">lock</i>
                   <p class="d-lg-none d-md-block">
                     Logout
@@ -168,7 +177,7 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Courses</h4>
-                  <p class="card-category"> Open Electives</p>
+                  <p class="card-category">All Courses</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -191,13 +200,13 @@
                           <td>Active</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -209,13 +218,13 @@
                           <td>Active</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -227,13 +236,13 @@
                           <td>Active</td>
                           <td class="text-right">180&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -245,13 +254,13 @@
                           <td>Active</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -263,13 +272,13 @@
                           <td>Active</td>
                           <td class="text-right">180&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -281,13 +290,13 @@
                           <td>Inactive</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -299,13 +308,13 @@
                           <td>Active</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -317,13 +326,13 @@
                           <td>Active</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -335,13 +344,13 @@
                           <td>Inactive</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -353,13 +362,13 @@
                           <td>Active</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success">
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
                               <i class="material-icons">edit</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
                               <i class="material-icons">close</i>
                             </button>
                           </td>

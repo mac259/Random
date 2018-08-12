@@ -107,9 +107,9 @@ module.exports = function(app, passport) {
     // LOGOUT ==============================
     app.get('/logout', functions.logoutfunc);
 
-    app.get('/sessions', functions.isLoggedInfunc, admin_access, functions.create_elective);
+    app.get('/create-session', functions.isLoggedInfunc, admin_access, functions.create_elective);
 
-    app.post('/create_oe',functions.isLoggedInfunc, admin_access, functions.create_oe_post_form);
+    app.post('/create_session',functions.isLoggedInfunc, admin_access, functions.create_session_post_form);
     // =====================================
 
     app.get('/dashboard', functions.isLoggedInfunc, admin_access, functions.dashboard);
@@ -146,6 +146,7 @@ module.exports = function(app, passport) {
     app.get('/upload', (req,res)=>{res.render("upload.ejs")});
     app.post('/upload',upload.single('media'), functions.upload);
 
+    app.get('/broadcast', functions.isLoggedInfunc, admin_access, functions.broadcast);
 
 
   // #########################################################################################
