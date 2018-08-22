@@ -1,3 +1,7 @@
+$('.selectpicker').selectpicker({
+  size: 4
+});
+
 (function() {
   isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 

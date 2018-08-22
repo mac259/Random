@@ -53,13 +53,13 @@
               <p>Forms</p>
             </a>
           </li>           -->
-          <li class="nav-item active">
-            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+          <li class="nav-item ">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
               <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
-          <div class="collapse show" id="collapseExample">
+          <div class="collapse" id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
@@ -67,7 +67,7 @@
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="./existing-sessions-index.html">
                   <span class="sidebar-mini" style="">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
@@ -75,7 +75,7 @@
               </li>
             </ul>
           </div>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./courses-index.html">
               <i class="material-icons">collections_bookmark</i>
               <p>Courses</p>
@@ -116,7 +116,7 @@
               <a class="dropdown-item" href="#">Upload Files</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Existing Sessions</a>
+            <a class="navbar-brand" href="">Courses</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -173,65 +173,209 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12 col-md-12">
+            <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Session Stats</h4>
-                  <p class="card-category">All Sessions</p>
+                  <h4 class="card-title ">Courses</h4>
+                  <p class="card-category">All Courses</p>
                 </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-primary">
-                      <th>Name</th>
-                      <th>Type</th>
-                      <th>Created By</th>
-                      <th>Status</th>
-                      <th class="text-right">Start Date</th>
-                      <th class="text-right">End Date</th>
-                    </thead>
-                    <tbody>
-                      <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                        <td>OE '19 Even Sem</td>
-                        <td>Open Elective</td>
-                        <td>@admin_1191</td>
-                        <td>Upcoming</td>
-                        <td class="text-right">13th Dec '19</td>
-                        <td class="text-right">&nbsp;--&nbsp;</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                        <td>OE '19 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@admin_1191</td>
-                        <td>Upcoming</td>
-                        <td class="text-right">11th May '19</td>
-                        <td class="text-right">&nbsp;--&nbsp;</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                        <td>DE '18 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@brainy.admin21</td>
-                        <td>Ongoing</td>
-                        <td class="text-right">24th May '18</td>
-                        <td class="text-right">8th June '18</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                        <td>OE '18 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@bossadmin</td>
-                        <td>Ongoing</td>
-                        <td class="text-right">20th May '18</td>
-                        <td class="text-right">3rd June '18</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                        <td>DE '17 Even Sem</td>
-                        <td>Open Elective</td>
-                        <td>@admin1986</td>
-                        <td>Completed</td>
-                        <td class="text-right">5th Dec '17</td>
-                        <td class="text-right">16th Jan '18</td>
-                      </tr>
-                    </tbody>
-                  </table><!--<a class="text-center see-more" href="#">See more</a>-->
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="text-primary">
+                          <th class="text-left">Code</th>
+                          <th>Name</th>
+                          <th>Department</th>
+                          <th>Status</th>
+                          <th class="text-right">Strength</th>
+                          <th class="text-right">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">MC1694</td>
+                          <td><b>Reliability Engineering</b></td>
+                          <td>Mechatronics</td>
+                          <td>Active</td>
+                          <td class="text-right">120&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">EE1491</td>
+                          <td><b>Renewable Energy Sources</b></td>
+                          <td>Electrical</td>
+                          <td>Active</td>
+                          <td class="text-right">60&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">EC1696</td>
+                          <td><b>Optical Fibre Technology</b></td>
+                          <td>Electronics</td>
+                          <td>Active</td>
+                          <td class="text-right">180&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">EO1491</td>
+                          <td><b>Sustainable Development</b></td>
+                          <td>Economics</td>
+                          <td>Active</td>
+                          <td class="text-right">120&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">CV1590</td>
+                          <td><b>Environmental Impact Assessment</b></td>
+                          <td>Civil</td>
+                          <td>Active</td>
+                          <td class="text-right">180&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">MA1490</td>
+                          <td><b>Bio-Statistics</b></td>
+                          <td>Maths</td>
+                          <td>Inactive</td>
+                          <td class="text-right">120&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">PS1490</td>
+                          <td><b>Foundations of Positive Psychology</b></td>
+                          <td>Psychology</td>
+                          <td>Active</td>
+                          <td class="text-right">60&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">MC1695</td>
+                          <td><b>Composite Materials</b></td>
+                          <td>Mechanical</td>
+                          <td>Active</td>
+                          <td class="text-right">60&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">HI3101</td>
+                          <td><b>Hindi</b></td>
+                          <td>Humanities</td>
+                          <td>Inactive</td>
+                          <td class="text-right">60&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                          <td class="text-left">EE1691</td>
+                          <td><b>Electrical Energy Systems</b></td>
+                          <td>Electrical</td>
+                          <td>Active</td>
+                          <td class="text-right">120&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
+                              <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                              <i class="material-icons">close</i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
                 <div class="col-md-12">
                   <ul class="pagination pagination-primary justify-content-center">
@@ -269,7 +413,7 @@
             </div>
             <div class="modal-body">
 
-              <h5 class="text-center"><b>Session Name</b></h5>
+              <h5 class="text-center"><b>Course Code | Course Name</b></h5>
               <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. <br>Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.
               Cras viverra mauris sed lectus accumsan, in ultrices ante euismod. Duis mattis massa in pharetra venenatis. Pellentesque ultricies, urna id placerat porta, arcu libero fermentum felis, posuere faucibus dolor tortor non lectus. Quisque tempus felis maximus, congue enim in, hendrerit mi.<br> Nulla facilisi. Praesent sodales velit orci, sit amet vehicula nunc tincidunt a. Nulla in felis libero. Cras gravida turpis ac nulla vestibulum tristique. Donec mollis egestas nisi, eget pellentesque ante tincidunt a. Suspendisse tellus justo, faucibus id erat a, venenatis placerat leo. Cras venenatis posuere lacus, vel porttitor diam facilisis ut. Phasellus sit amet tincidunt sapien.</p>
 
@@ -305,7 +449,7 @@
 <!--Modals-->
       <footer class="footer footer-default">
         <div class="container">
-    <!--
+      <!--
           <nav class="float-left">
             <ul>
               <li>
@@ -315,7 +459,7 @@
               </li>
             </ul>
           </nav>
-    -->
+      -->
           <div class="copyright float-right"><a>
             &copy;
             <script>
@@ -343,11 +487,11 @@
   <script src="assets/js/admin-main.js" type="text/javascript"></script>
   <script src="assets/js/admin-main2.js"></script>
   <script>
-    $(document).ready(function() {
+  $(document).ready(function() {
 
-      md.initDashboardPageCharts();
+    md.initDashboardPageCharts();
 
-    });
+  });
   </script>
 </body>
 </html>

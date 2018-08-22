@@ -865,3 +865,11 @@ input[type=number]::-webkit-outer-spin-button {
 .oe-de-radios {
   margin-top: 33px;
 }
+
+@media screen and (max-width: 767px)
+{
+  .space-out
+  {
+    margin-top: 10px;
+  }
+}

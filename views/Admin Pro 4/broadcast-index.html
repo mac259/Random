@@ -81,13 +81,13 @@
               <p>Courses</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./broadcast-index.html">
               <i class="material-icons">mail_outline</i>
               <p>Broadcast</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="./notifications-index.html">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
@@ -116,7 +116,7 @@
               <a class="dropdown-item" href="#">Upload Files</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Notifications</a>
+            <a class="navbar-brand" href="">Broadcast</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -172,128 +172,96 @@
       </nav>
       <div class="content">
         <div class="container-fluid">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Notifications</h3>
-              <p class="card-category">Messages and Requests</p>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <h4 class="card-title">Messages</h4>
-                  <div class="alert alert-info alert-with-icon" data-notify="container">
-                    <i class="material-icons" data-notify="icon">add_alert</i>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span data-notify="message">This is a with reference to the latest OE decision taken by the SCIT department and we wish to inform yout that your request for specialisation in OEs has been taken under consideration. We will keep you in the loop for any upcoming changes.</span>
-                  </div>
-                  <div class="alert alert-info alert-with-icon" data-notify="container">
-                    <i class="material-icons" data-notify="icon">add_alert</i>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span data-notify="message">Sir, I am replying to your request for new room allocation for Python OE. The new room as of tomorrow is 1-AB 110.</span>
-                  </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header card-header-rose">
+                  <h4 class="card-title">Broadcast Message</h4>
+                  <p class="card-category">Create Message</p>
                 </div>
-                <div class="col-md-6">
-                  <h4 class="card-title">Requests</h4>
-                  <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span>
-                      <b> OE Change </b><br>Respected sir, kindly alot me a new OE due to conflict in interests.<br><b> Aniket Mukherjee, 169105033 </b></span>
-                  </div>
-                  <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">&nbsp;close</i>
-                    </button>
-                    <button type="button" class="close"  aria-label="Close">
-                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
-                        <i class="material-icons">undo</i>
-                      </a>
-                    </button>
-                    <span>
-                      <b> Form Reset </b><br>Respected sir, kindly reset my form as I would like to make modifications to the sequence.<br><b> Prerit Pathak, 169105131 </b></span>
-                  </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Subject</label>
+                          <input required="required" type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                      </div>
+                    </div><br>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <select class="selectpicker pull-left" data-style="btn btn-secondary" title="Single Select">
+                          <option disabled selected>Sessions</option>
+                          <option value="2">All Ongoing Sessions</option>
+                          <option value="3">OE '18 Even Sem</option>
+                          <option value="4">DE '18 Odd Sem</option>
+                          <option value="5">OE '19 Odd Sem</option>
+                        </select>
+                      </div>
+                      <div class="col-md-8 grant-div send-message-div">
+                        <!--<button type="submit" class="btn btn-rose pull-right grant-access send-message">Send Message</button>-->
+                        <button type="submit" class="btn btn-rose pull-right grant-access send-message" onclick='swal({ title:"Success!", text: "Message Sent!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Send Message</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="places-buttons">
-                <div class="row">
-                  <div class="col-lg-4 col-md-10 ml-auto mr-auto">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header card-header-info">
+                  <h4 class="card-title">Personal Message</h4>
+                  <p class="card-category">Create Message</p>
+                </div>
+                <div class="card-body">
+                  <form>
                     <div class="row">
                       <div class="col-md-6">
-                        <button class="btn btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Subject</label>
+                          <input required="required" type="text" class="form-control">
+                        </div>
                       </div>
                       <div class="col-md-6">
-                        <button class="btn btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Registration No.</label>
+                          <input required="required" type="text" class="form-control">
+                        </div>
                       </div>
                     </div>
-                  </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                      </div>
+                    </div><br>
+                    <div class="row">
+                      <div class="col-md-12 grant-div">
+                        <!--<button type="submit" class="btn btn-info pull-right grant-access">Send Message</button>-->
+                        <button type="submit" class="btn btn-info pull-right grant-access send-message" onclick='swal({ title:"Success!", text: "Message Sent!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Send Message</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-<!--  Modals  -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Reply</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="material-icons">clear</i>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="contact-form">
-                <div class="row" style="padding-bottom: 10px;">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Subject</label>
-                      <input type="text" required="required" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6 space-out modal-date-time">
-                    <div class="form-group">
-                      <label class="label-control">Suited Date & Time</label>
-                      <input type="text" class="form-control datetimepicker" value="08/04/2018">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="exampleMessage" class="bmd-label-floating">Description</label>
-                  <textarea type="text" class="form-control" rows="3" id="exampleMessage"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <!--<button type="button" class="btn btn-primary btn-link">Send</button>-->
-              <button type="button" class="btn btn-primary btn-link" onclick='swal({ title:"Success!", text: "Message Sent!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Send</button>
-              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+<!--Modals-->
       <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

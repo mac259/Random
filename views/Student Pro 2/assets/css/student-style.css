@@ -16579,7 +16579,7 @@ footer .pull-center {
 
 .card-login .input-group {
   padding-bottom: 7px;
-  margin: 27px 0 0 0;
+  margin: 15px 0 0 0; /*27px 0 0 0*/
 }
 
 .card-login .form {
@@ -17935,5 +17935,70 @@ footer .pull-center {
   }
   .card-profile .card-header-image {
     max-height: 215px;
+  }
+}
+
+.g-recaptcha {
+  transform-origin: left top;
+  -webkit-transform-origin: left top;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 11px;
+}
+
+#rc-imageselect {
+  transform:scale(0.77);
+  -webkit-transform:scale(0.77);
+  transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+}
+
+.toggle-pass
+{
+  position: absolute;
+  top: 12%;
+  left: 94%;
+  transform: translate(-50%,50%);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.buttons-pass
+{
+  width: 24px;
+  height: 14px;
+  background: #ab47bc;
+  border-radius: 30px;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.buttons-pass > .circle-pass
+{
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons-pass.active
+{
+  background: #7b1fa2;
+}
+
+.buttons-pass.active > .circle-pass
+{
+  margin-left: 10px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 767px)
+{
+  .space-out
+  {
+    margin-top: 30px;
   }
 }

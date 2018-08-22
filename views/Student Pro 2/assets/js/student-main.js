@@ -1,3 +1,28 @@
+// Activate bootstrap-select
+if ($(".selectpicker").length != 0) {
+  $(".selectpicker").selectpicker();
+}
+
+$('.selectpicker').selectpicker({
+  size: 4
+});
+
+// Display password
+let loginPassStatus = false;
+
+function changeView() {
+    let getLoginInput = document.getElementById("loginPassStatus");
+
+    if (loginPassStatus === false) {
+        getLoginInput.setAttribute("type", "text");
+        loginPassStatus = true;
+      }
+      else if (loginPassStatus === true) {
+        getLoginInput.setAttribute("type", "password");
+        loginPassStatus = false;
+    }
+}
+
 var big_image;
 
 $(document).ready(function() {
