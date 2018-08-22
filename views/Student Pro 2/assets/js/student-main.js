@@ -1,12 +1,3 @@
-// Activate bootstrap-select
-if ($(".selectpicker").length != 0) {
-  $(".selectpicker").selectpicker();
-}
-
-$('.selectpicker').selectpicker({
-  size: 4
-});
-
 // Display password
 let loginPassStatus = false;
 
@@ -22,6 +13,16 @@ function changeView() {
         loginPassStatus = false;
     }
 }
+
+// Activate bootstrap-select
+if ($(".selectpicker").length != 0) {
+  $(".selectpicker").selectpicker();
+}
+
+// Limit to prevent overflow
+$('.selectpicker').selectpicker({
+  size: 4
+});
 
 var big_image;
 
