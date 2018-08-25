@@ -921,3 +921,11 @@ input[type=number]::-webkit-outer-spin-button {
     max-width: 140px;
   }
 }
+
+@media screen and (max-width: 320px)
+{
+  .contain
+  {
+    max-width: 180px;
+  }
+}

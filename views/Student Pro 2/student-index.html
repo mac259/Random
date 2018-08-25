@@ -347,7 +347,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-link" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Okay</button>
+          <button type="submit" id="okay" class="btn btn-primary btn-link" data-toggle="modal" data-target="#myModal">Okay</button>
           <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -443,9 +443,11 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary btn-link" onclick='swal({ title:"Success!", text: "Your preferences have been recorded!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Submit</button>
-          <button type="submit" class="btn btn-success btn-link">Reset</button>
-          <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+          <div class="col-md-12 text-right" style="padding-right: 0; padding-left: 0px;">
+            <button type="submit" class="btn btn-primary btn-link" onclick='swal({ title:"Success!", text: "Your preferences have been recorded!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Submit</button>
+            <button type="submit" class="btn btn-success btn-link">Reset</button>
+            <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
