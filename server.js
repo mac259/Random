@@ -28,6 +28,8 @@ app.use(express.static(__dirname + '/views'));
 
 // required for passport
 app.use(session({ secret: "winteriscoming",
+					 resave: true,
+    				saveUninitialized: true,
 						cookie: {
 							httpOnly: true,
 							secure: false
