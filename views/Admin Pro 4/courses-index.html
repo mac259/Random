@@ -63,13 +63,13 @@
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
-                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-mini">CS</span>
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="./existing-sessions-index.html">
-                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
                 </a>
               </li>
@@ -113,7 +113,7 @@
               <i class="material-icons">more_vert</i>
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
-              <a class="dropdown-item" href="#">Upload Files</a>
+              <a class="dropdown-item" href="#">Download Guide</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Courses</a>
@@ -187,188 +187,188 @@
                           <th class="text-left">Code</th>
                           <th>Name</th>
                           <th>Department</th>
-                          <th>Status</th>
+                          <th class="text-center">Credits</th>
                           <th class="text-right">Strength</th>
                           <th class="text-right">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">MC1694</td>
                           <td><b>Reliability Engineering</b></td>
                           <td>Mechatronics</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions"> <!-- REVIEW: To edit here make admin upload a new file -->
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">EE1491</td>
                           <td><b>Renewable Energy Sources</b></td>
                           <td>Electrical</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">EC1696</td>
                           <td><b>Optical Fibre Technology</b></td>
                           <td>Electronics</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">180&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">EO1491</td>
                           <td><b>Sustainable Development</b></td>
                           <td>Economics</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">CV1590</td>
                           <td><b>Environmental Impact Assessment</b></td>
                           <td>Civil</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">180&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">MA1490</td>
                           <td><b>Bio-Statistics</b></td>
                           <td>Maths</td>
-                          <td>Inactive</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">PS1490</td>
                           <td><b>Foundations of Positive Psychology</b></td>
                           <td>Psychology</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">MC1695</td>
                           <td><b>Composite Materials</b></td>
                           <td>Mechanical</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">HI3101</td>
                           <td><b>Hindi</b></td>
                           <td>Humanities</td>
-                          <td>Inactive</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
+                        <tr class="clickable-row sub-info" data-href="#">
                           <td class="text-left">EE1691</td>
                           <td><b>Electrical Energy Systems</b></td>
                           <td>Electrical</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>

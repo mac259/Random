@@ -41,7 +41,7 @@
               <p>Admins</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="./student-data-index.html">
               <i class="material-icons">library_books</i>
               <p>Student Data</p>
@@ -53,13 +53,13 @@
               <p>Forms</p>
             </a>
           </li>           -->
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
               <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
-          <div class="collapse " id="collapseExample">
+          <div class="collapse show" id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
@@ -67,7 +67,7 @@
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
-              <li class="nav-item ">
+              <li class="nav-item active">
                 <a class="nav-link" href="./existing-sessions-index.html">
                   <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
@@ -116,7 +116,7 @@
               <a class="dropdown-item" href="#">Download Guide</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Student Data</a>
+            <a class="navbar-brand" href="">Existing Sessions</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -176,106 +176,111 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Student Stats</h4>
-                  <p class="card-category">Submission Details</p>
+                  <h4 class="card-title ">OE '19 Even Sem</h4>
+                  <p class="card-category">Course Data</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr class="text-primary">
-                          <th class="text-left">Reg. No.</th>
+                          <th class="text-left">Code</th>
                           <th>Name</th>
-                          <th>Branch</th>
-                          <th class="text-center">Semester</th>
-                          <th class="text-right">Session</th>
-                          <th class="text-right">Submission</th>
+                          <th>Department</th>
+                          <th class="text-center">Credits</th>
+                          <th class="text-right">Strength</th>
+                          <th class="text-right">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                          <td class="text-left">169105033</td>
-                          <td><b>Aniket Mukherjee</b></td>
-                          <td>CSE</td>
-                          <td class="text-center">V</td>
-                          <td class="text-right">OE '18 Odd Sem</td>
-                          <td class="text-right">
-                            <div class="form-check submission">
-                              <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="" checked disabled>
-                                <span class="form-check-sign">
-                                  <span class="check"></span>
-                                </span>
-                              </label>
-                            </div>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">MA1490</td>
+                          <td><b>Bio-Statistics</b></td>
+                          <td>Maths</td>
+                          <td class="text-center">3</td>
+                          <td class="text-right">120&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
+                              <i class="material-icons">cloud_upload</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
+                              <i class="material-icons">close</i>
+                            </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                          <td class="text-left">169105031</td>
-                          <td><b>Amrit Srivastava</b></td>
-                          <td>CSE</td>
-                          <td class="text-center">V</td>
-                          <td class="text-right">DE '18 Odd Sem</td>
-                          <td class="text-right">
-                            <div class="form-check submission">
-                              <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="" disabled>
-                                <span class="form-check-sign">
-                                  <span class="check"></span>
-                                </span>
-                              </label>
-                            </div>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">PS1490</td>
+                          <td><b>Foundations of Positive Psychology</b></td>
+                          <td>Psychology</td>
+                          <td class="text-center">3</td>
+                          <td class="text-right">60&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
+                              <i class="material-icons">cloud_upload</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
+                              <i class="material-icons">close</i>
+                            </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                          <td class="text-left">169103033</td>
-                          <td><b>Shivam Thakur</b></td>
-                          <td>CCE</td>
-                          <td class="text-center">V</td>
-                          <td class="text-right">DE '18 Odd Sem</td>
-                          <td class="text-right">
-                            <div class="form-check submission">
-                              <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="" checked disabled>
-                                <span class="form-check-sign">
-                                  <span class="check"></span>
-                                </span>
-                              </label>
-                            </div>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">MC1695</td>
+                          <td><b>Composite Materials</b></td>
+                          <td>Mechanical</td>
+                          <td class="text-center">3</td>
+                          <td class="text-right">60&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
+                              <i class="material-icons">cloud_upload</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
+                              <i class="material-icons">close</i>
+                            </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                          <td class="text-left">169105037</td>
-                          <td><b>Ankit Mishra</b></td>
-                          <td>CSE</td>
-                          <td class="text-center">V</td>
-                          <td class="text-right">OE '18 Odd Sem</td>
-                          <td class="text-right">
-                            <div class="form-check submission">
-                              <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="" checked disabled>
-                                <span class="form-check-sign">
-                                  <span class="check"></span>
-                                </span>
-                              </label>
-                            </div>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">HI3101</td>
+                          <td><b>Hindi</b></td>
+                          <td>Humanities</td>
+                          <td class="text-center">3</td>
+                          <td class="text-right">60&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
+                              <i class="material-icons">cloud_upload</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
+                              <i class="material-icons">close</i>
+                            </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal">
-                          <td class="text-left">169102008</td>
-                          <td><b>Apoorv Gaurav</b></td>
-                          <td>IT</td>
-                          <td class="text-center">VII</td>
-                          <td class="text-right">OE '18 Odd Sem</td>
-                          <td class="text-right">
-                            <div class="form-check submission">
-                              <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="" disabled>
-                                <span class="form-check-sign">
-                                  <span class="check"></span>
-                                </span>
-                              </label>
-                            </div>
+                        <tr class="clickable-row sub-info" data-href="#">
+                          <td class="text-left">EE1691</td>
+                          <td><b>Electrical Energy Systems</b></td>
+                          <td>Electrical</td>
+                          <td class="text-center">3</td>
+                          <td class="text-right">120&nbsp;</td>
+                          <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
+                              <i class="material-icons">person</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
+                              <i class="material-icons">cloud_upload</i>
+                            </button>
+                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
+                              <i class="material-icons">close</i>
+                            </button>
                           </td>
                         </tr>
                       </tbody>
@@ -304,10 +309,196 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-rose">
+                  <h4 class="card-title ">OE '19 Even Sem</h4>
+                  <p class="card-category">Student Data</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="text-rose">
+                          <th class="text-left">Reg. No.</th>
+                          <th>Name</th>
+                          <th>Branch</th>
+                          <th class="text-center">Semester</th>
+                          <th class="text-right">Allotment</th>
+                          <th class="text-right">Submission</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal3">
+                          <td class="text-left">169105033</td>
+                          <td><b>Aniket Mukherjee</b></td>
+                          <td>CSE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right">IT1552</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked disabled>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal3">
+                          <td class="text-left">169105031</td>
+                          <td><b>Amrit Srivastava</b></td>
+                          <td>CSE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right"><i>--Unalloted--</i></td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" disabled>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal3">
+                          <td class="text-left">169103033</td>
+                          <td><b>Shivam Thakur</b></td>
+                          <td>CCE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right">EC1792</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked disabled>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal3">
+                          <td class="text-left">169105037</td>
+                          <td><b>Ankit Mishra</b></td>
+                          <td>CSE</td>
+                          <td class="text-center">V</td>
+                          <td class="text-right">CM1493</td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked disabled>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="clickable-row sub-info" data-href="#" data-toggle="modal" data-target="#myModal3">
+                          <td class="text-left">169102008</td>
+                          <td><b>Apoorv Gaurav</b></td>
+                          <td>IT</td>
+                          <td class="text-center">VII</td>
+                          <td class="text-right"><i>--Unalloted--</i></td>
+                          <td class="text-right">
+                            <div class="form-check submission">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" disabled>
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <ul class="pagination pagination-rose justify-content-center">
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active pagination-rose">
+                      <a href="javascript:void(0);" class="page-link">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a href="javascript:void(0);" class="page-link">Next</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <button type="button" class="btn btn  btn-info" onclick='swal({ title:"Success!", text: "Allotment Started!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Start Allotment</button>  <!-- REVIEW: Before allotment all student's allotment displays 'Unalloted' -->
+              <button type="button" class="btn btn btn-info">Download Data</button>
+              <button type="button" class="btn btn btn-info" data-toggle="modal" data-target="#myModal4">Add Course</button>
+              <button type="button" class="btn btn btn-info">Upload Course Data</button>
+              <button type="button" class="btn btn btn-info" data-href="upcoming-redirect-index.html">Upload Student Data</button>
+              <button type="button" class="btn btn  btn-info" onclick='swal({ title:"Success!", text: "Session Terminated!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Terminate Session</button>
+            </div>
+          </div>
         </div>
       </div>
 <!--Modals-->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Description</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <h5 class="text-center"><b>Course Code | Course Name</b></h5>
+              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. <br>Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.
+              Cras viverra mauris sed lectus accumsan, in ultrices ante euismod. Duis mattis massa in pharetra venenatis. Pellentesque ultricies, urna id placerat porta, arcu libero fermentum felis, posuere faucibus dolor tortor non lectus. Quisque tempus felis maximus, congue enim in, hendrerit mi.<br> Nulla facilisi. Praesent sodales velit orci, sit amet vehicula nunc tincidunt a. Nulla in felis libero. Cras gravida turpis ac nulla vestibulum tristique. Donec mollis egestas nisi, eget pellentesque ante tincidunt a. Suspendisse tellus justo, faucibus id erat a, venenatis placerat leo. Cras venenatis posuere lacus, vel porttitor diam facilisis ut. Phasellus sit amet tincidunt sapien.</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link">Download</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Subject</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -403,22 +594,45 @@
           </div>
         </div>
       </div>
-      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+      <div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Subject</h5>
+              <h5 class="modal-title">Add Course</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <i class="material-icons">clear</i>
               </button>
             </div>
             <div class="modal-body">
-
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.</p>
-
+              <div class="row-sm">
+                <div class="col-md-12">
+                  <div class="form-group dropup">
+                    <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
+                      <option class="resp" disabled selected>Choose Course</option>
+                      <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                      <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                      <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                      <option class="resp" value="5">EO1491 Sustainable Development</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+<!--          <div class="row-sm">
+                <div class="col-md-12">
+                  <div class="form-group dropup">
+                    <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
+                      <option class="resp" disabled selected>Department</option>
+                      <option class="resp" value="2">Computer Science</option>
+                      <option class="resp" value="3">Information Technology</option>
+                      <option class="resp" value="4">Mechanical Engineering</option>
+                      <option class="resp" value="5">Chemical Engineering</option>
+                    </select>
+                  </div>
+                </div>
+              </div>          -->
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal">Okay</button>
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
           </div>
@@ -427,7 +641,7 @@
 <!--Modals-->
       <footer class="footer footer-default">
         <div class="container">
-    <!--
+      <!--
           <nav class="float-left">
             <ul>
               <li>
@@ -437,7 +651,7 @@
               </li>
             </ul>
           </nav>
-    -->
+      -->
           <div class="copyright float-right"><a>
             &copy;
             <script>
@@ -465,11 +679,11 @@
   <script src="assets/js/admin-main.js" type="text/javascript"></script>
   <script src="assets/js/admin-main2.js"></script>
   <script>
-    $(document).ready(function() {
+  $(document).ready(function() {
 
-      md.initDashboardPageCharts();
+    md.initDashboardPageCharts();
 
-    });
+  });
   </script>
 </body>
 </html>
