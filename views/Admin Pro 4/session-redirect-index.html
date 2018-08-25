@@ -442,13 +442,18 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12 text-center">
-              <button type="button" class="btn btn  btn-info" onclick='swal({ title:"Success!", text: "Allotment Started!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Start Allotment</button>  <!-- REVIEW: Before allotment all student's allotment displays 'Unalloted' -->
-              <button type="button" class="btn btn btn-info">Download Data</button>
-              <button type="button" class="btn btn btn-info" data-toggle="modal" data-target="#myModal4">Add Course</button>
-              <button type="button" class="btn btn btn-info">Upload Course Data</button>
-              <button type="button" class="btn btn btn-info" data-href="upcoming-redirect-index.html">Upload Student Data</button>
-              <button type="button" class="btn btn  btn-info" onclick='swal({ title:"Success!", text: "Session Terminated!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Terminate Session</button>
+            <div class="col-md-12">
+              <a class="nav-link btn btn-just-icon btn-white btn-fab btn-round ml-auto mr-auto" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">add</i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
+                <a class="dropdown-item" href="#" onclick='swal({ title:"Success!", text: "Allotment Started!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Start Allotment</a>  <!-- REVIEW: Before allotment all student's allotment displays 'Unalloted' -->
+                <a class="dropdown-item" href="#">Download Data</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal4">Add Course</a>
+                <a class="dropdown-item" href="#">Upload Course Data</a>
+                <a class="dropdown-item" href="#" data-href="upcoming-redirect-index.html">Upload Student Data</a>
+                <a class="dropdown-item" href="#" onclick='swal({ title:"Success!", text: "Session Terminated!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Terminate Session</a>
+              </div>
             </div>
           </div>
         </div>
@@ -632,7 +637,7 @@
               </div>          -->
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal">Okay</button>
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Course Added!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Okay</button>
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
           </div>
