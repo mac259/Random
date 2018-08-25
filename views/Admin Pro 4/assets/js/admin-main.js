@@ -1,3 +1,4 @@
+// Limit to prevent overflow
 $('.selectpicker').selectpicker({
   size: 4
 });

@@ -16604,7 +16604,8 @@ footer .pull-center {
   background: transparent;
   bottom: 0;
   color: #fff;
-  z-index: 1;
+  z-index: 2;
+  cursor: default;
 }
 
 .login-page .footer .copyright a {
@@ -18000,5 +18001,53 @@ footer .pull-center {
   .space-out
   {
     margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 410px) and (min-width: 381px)
+{
+  .resp
+  {
+    max-width: 240px;
+  }
+}
+
+@media screen and (max-width: 380px) and (min-width: 360px)
+{
+  .resp
+  {
+    max-width: 220px;
+  }
+}
+
+@media screen and (max-width: 359px) and (min-width: 340px)
+{
+  .resp
+  {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 339px) and (min-width: 320px)
+{
+  .resp
+  {
+    max-width: 180px;
+  }
+}
+
+@media screen and (max-width: 319px) and (min-width: 300px)
+{
+  .resp
+  {
+    max-width: 160px;
+  }
+}
+
+@media screen and (max-width: 299px)
+{
+  .resp
+  {
+    max-width: 140px;
   }
 }

@@ -63,13 +63,13 @@
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
-                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-mini">CS</span>
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="./existing-sessions-index.html">
-                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
                 </a>
               </li>
@@ -113,7 +113,7 @@
               <i class="material-icons">more_vert</i>
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
-              <a class="dropdown-item" href="#">Upload Files</a>
+              <a class="dropdown-item" href="#">Download Guide</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Settings</a>
@@ -183,7 +183,7 @@
                       <input type="text" class="form-control">
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick='swal({ title:"Success!", text: "Password has been reset!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Reset</a>
+                  <a href="#" class="btn btn-primary" onclick='swal({ title:"Success!", text: "Password has been reset to muj@1234!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Reset</a>
                 </div>
               </div>
             </div>
@@ -197,7 +197,7 @@
                       <input type="text" class="form-control">
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick='swal({ title:"Success!", text: "Form has been reset!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Reset</a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Reset</a>
                 </div>
               </div>
             </div>
@@ -230,27 +230,27 @@
             </div>
             <div class="modal-body">
               <div class="row-sm">
-                <div class="col-lg-8 col-sm-4">
+                <div class="col-md-12">
                   <div class="form-group dropup">
-                    <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                      <option disabled selected>Previous Allotment</option>
-                      <option value="2">CM1493 Social Entrepreneurship</option>
-                      <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                      <option value="4">MC1694 Reliability Engineering</option>
-                      <option value="5">EO1491 Sustainable Development</option>
+                    <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select" disabled>
+                      <option class="resp" disabled selected>Previous Allotment</option>
+                      <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                      <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                      <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                      <option class="resp" value="5">EO1491 Sustainable Development</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div class="row-sm">
-                <div class="col-lg-8 col-sm-4">
+                <div class="col-md-12">
                   <div class="form-group dropup">
                     <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                      <option disabled selected>New Allotment</option>
-                      <option value="2">CM1493 Social Entrepreneurship</option>
-                      <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                      <option value="4">MC1694 Reliability Engineering</option>
-                      <option value="5">EO1491 Sustainable Development</option>
+                      <option class="resp" disabled selected>New Allotment</option>
+                      <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                      <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                      <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                      <option class="resp" value="5">EO1491 Sustainable Development</option>
                     </select>
                   </div>
                 </div>
@@ -279,6 +279,36 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Reset Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row-sm">
+                <div class="col-md-12">
+                  <div class="form-group dropup">
+                    <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
+                      <option class="resp" disabled selected>Choose Session</option>
+                      <option class="resp" value="2">OE '19 Even Sem</option>
+                      <option class="resp" value="3">DE '19 Odd Sem</option>
+                      <option class="resp" value="4">OE '18 Even Sem</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary btn-link" onclick='swal({ title:"Success!", text: "Form has been reset!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Reset</button>
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
           </div>

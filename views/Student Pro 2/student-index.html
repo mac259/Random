@@ -190,9 +190,13 @@
                     <br>
                     EC1792 Hybrid Soft Computing Techniques</p>
                     <br>
-                    <a href="#"><p><b>Department Elective 2018-19 Odd Semester</b></a>
+                    <a href="#" data-toggle="modal" data-target="#myModal3"><p><b>Department Elective I 2018-19 Odd Semester</b></a>
                     <br>
                     IT1552 Python Programming</p>
+                    <br>
+                    <a href="#" onclick="scrollToForms()"><p><b>Department Elective II 2018-19 Odd Semester</b></a>
+                    <br>
+                    <i>----Unalloted----</i></p>
                   </div>
                   <div class="tab-pane text-center sub-info" id="upcoming">
                     <br>
@@ -254,15 +258,15 @@
             </div>
             <br>
             <div class="row text-center" id="modals">
-              <div class="col-md-4 ml-auto mr-auto text-center">
-                <button class="btn btn-raised btn-primary" data-toggle="modal" data-target="#myModal">
+              <div class="col-md-12 ml-auto mr-auto text-center">
+                <button class="btn btn-raised btn-primary" data-toggle="modal" data-target="#myModal4">
                   <i class="material-icons">create</i> Fill Out Forms
                 </button>
               </div>
             </div>
             <div class="row text-center" id="modals">
-              <div class="col-md-4 ml-auto mr-auto text-center">
-                <button type="button" class="btn btn-rose" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Availability/Deadline" data-content="This form must be submitted by 10th August 2018." data-container="body">Details</button><!--data-content="No forms are currently active."-->
+              <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-rose ml-auto mr-auto" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Availability/Deadline" data-content="This form must be submitted by 10th August 2018." data-container="body">Details</button><!--data-content="No forms are currently active."-->
               </div>
             </div>
           </div>
@@ -298,7 +302,7 @@
                 <div class="col-md-6 space-out">
                   <div class="form-group">
                     <label class="label-control">Suited Date & Time</label>
-                    <input type="text" class="form-control datetimepicker" value="07/17/2018">
+                    <input type="text" class="form-control datetimepicker" value="">
                   </div>
                 </div>
               </div>
@@ -320,6 +324,35 @@
     </div>
   </div>
 <!--Modals-->
+  <div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ongoing Sessions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row-sm">
+            <div class="col-md-12">
+              <div class="form-group dropup">
+                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
+                  <option class="resp" disabled selected>Choose Session</option>
+                  <option class="resp" value="2">Open Elective 2018-19 Even Semester</option>
+                  <option class="resp" value="3">Department Elective 2018-19 Odd Semester</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary btn-link" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Okay</button>
+          <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -331,79 +364,79 @@
         </div>
         <div class="modal-body">
           <div class="row-sm">
-            <div class="col-lg-8 col-sm-4">
+            <div class="col-md-12">
               <div class="form-group dropup">
                 <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option disabled selected>Priority 1</option>
-                  <option value="2">CM1493 Social Entrepreneurship</option>
-                  <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option value="4">MC1694 Reliability Engineering</option>
-                  <option value="5">EO1491 Sustainable Development</option>
+                  <option class="resp" disabled selected>Priority 1</option>
+                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                  <option class="resp" value="5">EO1491 Sustainable Development</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="row-sm">
-            <div class="col-lg-8 col-sm-4">
+            <div class="col-md-12">
               <div class="form-group dropup">
                 <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option disabled selected>Priority 2</option>
-                  <option value="2">CM1493 Social Entrepreneurship</option>
-                  <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option value="4">MC1694 Reliability Engineering</option>
-                  <option value="5">EO1491 Sustainable Development</option>
+                  <option class="resp" disabled selected>Priority 2</option>
+                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                  <option class="resp" value="5">EO1491 Sustainable Development</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="row-sm">
-            <div class="col-lg-8 col-sm-4">
+            <div class="col-md-12">
               <div class="form-group dropup">
                 <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option disabled selected>Priority 3</option>
-                  <option value="2">CM1493 Social Entrepreneurship</option>
-                  <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option value="4">MC1694 Reliability Engineering</option>
-                  <option value="5">EO1491 Sustainable Development</option>
+                  <option class="resp" disabled selected>Priority 3</option>
+                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                  <option class="resp" value="5">EO1491 Sustainable Development</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="row-sm">
-            <div class="col-lg-8 col-sm-4">
+            <div class="col-md-12">
               <div class="form-group dropup">
                 <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option disabled selected>Priority 4</option>
-                  <option value="2">CM1493 Social Entrepreneurship</option>
-                  <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option value="4">MC1694 Reliability Engineering</option>
-                  <option value="5">EO1491 Sustainable Development</option>
+                  <option class="resp" disabled selected>Priority 4</option>
+                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                  <option class="resp" value="5">EO1491 Sustainable Development</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="row-sm">
-            <div class="col-lg-8 col-sm-4">
+            <div class="col-md-12">
               <div class="form-group dropup">
                 <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option disabled selected>Priority 5</option>
-                  <option value="2">CM1493 Social Entrepreneurship</option>
-                  <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option value="4">MC1694 Reliability Engineering</option>
-                  <option value="5">EO1491 Sustainable Development</option>
+                  <option class="resp" disabled selected>Priority 5</option>
+                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                  <option class="resp" value="5">EO1491 Sustainable Development</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="row-sm">
-            <div class="col-lg-8 col-sm-4">
+            <div class="col-md-12">
               <div class="form-group dropup">
                 <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option disabled selected>Priority 6</option>
-                  <option value="2">CM1493 Social Entrepreneurship</option>
-                  <option value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option value="4">MC1694 Reliability Engineering</option>
-                  <option value="5">EO1491 Sustainable Development</option>
+                  <option class="resp" disabled selected>Priority 6</option>
+                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
+                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
+                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
+                  <option class="resp" value="5">EO1491 Sustainable Development</option>
                 </select>
               </div>
             </div>
