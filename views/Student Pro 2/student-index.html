@@ -59,7 +59,7 @@
               <i class="material-icons">cloud_download</i> Download
             </a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown">  <!-- REVIEW: The notifications should appear in the dropdown even if they are marked read, only the bullet should disappear once read. After 1 month of a notification being read, it should be removed from the dropdown menu -->
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="material-icons">notifications</i>
               <span class="notification">4</span>
@@ -337,7 +337,7 @@
           <div class="row-sm">
             <div class="col-md-12">
               <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
+                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select"> <!-- REVIEW: Reset this modal once priority list is submitted -->
                   <option class="resp" disabled selected>Choose Session</option>
                   <option class="resp" value="2">Open Elective 2018-19 Even Semester</option>
                   <option class="resp" value="3">Department Elective 2018-19 Odd Semester</option>
@@ -444,7 +444,7 @@
         </div>
         <div class="modal-footer">
           <div class="col-md-12 text-right" style="padding-right: 0; padding-left: 0px;">
-            <button type="submit" class="btn btn-primary btn-link" onclick='swal({ title:"Success!", text: "Your preferences have been recorded!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Submit</button>
+            <button type="submit" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Your preferences have been recorded!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Submit</button>
             <button type="submit" class="btn btn-success btn-link">Reset</button>
             <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
           </div>
