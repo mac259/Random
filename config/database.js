@@ -3,10 +3,10 @@ module.exports = {
     'connection': {
         'host': 'localhost',
         'user': 'root',
-        'password': 'qwerty'
+        'password': 'Pass@1234'
 
     },
-	'database': 'muj_electives',
+	'database': 'elective',
     'users_table': 'account'
 };
 

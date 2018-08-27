@@ -114,7 +114,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
               <a class="dropdown-item" href="#">Upload Files</a>
-              <a class="dropdown-item" href="#">Change Password</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal99">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Student Data</a>
           </div>
@@ -396,7 +396,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Description</h5>
+              <h5 class="modal-title">Form Details</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <i class="material-icons">clear</i>
               </button>
@@ -483,6 +483,48 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary btn-link" data-dismiss="modal">Okay</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal99" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Current Password</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row space-out-perm">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">New Password</label>
+                    <input type="password" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row space-out-perm">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Confirm New Password</label>
+                    <input type="password" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Password Changed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Save</button>
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
           </div>

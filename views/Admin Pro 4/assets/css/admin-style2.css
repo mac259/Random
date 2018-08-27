@@ -929,3 +929,8 @@ input[type=number]::-webkit-outer-spin-button {
     max-width: 180px;
   }
 }
+
+.space-out-perm
+{
+  margin-top: 10px;
+}

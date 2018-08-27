@@ -114,7 +114,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
               <a class="dropdown-item" href="#">Upload Files</a>
-              <a class="dropdown-item" href="#">Change Password</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal99">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Dashboard</a>
           </div>
@@ -251,9 +251,9 @@
                        <button type="button" class="btn btn-info btn-link" rel="tooltip" data-placement="bottom" title="Refresh">
                          <i class="material-icons">refresh</i>
                        </button>
-                       <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="Change Date">
+<!--                    <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="Change Date">
                          <i class="material-icons">edit</i>
-                       </button>
+                       </button>                    -->
                    </div>
                   <h4 class="card-title">Daily Submissions</h4>
                   <p class="card-category">
@@ -279,9 +279,9 @@
                     <button type="button" class="btn btn-info btn-link" rel="tooltip" data-placement="bottom" title="Refresh">
                       <i class="material-icons">refresh</i>
                     </button>
-                    <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="Change Date">
+<!--                <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="Change Date">
                       <i class="material-icons">edit</i>
-                    </button>
+                    </button>                   -->
                   </div>
                   <h4 class="card-title">Queries Generated</h4>
                   <p class="card-category">Last Session Stats</p>
@@ -306,9 +306,9 @@
                     <button type="button" class="btn btn-info btn-link" rel="tooltip" data-placement="bottom" title="Refresh">
                       <i class="material-icons">refresh</i>
                     </button>
-                    <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="Change Date">
+<!--                <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="Change Date">
                       <i class="material-icons">edit</i>
-                    </button>
+                    </button>                   -->
                   </div>
                   <h4 class="card-title">Completed Tasks</h4>
                   <p class="card-category">This Week's Productivity</p>
@@ -337,7 +337,7 @@
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#profile" data-toggle="tab">
-                            <i class="material-icons">attach_file</i> Courses
+                            <i class="material-icons">attach_file</i> Sessions
                             <div class="ripple-container"></div>
                           </a>
                         </li>
@@ -369,8 +369,8 @@
                             </td>
                             <td>Create elective 'Stock Market Predictions' for next session</td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
+                                <i class="material-icons">edit</i>  <!-- REVIEW: Clicking here opens a modal that should not be empty and should display previous task description. This task description can then be edited. -->
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
@@ -390,7 +390,7 @@
                             </td>
                             <td>Send a notification to the students who missed the deadline</td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -412,7 +412,7 @@
                             <td>Provision tentative allotment dates for 'Open Elective 2018 Even Semester'
                             </td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -422,6 +422,11 @@
                           </tr>
                         </tbody>
                       </table>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <button class="btn btn-sm btn-wd text-primary btn-secondary" style="margin:0;" data-toggle="modal" data-target="#myModal98">Add task</button> <!-- REVIEW: New table row should not be created if task description field is empty -->
+                        </div>
+                      </div>
                     </div>
                     <div class="tab-pane" id="messages">
                       <table class="table">
@@ -440,7 +445,7 @@
                             <td>Assign faculty to coordinate elective changes and notify the students regarding the same
                             </td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -461,7 +466,7 @@
                             </td>
                             <td>Fulfill formalities for certificates</td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -471,6 +476,11 @@
                           </tr>
                         </tbody>
                       </table>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <button class="btn btn-sm btn-wd text-primary btn-secondary" style="margin:0;" data-toggle="modal" data-target="#myModal98">Add task</button>
+                        </div>
+                      </div>
                     </div>
                     <div class="tab-pane active" id="settings">
                       <table class="table">
@@ -488,7 +498,7 @@
                             </td>
                             <td class="contain-col">Check loading time and other areas for improvement</td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -510,7 +520,7 @@
                             <td>Send report to the creators for any additional features that need to be added
                             </td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -531,7 +541,7 @@
                             </td>
                             <td>Test run the website and all its components</td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -539,6 +549,7 @@
                               </button>
                             </td>
                           </tr>
+<!--
                           <tr>
                             <td>
                               <div class="form-check">
@@ -552,7 +563,7 @@
                             </td>
                             <td>Just awe the majestic awesomeness bug and remember that it beats all other bugs</td>
                             <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#myModal97">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
@@ -560,8 +571,14 @@
                               </button>
                             </td>
                           </tr>
+-->
                         </tbody>
                       </table>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <button class="btn btn-sm btn-wd text-primary btn-secondary" style="margin:0;" data-toggle="modal" data-target="#myModal98">Add task</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -574,7 +591,7 @@
                   <p class="card-category">Latest Submissions</p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table class="table table-hover">
+                  <table class="table table-hover"> <!-- REVIEW: Should show latest 3 submissions only in order to maintain proportions -->
                     <thead class="text-warning">
                       <th>Reg No</th>
                       <th>Name</th>
@@ -594,11 +611,6 @@
                       <tr>
                         <td>169105037</td>
                         <td>Ankit Mishra</td>
-                        <td>19th July '18</td>
-                      </tr>
-                      <tr>
-                        <td>169105031</td>
-                        <td>Amrit Srivastava</td>
                         <td>19th July '18</td>
                       </tr>
                     </tbody>
@@ -628,6 +640,102 @@
           </div>
         </div>
       </div>
+<!--Modals-->
+      <div class="modal fade" id="myModal99" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Current Password</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row space-out-perm">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">New Password</label>
+                    <input type="password" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row space-out-perm">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Confirm New Password</label>
+                    <input type="password" class="form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Password Changed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Save</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal98" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Task</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Task Description</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Task list updated!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Save</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal97" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Task</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Task Description</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Task list updated!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Save</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--Modals-->
       <footer class="footer footer-default">
         <div class="container">
     <!--
