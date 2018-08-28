@@ -30,19 +30,19 @@
       <div class="sidebar-wrapper" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/dashboard">
+            <a class="nav-link" href="./dashboard-index.html">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./admins-index.html">
               <i class="material-icons">person</i>
               <p>Admins</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./student-data-index.html">
               <i class="material-icons">library_books</i>
               <p>Student Data</p>
             </a>
@@ -62,39 +62,39 @@
           <div class="collapse" id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
-                <a class="nav-link" href="/create-ession">
-                  <span class="sidebar-mini" style="">CS</span>
+                <a class="nav-link" href="./create-session-index.html">
+                  <span class="sidebar-mini">CS</span>
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="/Sessions">
-                  <span class="sidebar-mini" style="">ES</span>
+                <a class="nav-link" href="./existing-sessions-index.html">
+                  <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
                 </a>
               </li>
             </ul>
           </div>
           <li class="nav-item ">
-            <a class="nav-link" href="/courses">
+            <a class="nav-link" href="./courses-index.html">
               <i class="material-icons">collections_bookmark</i>
               <p>Courses</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/broadcast">
+            <a class="nav-link" href="./broadcast-index.html">
               <i class="material-icons">mail_outline</i>
               <p>Broadcast</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/notifications">
+            <a class="nav-link" href="./notifications-index.html">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/settings">
+            <a class="nav-link" href="./settings-index.html">
               <i class="material-icons">settings</i>
               <p>Settings</p>
             </a>
@@ -113,7 +113,7 @@
               <i class="material-icons">more_vert</i>
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
-              <a class="dropdown-item" href="#">Upload Files</a>
+              <a class="dropdown-item" href="#">Download Guide</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Admins</a>
@@ -152,14 +152,14 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">&bull; New requests available!</a>
-                  <a class="dropdown-item" href="#">&bull; You have 5 new tasks for today!</a>
-                  <a class="dropdown-item" href="#">&bull; New form created by @admin_1191</a>
-                  <a class="dropdown-item" href="#">&bull; Daily submissions data updated</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New requests available!</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; You have 5 new tasks for today!</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New form created by @admin_1191</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; Daily submissions data updated</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/logout">
+                <a class="nav-link" href="../Student Pro/login-index.html">
                   <i class="material-icons">lock</i>
                   <p class="d-lg-none d-md-block">
                     Logout
@@ -225,7 +225,7 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="label-control">SOA</label>
-                          <input type="text" class="form-control datetimepicker" value="07/26/2018" />
+                          <input type="text" class="form-control datetimepicker" value="" />
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -245,16 +245,17 @@
                     </div><br>
                     <div class="row">
                       <div class="col-md-4">
-                        <select class="selectpicker pull-left" data-style="btn btn-secondary" title="Single Select">
-                          <option disabled selected>Privileges</option>
-                          <option value="2">All Access</option>
-                          <option value="3">Course Management</option>
-                          <option value="4">Data Analysis</option>
-                          <option value="5">Help & Support</option>
+                        <select class="selectpicker contain pull-left" data-style="btn btn-secondary" title="Single Select">
+                          <option class="resp" disabled selected>Privileges</option>
+                          <option class="resp" value="2">All Access</option>
+                          <option class="resp" value="3">Course Management</option>
+                          <option class="resp" value="4">Data Analysis</option>
+                          <option class="resp" value="5">Help & Support</option>
                         </select>
                       </div>
                       <div class="col-md-8 grant-div">
-                        <button type="submit" class="btn btn-primary pull-right grant-access">Grant Access</button>
+                        <!--<button type="submit" class="btn btn-primary pull-right grant-access">Grant Access</button>-->
+                        <button type="submit" class="btn btn-primary pull-right grant-access" onclick='swal({ title:"Success!", text: "Access Granted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Grant Access</button>
                         <div class="clearfix"></div>
                       </div>
                     </div>
@@ -313,6 +314,29 @@
           </div>
         </div>
       </div>
+<!--Modals-->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Subject</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--Modals-->
       <footer class="footer footer-default">
         <div class="container">
 <!--    <button class="btn btn-primary btn-fill" onclick='swal({ title:"Good job!", text: "You clicked the button!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Grant Access</button>   -->
@@ -352,7 +376,7 @@
   <script src="/Admin Pro 4/assets/js/plugins/bootstrap-notify.js"></script>
   <!--  Control Scripts for parallax effects, modals etc.  -->
   <script src="/Admin Pro 4/assets/js/admin-main.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/admin-main2.js"></script>
+  <script src="/Admin Pro 4/assets/js/admin-main2.js" type="text/javascript"></script>
   <script>
   $(document).ready(function() {
 

@@ -63,13 +63,13 @@
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
-                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-mini">CS</span>
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="./existing-sessions-index.html">
-                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
                 </a>
               </li>
@@ -113,7 +113,7 @@
               <i class="material-icons">more_vert</i>
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
-              <a class="dropdown-item" href="#">Upload Files</a>
+              <a class="dropdown-item" href="#">Download Guide</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Courses</a>
@@ -152,14 +152,14 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">&bull; New requests available!</a>
-                  <a class="dropdown-item" href="#">&bull; You have 5 new tasks for today!</a>
-                  <a class="dropdown-item" href="#">&bull; New form created by @admin_1191</a>
-                  <a class="dropdown-item" href="#">&bull; Daily submissions data updated</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New requests available!</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; You have 5 new tasks for today!</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New form created by @admin_1191</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; Daily submissions data updated</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./login.html">
+                <a class="nav-link" href="../Student Pro/login-index.html">
                   <i class="material-icons">lock</i>
                   <p class="d-lg-none d-md-block">
                     Logout
@@ -187,7 +187,7 @@
                           <th class="text-left">Code</th>
                           <th>Name</th>
                           <th>Department</th>
-                          <th>Status</th>
+                          <th class="text-center">Credits</th>
                           <th class="text-right">Strength</th>
                           <th class="text-right">Actions</th>
                         </tr>
@@ -197,16 +197,16 @@
                           <td class="text-left">MC1694</td>
                           <td><b>Reliability Engineering</b></td>
                           <td>Mechatronics</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions"> <!-- REVIEW: To edit here make admin upload a new file -->
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -215,16 +215,16 @@
                           <td class="text-left">EE1491</td>
                           <td><b>Renewable Energy Sources</b></td>
                           <td>Electrical</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -233,16 +233,16 @@
                           <td class="text-left">EC1696</td>
                           <td><b>Optical Fibre Technology</b></td>
                           <td>Electronics</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">180&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -251,16 +251,16 @@
                           <td class="text-left">EO1491</td>
                           <td><b>Sustainable Development</b></td>
                           <td>Economics</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -269,16 +269,16 @@
                           <td class="text-left">CV1590</td>
                           <td><b>Environmental Impact Assessment</b></td>
                           <td>Civil</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">180&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -287,16 +287,16 @@
                           <td class="text-left">MA1490</td>
                           <td><b>Bio-Statistics</b></td>
                           <td>Maths</td>
-                          <td>Inactive</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -305,16 +305,16 @@
                           <td class="text-left">PS1490</td>
                           <td><b>Foundations of Positive Psychology</b></td>
                           <td>Psychology</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -323,16 +323,16 @@
                           <td class="text-left">MC1695</td>
                           <td><b>Composite Materials</b></td>
                           <td>Mechanical</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -341,16 +341,16 @@
                           <td class="text-left">HI3101</td>
                           <td><b>Hindi</b></td>
                           <td>Humanities</td>
-                          <td>Inactive</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">60&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -359,16 +359,16 @@
                           <td class="text-left">EE1691</td>
                           <td><b>Electrical Energy Systems</b></td>
                           <td>Electrical</td>
-                          <td>Active</td>
+                          <td class="text-center">3</td>
                           <td class="text-right">120&nbsp;</td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Edit Data" class="btn btn-success actions">
-                              <i class="material-icons">edit</i>
+                            <button type="button" rel="tooltip" data-placement="top" title="upload data" class="btn btn-success actions">
+                              <i class="material-icons">backup</i>
                             </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions">
+                            <button type="button" rel="tooltip" data-placement="top" title="Delete Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course deleted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
                               <i class="material-icons">close</i>
                             </button>
                           </td>
@@ -399,93 +399,54 @@
               </div>
             </div>
           </div>
-<!--          <div class="row">
-            <div class="col-md-4 ml-auto mr-auto">
-              <div class="card card-pricing bg-rose"><div class="card-body ">
-                <div class="card-icon"><i class="material-icons">school</i></div>
-                <h3 class="card-title">Open Elective</h3>
-                <p class="card-description">Create a new open elective and make it live whenever you want.</p>
-                <a href="#" class="btn btn-white btn-round" style="margin-top: 10px;" data-toggle="modal" data-target="#myModal">create</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 ml-auto mr-auto">
-              <div class="card card-pricing bg-success"><div class="card-body ">
-                <div class="card-icon"><i class="material-icons">school</i></div>
-                <h3 class="card-title">Department Elective</h3>
-                <p class="card-description">
-                  <p class="card-description">Create a new department elective and make it live whenever you want.</p>
-                </p>
-                <a href="#" class="btn btn-white btn-round" style="margin-top: 10px;" data-toggle="modal" data-target="#myModal">create</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 ml-auto mr-auto">
-              <div class="card card-pricing bg-info"><div class="card-body ">
-                <div class="card-icon"><i class="material-icons">school</i></div>
-                <h3 class="card-title">Curriculum Course</h3>
-                <p class="card-description">
-                  <p class="card-description">Create a new curriculum course and make it live whenever you want.</p>
-                </p>
-                <a href="#" class="btn btn-white btn-round" style="margin-top: 10px;" data-toggle="modal" data-target="#myModal">create</a>
-                </div>
-              </div>
-            </div>
-          </div>          -->
         </div>
       </div>
-<!--  Modals  -->
-<!--      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+<!--Modals-->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Create</h5>
+              <h5 class="modal-title">Description</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <i class="material-icons">clear</i>
               </button>
             </div>
             <div class="modal-body">
-              <form class="contact-form">
-                <div class="row" style="padding-bottom: 10px;">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Course Code</label>
-                      <input type="text" required="required" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="label-control">Make Live On</label>
-                      <input type="text" class="form-control datetimepicker" value="08/04/2018">
-                    </div>
-                  </div>
-                  <div class="col-md-6" style="margin-top: 10px;">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Course Name</label>
-                      <input type="text" required="required" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6" style="margin-top: 10px;">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Department</label>
-                      <input type="text" required="required" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="exampleMessage" class="bmd-label-floating">Description</label>
-                  <textarea type="text" class="form-control" rows="3" id="exampleMessage"></textarea>
-                </div>
-              </form>
+
+              <h5 class="text-center"><b>Course Code | Course Name</b></h5>
+              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. <br>Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.
+              Cras viverra mauris sed lectus accumsan, in ultrices ante euismod. Duis mattis massa in pharetra venenatis. Pellentesque ultricies, urna id placerat porta, arcu libero fermentum felis, posuere faucibus dolor tortor non lectus. Quisque tempus felis maximus, congue enim in, hendrerit mi.<br> Nulla facilisi. Praesent sodales velit orci, sit amet vehicula nunc tincidunt a. Nulla in felis libero. Cras gravida turpis ac nulla vestibulum tristique. Donec mollis egestas nisi, eget pellentesque ante tincidunt a. Suspendisse tellus justo, faucibus id erat a, venenatis placerat leo. Cras venenatis posuere lacus, vel porttitor diam facilisis ut. Phasellus sit amet tincidunt sapien.</p>
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-link">Create</button>
+              <button type="button" class="btn btn-primary btn-link">Download</button>
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
--->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Subject</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--Modals-->
       <footer class="footer footer-default">
         <div class="container">
       <!--

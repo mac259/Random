@@ -82,6 +82,7 @@ module.exports = function(app, passport) {
             }
 
             //this is when login is successful
+            console.log('one-one');
             req.logIn(user, function(err) {
                 if (err) { return next(err); }
                 console.log(req.body);

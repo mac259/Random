@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <title>Elective Portal</title>
-  <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/favicon.png" /> <!--Favicon for apple devices-->
+  <link rel="icon" type="image/x-icon" href="/Student Pro 2/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/Student Pro 2/assets/img/favicon.png" /> <!--Favicon for apple devices-->
   <!-- Meta Tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
   <!-- Stylesheets -->
-  <link href="./assets/css/student-style.css" rel="stylesheet" />
+  <link href="/Student Pro 2/assets/css/student-style.css" rel="stylesheet" />
 </head>
 
 <body class="login-page sidebar-collapse">
@@ -23,12 +23,12 @@
       </div>
     </div>
   </nav>
-  <div class="page-header header-filter" style="background-image: url('./assets/img/bg-login.jpeg'); background-size: cover; background-position: top center; height: 100vh;">
+  <div class="page-header header-filter" style="background-image: url('/Student Pro 2/assets/img/bg-login.jpeg'); background-size: cover; background-position: top center; height: 100vh;">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
           <div class="card card-login">
-            <form class="form" method="" action="">
+            <form class="form" method="post" action="/login">
               <div class="card-header card-header-primary text-center">
                 <i class="material-icons" style="font-size: 3.1rem;">fingerprint</i>
                 <h4 class="card-title">Login</h4>
@@ -41,7 +41,7 @@
                       <i class="material-icons">face</i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Enter Username">
+                  <input type="text" class="form-control" name="id" placeholder="Enter Username">
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
@@ -49,7 +49,7 @@
                       <i class="material-icons">lock_outline</i>
                     </span>
                   </div>
-                  <input id="loginPassStatus" type="password" class="form-control" placeholder="Enter Password">
+                  <input id="loginPassStatus" type="password"  name="password" class="form-control" placeholder="Enter Password">
                   <div class="toggle-pass">
                     <div class="buttons-pass" onclick="this.classList.toggle('active'); changeView();">
                       <div class="circle-pass">
@@ -58,13 +58,13 @@
                   </div>
                 </div>
                 <div class="input-group cont" style="padding-left: 22px;">
-                  <form action="" method="get">
-                    <div class="g-recaptcha" data-theme="light" data-sitekey="6Lfg-l4UAAAAAALvo7I0X50fbj6gbMUUK9nQwCAh"></div>
-                  </form>
+                  
+                    <div class="g-recaptcha" id ="gg" data-theme="light" data-sitekey="6Lfg-l4UAAAAAALvo7I0X50fbj6gbMUUK9nQwCAh"></div>
+                  
                 </div>
               </div>
               <div class="footer text-center">
-                <a href="#" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
+                <input type = 'submit' class="btn btn-primary btn-link btn-wd btn-lg" value = 'Get Started' name="submit">
               </div>
             </form>
           </div>
@@ -95,21 +95,37 @@
       </div>
     </footer>
   </div>
-  <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="./assets/js/core/bootstrap-design.min.js" type="text/javascript"></script>
-  <script src="./assets/js/plugins/moment.min.js"></script>
+  <script src="/Student Pro 2/assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="/Student Pro 2/assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="/Student Pro 2/assets/js/core/bootstrap-design.min.js" type="text/javascript"></script>
+  <script src="/Student Pro 2/assets/js/plugins/moment.min.js"></script>
   <!-- Plugin for the Datepicker -->
-  <script src="./assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <script src="/Student Pro 2/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!-- Plugin for the Slider -->
-  <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <script src="/Student Pro 2/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
   <!-- Plugin for Sharrre Btn -->
-  <script src="./assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+  <script src="/Student Pro 2/assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
   <!-- Control Script for parallax effects, modals etc. -->
-  <script src="./assets/js/student-main.js" type="text/javascript"></script>
+  <script src="/Student Pro 2/assets/js/student-main.js" type="text/javascript"></script>
   <!-- Google ReCaptcha API Plugin -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- Script for responsive reCaptcha -->
-  <script src="./assets/js/reCaptcha.js"></script>
+  <script src="/Student Pro 2/assets/js/reCaptcha.js"></script>
+   <!-- <script type="text/javascript">
+        
+            $("form").on('submit', function (e) {
+                  var googleResponse = jQuery('#g-recaptcha-response').val();                 
+                  if (!googleResponse) {
+                      $('<p style="color:red !important" class="error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#html_element");
+                      alert('Please check');
+                      e.preventDefault();
+                  } else {            
+                      return true;
+                  }
+                   
+                });
+
+
+  </script> -->
 </body>
 </html>

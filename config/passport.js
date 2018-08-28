@@ -12,6 +12,7 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
+        console.log('two-two');
        if(user.userID) 
         done(null, user.userID);
        else if(user.regNO)
@@ -21,6 +22,7 @@ module.exports = function(passport) {
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
         console.log(id);
+        console.log('three-three');
         if(isNaN(id)) 
         {    
                 connection.query("SELECT * FROM admin WHERE userID = ? ",[id], function(err, rows){

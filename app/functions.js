@@ -32,7 +32,7 @@ module.exports = {
             res.redirect('/dashboard');
         }
         else
-            res.render('login.ejs');
+            res.render('admin_login.ejs');
 
     },
 
@@ -145,6 +145,18 @@ module.exports = {
                                 if(err2)
                                     throw err2;
                                 else{
+
+                                   /* function sleep(ms) {
+                                        return new Promise(resolve => setTimeout(resolve, ms));
+                                        }
+
+                                    async function demo() {
+                                          console.log('Taking a break...');
+                                          await sleep(20000);
+                                          console.log('Two second later');
+                                    }
+                                */
+                                    
                                     res.redirect("/dashboard");
                                 }
                             });

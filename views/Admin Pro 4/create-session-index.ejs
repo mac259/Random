@@ -63,13 +63,13 @@
             <ul class="nav nav-inner">
               <li class="nav-item active">
                 <a class="nav-link" href="./create-session-index.html">
-                  <span class="sidebar-mini" style="">CS</span>
+                  <span class="sidebar-mini">CS</span>
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="./existing-sessions-index.html">
-                  <span class="sidebar-mini" style="">ES</span>
+                  <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
                 </a>
               </li>
@@ -113,7 +113,7 @@
               <i class="material-icons">more_vert</i>
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
-              <a class="dropdown-item" href="#">Upload Files</a>
+              <a class="dropdown-item" href="#">Download Guide</a>
               <a class="dropdown-item" href="#">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Create Session</a>
@@ -152,14 +152,14 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">&bull; New requests available!</a>
-                  <a class="dropdown-item" href="#">&bull; You have 5 new tasks for today!</a>
-                  <a class="dropdown-item" href="#">&bull; New form created by @admin_1191</a>
-                  <a class="dropdown-item" href="#">&bull; Daily submissions data updated</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New requests available!</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; You have 5 new tasks for today!</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New form created by @admin_1191</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; Daily submissions data updated</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./login.html">
+                <a class="nav-link" href="../Student Pro/login-index.html">
                   <i class="material-icons">lock</i>
                   <p class="d-lg-none d-md-block">
                     Logout
@@ -194,18 +194,18 @@
                   <div class="card-body ">
                     <div class="tab-content text-center">
                       <div class="tab-pane active" id="specs">
-                        <form action="create_session" method="post">
+                        <form>
                           <div class="row">
                             <div class="col-md-6">
                               <div class="form-group">
                                 <label class="label-control">Make Live On</label>
-                                <input type="text" class="form-control datetimepicker" value="2018-08-15" name="slive">
+                                <input type="text" class="form-control datetimepicker" value="">
                               </div>
                             </div>
                             <div class="col-md-6">
                               <div class="form-group">
                                 <label class="label-control">Deadline</label>
-                                <input type="text" class="form-control datetimepicker" value="2018-08-20" name="sallott"> 
+                                <input type="text" class="form-control datetimepicker" value="">
                               </div>
                             </div>
                           </div>
@@ -213,13 +213,13 @@
                             <div class="col-md-6">
                               <div class="form-group text-left">
                                 <label class="bmd-label-floating">Name</label>
-                                <input type="text" class="form-control" name="elective_name">
+                                <input required="required" type="text" class="form-control">
                               </div>
                             </div>
                             <div class="col-md-6 oe-de-radios">
                               <div class="form-check form-check-radio form-check-inline float-left">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="option1" checked> Open Elective
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> Open Elective
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -227,7 +227,7 @@
                               </div>
                               <div class="form-check form-check-radio form-check-inline float-left">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="option2"> Department Elective
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Department Elective
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -238,18 +238,19 @@
                           <br>
                           <div class="row">
                             <div class="col-md-12">
-                              <button type="submit" class="btn btn-rose pull-right">Create Session</button>
+                              <!--<button type="submit" class="btn btn-rose pull-right">Create Session</button>-->
+                              <button type="submit" class="btn btn-rose pull-right" onclick='swal({ title:"Success!", text: "Session Created!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Create Session</button>
                               <div class="clearfix"></div>
                             </div>
                           </div>
-                      <!--  </form> -->
+                        </form>
                       </div>
                       <div class="tab-pane" id="depts">
-                       <!-- <form style="margin-top: 9px;"> -->
+                        <form style="margin-top: 9px;">
                           <div class="row">
                             <div class="col-md-6 stream">
                               <div class="form-check form-check-inline">
-                                <p style="font-size: 14px; color: #999;">
+                                <p style="font-size: 14px; color: #888;">
                                   Computer Science Engineering
                                 </p>
                               </div>
@@ -257,7 +258,7 @@
                             <div class="col-md-6 sem">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value=6 name="sm_ids"> III
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> III
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -265,7 +266,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value=7 name="sm_ids"> IV
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> IV
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -273,7 +274,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value=8 name="sm_ids"> V
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> V
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -281,7 +282,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value=9 name="sm_ids"> VI
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4"> VI
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -289,7 +290,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value=10 name="sm_ids"> VII
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5"> VII
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -300,7 +301,7 @@
                           <div class="row">
                             <div class="col-md-6 stream">
                               <div class="form-check form-check-inline">
-                                <p style="font-size: 14px; color: #999;">
+                                <p style="font-size: 14px; color: #888;">
                                   Information Technology Engineering
                                 </p>
                               </div>
@@ -308,7 +309,7 @@
                             <div class="col-md-6 sem">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value=11 name="sm_ids"> III
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option1"> III
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -316,7 +317,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value=12 name="sm_ids"> IV
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2"> IV
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -324,7 +325,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value=13 name="sm_ids"> V
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option3"> V
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -332,7 +333,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value=14 name="sm_ids"> VI
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option4"> VI
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -340,7 +341,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value=15 name="sm_ids"> VII
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option5"> VII
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -351,7 +352,7 @@
                           <div class="row">
                             <div class="col-md-6 stream">
                               <div class="form-check form-check-inline">
-                                <p style="font-size: 14px; color: #999;">
+                                <p style="font-size: 14px; color: #888;">
                                   Computer & Communication Engineering
                                 </p>
                               </div>
@@ -359,7 +360,7 @@
                             <div class="col-md-6 sem">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value=2 name="sm_ids"> III
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option1"> III
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -367,7 +368,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value=3 name="sm_ids"> IV
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="option2"> IV
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -375,7 +376,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value=1 name="sm_ids"> V
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="option3"> V
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -383,7 +384,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value=4 name="sm_ids"> VI
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="option4"> VI
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -391,7 +392,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value=5 name="sm_ids"> VII
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox15" value="option5"> VII
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -402,7 +403,7 @@
                           <div class="row">
                             <div class="col-md-6 stream">
                               <div class="form-check form-check-inline">
-                                <p style="font-size: 14px; color: #999;">
+                                <p style="font-size: 14px; color: #888;">
                                   Electronics & Communication Engineering
                                 </p>
                               </div>
@@ -410,7 +411,7 @@
                             <div class="col-md-6 sem">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value=16 name="sm_ids"> III
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox16" value="option1"> III
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -418,7 +419,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value=17 name="sm_ids"> IV
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox17" value="option2"> IV
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -426,7 +427,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value=18 name="sm_ids"> V
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox18" value="option3"> V
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -434,7 +435,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value=19 name="sm_ids"> VI
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox19" value="option4"> VI
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -442,7 +443,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value=20 name="sm_ids"> VII
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox20" value="option5"> VII
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -453,15 +454,15 @@
                           <div class="row">
                             <div class="col-md-6 stream">
                               <div class="form-check form-check-inline">
-                                <p style="font-size: 14px; color: #999;">
-                                  Mechanical Engineering
+                                <p style="font-size: 14px; color: #888;">
+                                  Electronics & Electrical Engineering
                                 </p>
                               </div>
                             </div>
                             <div class="col-md-6 sem">
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value=21 name="sm_ids"> III
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox21" value="option1"> III
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -469,7 +470,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value=22 name="sm_ids"> IV
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox22" value="option2"> IV
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -477,7 +478,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value=23 name="sm_ids"> V
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox23" value="option3"> V
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -485,7 +486,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value=24 name="sm_ids"> VI
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox24" value="option4"> VI
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -493,7 +494,7 @@
                               </div>
                               <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value=25 name="sm_ids"> VII
+                                  <input class="form-check-input" type="checkbox" id="inlineCheckbox25" value="option5"> VII
                                   <span class="circle">
                                     <span class="check"></span>
                                   </span>
@@ -546,6 +547,29 @@
           </div>
         </div>
       </div>
+<!--Modals-->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Subject</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--Modals-->
       <footer class="footer footer-default">
         <div class="container">
     <!--
