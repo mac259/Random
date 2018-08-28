@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <title>Elective Portal</title>
-  <link rel="icon" type="image/png" href="/Admin Pro 4/assets/img/favicon.ico">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Admin Pro 4/assets/img/favicon.png"> <!--Favicon for apple devices-->
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon.png"> <!--Favicon for apple devices-->
   <!-- Meta Tags -->
   <meta charset="utf-8" />
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -12,15 +12,15 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!--  Stylesheets  -->
-  <link href="/Admin Pro 4/assets/css/admin-style.css" rel="stylesheet" />
-  <link href="/Admin Pro 4/assets/css/admin-style2.css" rel="stylesheet" />
-  <link href="/Admin Pro 4/assets/css/bootstrap-select.css" rel="stylesheet" />
-  <link href="/Admin Pro 4/assets/css/sweetalert2.css" rel="stylesheet" />
+  <link href="assets/css/admin-style.css" rel="stylesheet" />
+  <link href="assets/css/admin-style2.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap-select.css" rel="stylesheet" />
+  <link href="assets/css/sweetalert2.css" rel="stylesheet" />
 </head>
 
 <body class="">
   <div class="wrapper">
-    <div class="sidebar" data-color="rose" data-background-color="black" data-image="/Admin Pro 4/assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="rose" data-background-color="black" data-image="assets/img/sidebar-5.jpg">
       <!--  options: data-color="purple | azure | green | orange | danger"  -->
       <div class="logo">
         <a href="" class="simple-text logo-normal">
@@ -53,13 +53,13 @@
               <p>Forms</p>
             </a>
           </li>           -->
-          <li class="nav-item active">
-            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+          <li class="nav-item ">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
               <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
-          <div class="collapse show" id="collapseExample">
+          <div class="collapse" id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
@@ -67,7 +67,7 @@
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="./existing-sessions-index.html">
                   <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
@@ -87,7 +87,7 @@
               <p>Broadcast</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./notifications-index.html">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
@@ -116,7 +116,7 @@
               <a class="dropdown-item" href="#">Upload Files</a>
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal99">Change Password</a>
             </div>
-            <a class="navbar-brand" href="">Existing Sessions</a>
+            <a class="navbar-brand" href="">Notifications</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -172,92 +172,128 @@
       </nav>
       <div class="content">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">Session Stats</h4>
-                  <p class="card-category">Session Details</p>
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Notifications</h3>
+              <p class="card-category">Messages and Requests</p>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h4 class="card-title">Messages</h4>
+                  <div class="alert alert-info alert-with-icon" data-notify="container">
+                    <i class="material-icons" data-notify="icon">add_alert</i>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">&nbsp;close</i>
+                    </button>
+                    <button type="button" class="close"  aria-label="Close">
+                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
+                        <i class="material-icons">undo</i>
+                      </a>
+                    </button>
+                    <span data-notify="message">This is a with reference to the latest OE decision taken by the SCIT department and we wish to inform yout that your request for specialisation in OEs has been taken under consideration. We will keep you in the loop for any upcoming changes.</span>
+                  </div>
+                  <div class="alert alert-info alert-with-icon" data-notify="container">
+                    <i class="material-icons" data-notify="icon">add_alert</i>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">&nbsp;close</i>
+                    </button>
+                    <button type="button" class="close"  aria-label="Close">
+                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
+                        <i class="material-icons">undo</i>
+                      </a>
+                    </button>
+                    <span data-notify="message">Sir, I am replying to your request for new room allocation for Python OE. The new room as of tomorrow is 1-AB 110.</span>
+                  </div>
                 </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-primary">
-                      <th>Name</th>
-                      <th>Type</th>
-                      <th>Created By</th>
-                      <th>Status</th>
-                      <th class="text-right">Start Date</th>
-                      <th class="text-right">End Date</th>
-                    </thead>
-                    <tbody>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>OE '19 Even Sem</td>
-                        <td>Open Elective</td>
-                        <td>@admin_1191</td>
-                        <td>Upcoming</td>
-                        <td class="text-right">13th Dec '19</td>
-                        <td class="text-right">&nbsp;--&nbsp;</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>OE '19 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@admin_1191</td>
-                        <td>Upcoming</td>
-                        <td class="text-right">11th May '19</td>
-                        <td class="text-right">&nbsp;--&nbsp;</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>DE '18 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@brainy.admin21</td>
-                        <td>Ongoing</td>
-                        <td class="text-right">24th May '18</td>
-                        <td class="text-right">8th June '18</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>OE '18 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@bossadmin</td>
-                        <td>Ongoing</td>
-                        <td class="text-right">20th May '18</td>
-                        <td class="text-right">3rd June '18</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>DE '17 Even Sem</td>
-                        <td>Open Elective</td>
-                        <td>@admin1986</td>
-                        <td>Completed</td>
-                        <td class="text-right">5th Dec '17</td>
-                        <td class="text-right">16th Jan '18</td>
-                      </tr>
-                    </tbody>
-                  </table><!--<a class="text-center see-more" href="#">See more</a>-->
-                </div>
-                <div class="col-md-12">
-                  <ul class="pagination pagination-primary justify-content-center">
-                    <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">Previous</a>
-                    </li>
-                    <li class="page-item active pagination-primary">
-                      <a href="javascript:void(0);" class="page-link">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">Next</a>
-                    </li>
-                  </ul>
+                <div class="col-md-6">
+                  <h4 class="card-title">Requests</h4>
+                  <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">&nbsp;close</i>
+                    </button>
+                    <button type="button" class="close"  aria-label="Close">
+                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
+                        <i class="material-icons">undo</i>
+                      </a>
+                    </button>
+                    <span>
+                      <b> OE Change </b><br>Respected sir, kindly alot me a new OE due to conflict in interests.<br><b> Aniket Mukherjee, 169105033 </b></span>
+                  </div>
+                  <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">&nbsp;close</i>
+                    </button>
+                    <button type="button" class="close"  aria-label="Close">
+                      <a class="" href="#" data-toggle="modal" data-target="#myModal">
+                        <i class="material-icons">undo</i>
+                      </a>
+                    </button>
+                    <span>
+                      <b> Form Reset </b><br>Respected sir, kindly reset my form as I would like to make modifications to the sequence.<br><b> Prerit Pathak, 169105131 </b></span>
+                  </div>
                 </div>
               </div>
             </div>
+<!--        <div class="col-md-12">
+              <div class="places-buttons">
+                <div class="row">
+                  <div class="col-lg-4 col-md-10 ml-auto mr-auto">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button class="btn btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
+                      </div>
+                      <div class="col-md-6">
+                        <button class="btn btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>           -->
           </div>
         </div>
       </div>
 <!--Modals-->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Reply</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="contact-form">
+                <div class="row" style="padding-bottom: 10px;">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Subject</label>
+                      <input type="text" required="required" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6 space-out modal-date-time">
+                    <div class="form-group">
+                      <label class="label-control">Suited Date & Time</label>
+                      <input type="text" class="form-control datetimepicker" value="">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleMessage" class="bmd-label-floating">Description</label>
+                  <textarea type="text" class="form-control" rows="3" id="exampleMessage"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <!--<button type="button" class="btn btn-primary btn-link">Send</button>-->
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Message Sent!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Send</button>
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal fade" id="myModal99" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -326,20 +362,20 @@
       </footer>
     </div>
   </div>
-  <script src="/Admin Pro 4/assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/core/bootstrap-design.min.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/moment.min.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/chartist.min.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/bootstrap-select.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/sweetalert2.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/bootstrap-design.min.js" type="text/javascript"></script>
+  <script src="assets/js/plugins/moment.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/js/plugins/chartist.min.js"></script>
+  <script src="assets/js/plugins/bootstrap-select.js"></script>
+  <script src="assets/js/plugins/sweetalert2.js"></script>
+  <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!--  Plugin for Notifications  -->
-  <script src="/Admin Pro 4/assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!--  Control Scripts for parallax effects, modals etc.  -->
-  <script src="/Admin Pro 4/assets/js/admin-main.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/admin-main2.js"></script>
+  <script src="assets/js/admin-main.js" type="text/javascript"></script>
+  <script src="assets/js/admin-main2.js"></script>
   <script>
     $(document).ready(function() {
 

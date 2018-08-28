@@ -59,7 +59,7 @@
               <i class="material-icons">cloud_download</i> Download
             </a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown">  <!-- REVIEW: The notifications should appear in the dropdown even if they are marked read, only the bullet should disappear once read. After 1 month of a notification being read, it should be removed from the dropdown menu -->
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="material-icons">notifications</i>
               <span class="notification">4</span>
@@ -164,27 +164,11 @@
                 <div class="tab-content tab-space">
                   <div class="tab-pane text-center sub-info" id="completed">
                     <br>
-                    <a href="#"><p><b>Open Elective 2017-18 Even Semester</b></a>
+                    <a style="cursor: default;"><p><b>Open Elective 2017-18 Even Semester</b></a>
                     <br>
                     CM1493 Social Entrepreneurship</p>
                   </div>
                   <div class="tab-pane active text-center sub-info" id="ongoing">
-<!--
-                  <h3>
-                    <small>Time Elapsed</small>
-                  </h3>
-                  <div id="progress">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="progress progress-line-primary">
-                          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            <span class="sr-only">60% Complete</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
--->
                     <br>
                     <a href="#" data-toggle="modal" data-target="#myModal3"><p><b>Open Elective 2018-19 Odd Semester</b></a>
                     <br>
@@ -266,7 +250,7 @@
             </div>
             <div class="row text-center" id="modals">
               <div class="col-md-12 text-center">
-                <button type="button" class="btn btn-rose ml-auto mr-auto" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Availability/Deadline" data-content="This form must be submitted by 10th August 2018." data-container="body">Details</button><!--data-content="No forms are currently active."-->
+                <button type="button" class="btn btn-rose ml-auto mr-auto" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Deadlines" data-content="Forms for &apos;Open Elective 2018-19 Even Semester&apos; and &apos;Department Elective 2018-19 Odd Semester&apos; must be submitted by 27th August 2018 and 31st August 2018 respectively." data-container="body">Details</button> <!--data-content="No forms are currently active." title="Availability/Deadline"-->
               </div>
             </div>
           </div>
@@ -314,7 +298,7 @@
               <br>
               <div class="row">
                 <div class="col-md-4 ml-auto mr-auto text-center">
-                  <button type="submit" class="btn btn-primary btn-raised" onclick='swal({ title:"Success!", text: "Your message has been sent!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'><i class="material-icons">forward</i> Send Request</button>
+                  <button type="submit" class="btn btn-primary btn-raised" onclick='swal({ title:"Success!", text: "Your message has been sent!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'><i class="material-icons">forward</i> Send Request</button>  <!-- REVIEW: After clicking this button all input fields must be reset -->
                 </div>
               </div>
             </form>
@@ -337,7 +321,7 @@
           <div class="row-sm">
             <div class="col-md-12">
               <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
+                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select"> <!-- REVIEW: Reset this modal once priority list is submitted -->
                   <option class="resp" disabled selected>Choose Session</option>
                   <option class="resp" value="2">Open Elective 2018-19 Even Semester</option>
                   <option class="resp" value="3">Department Elective 2018-19 Odd Semester</option>
@@ -444,7 +428,7 @@
         </div>
         <div class="modal-footer">
           <div class="col-md-12 text-right" style="padding-right: 0; padding-left: 0px;">
-            <button type="submit" class="btn btn-primary btn-link" onclick='swal({ title:"Success!", text: "Your preferences have been recorded!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Submit</button>
+            <button type="submit" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Your preferences have been recorded!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Submit</button>
             <button type="submit" class="btn btn-success btn-link">Reset</button>
             <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
           </div>
@@ -467,7 +451,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+          <button type="button" class="btn btn-primary btn-link" data-dismiss="modal">Mark as read</button> <!-- REVIEW: Clicking this button should remove the &bull; from the notification thus differentiating between read and unread notifications -->
           <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
         </div>
       </div>

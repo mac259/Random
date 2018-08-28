@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <title>Elective Portal</title>
-  <link rel="icon" type="image/png" href="/Admin Pro 4/assets/img/favicon.ico">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Admin Pro 4/assets/img/favicon.png"> <!--Favicon for apple devices-->
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon.png"> <!--Favicon for apple devices-->
   <!-- Meta Tags -->
   <meta charset="utf-8" />
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -12,15 +12,15 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!--  Stylesheets  -->
-  <link href="/Admin Pro 4/assets/css/admin-style.css" rel="stylesheet" />
-  <link href="/Admin Pro 4/assets/css/admin-style2.css" rel="stylesheet" />
-  <link href="/Admin Pro 4/assets/css/bootstrap-select.css" rel="stylesheet" />
-  <link href="/Admin Pro 4/assets/css/sweetalert2.css" rel="stylesheet" />
+  <link href="assets/css/admin-style.css" rel="stylesheet" />
+  <link href="assets/css/admin-style2.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap-select.css" rel="stylesheet" />
+  <link href="assets/css/sweetalert2.css" rel="stylesheet" />
 </head>
 
 <body class="">
   <div class="wrapper">
-    <div class="sidebar" data-color="rose" data-background-color="black" data-image="/Admin Pro 4/assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="rose" data-background-color="black" data-image="assets/img/sidebar-5.jpg">
       <!--  options: data-color="purple | azure | green | orange | danger"  -->
       <div class="logo">
         <a href="" class="simple-text logo-normal">
@@ -35,7 +35,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./admins-index.html">
               <i class="material-icons">person</i>
               <p>Admins</p>
@@ -53,13 +53,13 @@
               <p>Forms</p>
             </a>
           </li>           -->
-          <li class="nav-item active">
-            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+          <li class="nav-item ">
+            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="material-icons">access_alarm</i>
               <p>Sessions&nbsp;<b class="caret"></b></p>
             </a>
           </li>
-          <div class="collapse show" id="collapseExample">
+          <div class="collapse" id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
                 <a class="nav-link" href="./create-session-index.html">
@@ -67,7 +67,7 @@
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="./existing-sessions-index.html">
                   <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
@@ -114,9 +114,9 @@
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
               <a class="dropdown-item" href="#">Upload Files</a>
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal99">Change Password</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal99">Change Password</a>  <!-- TODO: Replace this line -->
             </div>
-            <a class="navbar-brand" href="">Existing Sessions</a>
+            <a class="navbar-brand" href="">Admins</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -173,76 +173,133 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12 col-md-12">
+            <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Session Stats</h4>
-                  <p class="card-category">Session Details</p>
+                  <h4 class="card-title">Admin Profile</h4>
+                  <p class="card-category">Create New Admin</p>
                 </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-primary">
-                      <th>Name</th>
-                      <th>Type</th>
-                      <th>Created By</th>
-                      <th>Status</th>
-                      <th class="text-right">Start Date</th>
-                      <th class="text-right">End Date</th>
-                    </thead>
-                    <tbody>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>OE '19 Even Sem</td>
-                        <td>Open Elective</td>
-                        <td>@admin_1191</td>
-                        <td>Upcoming</td>
-                        <td class="text-right">13th Dec '19</td>
-                        <td class="text-right">&nbsp;--&nbsp;</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>OE '19 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@admin_1191</td>
-                        <td>Upcoming</td>
-                        <td class="text-right">11th May '19</td>
-                        <td class="text-right">&nbsp;--&nbsp;</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>DE '18 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@brainy.admin21</td>
-                        <td>Ongoing</td>
-                        <td class="text-right">24th May '18</td>
-                        <td class="text-right">8th June '18</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>OE '18 Odd Sem</td>
-                        <td>Department Elective</td>
-                        <td>@bossadmin</td>
-                        <td>Ongoing</td>
-                        <td class="text-right">20th May '18</td>
-                        <td class="text-right">3rd June '18</td>
-                      </tr>
-                      <tr class="clickable-row sub-info" data-href="session-redirect-index.html">
-                        <td>DE '17 Even Sem</td>
-                        <td>Open Elective</td>
-                        <td>@admin1986</td>
-                        <td>Completed</td>
-                        <td class="text-right">5th Dec '17</td>
-                        <td class="text-right">16th Jan '18</td>
-                      </tr>
-                    </tbody>
-                  </table><!--<a class="text-center see-more" href="#">See more</a>-->
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Campus (Disabled)</label>
+                          <input type="text" class="form-control" disabled>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email Address</label>
+                          <input type="email" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">First Name</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Last Name</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Department</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="label-control">SOA</label>
+                          <input type="text" class="form-control datetimepicker" value="" />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Password</label>
+                          <input type="password" min="0" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">About</label>
+                          <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </div><br>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <select class="selectpicker contain pull-left" data-style="btn btn-secondary" title="Single Select">
+                          <option class="resp" disabled selected>Privileges</option>
+                          <option class="resp" value="2">All Access</option>
+                          <option class="resp" value="3">Course Management</option>
+                          <option class="resp" value="4">Data Analysis</option>
+                          <option class="resp" value="5">Help & Support</option>
+                        </select>
+                      </div>
+                      <div class="col-md-8 grant-div">
+                        <!--<button type="submit" class="btn btn-primary pull-right grant-access">Grant Access</button>-->
+                        <button type="submit" class="btn btn-primary pull-right grant-access" onclick='swal({ title:"Success!", text: "Access Granted!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Grant Access</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header card-header-rose">
+                  <h4 class="card-title">Admin Stats</h4>
+                  <p class="card-category">Authorized Admins</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="text-rose">
+                        <th>Username</th>
+                        <th>Privileges</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>@bossadmin</td>
+                          <td>Data Analysis</td>
+                        </tr>
+                        <tr>
+                          <td>@brainy.admin21</td>
+                          <td>Help & Support</td>
+                        </tr>
+                        <tr>
+                          <td>@admin1986</td>
+                          <td>Course Management</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
                 <div class="col-md-12">
-                  <ul class="pagination pagination-primary justify-content-center">
+                  <ul class="pagination pagination-rose justify-content-center admins-pagination">
                     <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">Previous</a>
+                      <a href="javascript:void(0);" class="page-link">Prev</a>
                     </li>
-                    <li class="page-item active pagination-primary">
+                    <li class="page-item active pagination-rose">
                       <a href="javascript:void(0);" class="page-link">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a href="javascript:void(0);" class="page-link">2</a>
                     </li>
                     <li class="page-item">
                       <a href="javascript:void(0);" class="page-link">3</a>
@@ -257,7 +314,7 @@
           </div>
         </div>
       </div>
-<!--Modals-->
+<!--Modals--> <!-- TODO: Add from here -->
       <div class="modal fade" id="myModal99" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -300,10 +357,10 @@
           </div>
         </div>
       </div>
-<!--Modals-->
+<!--Modals--> <!-- TODO: Add till here -->
       <footer class="footer footer-default">
         <div class="container">
-    <!--
+      <!--
           <nav class="float-left">
             <ul>
               <li>
@@ -313,7 +370,7 @@
               </li>
             </ul>
           </nav>
-    -->
+      -->
           <div class="copyright float-right"><a>
             &copy;
             <script>
@@ -326,26 +383,26 @@
       </footer>
     </div>
   </div>
-  <script src="/Admin Pro 4/assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/core/bootstrap-design.min.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/moment.min.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/chartist.min.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/bootstrap-select.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/sweetalert2.js"></script>
-  <script src="/Admin Pro 4/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/bootstrap-design.min.js" type="text/javascript"></script>
+  <script src="assets/js/plugins/moment.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/js/plugins/chartist.min.js"></script>
+  <script src="assets/js/plugins/bootstrap-select.js"></script>
+  <script src="assets/js/plugins/sweetalert2.js"></script>
+  <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!--  Plugin for Notifications  -->
-  <script src="/Admin Pro 4/assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
   <!--  Control Scripts for parallax effects, modals etc.  -->
-  <script src="/Admin Pro 4/assets/js/admin-main.js" type="text/javascript"></script>
-  <script src="/Admin Pro 4/assets/js/admin-main2.js"></script>
+  <script src="assets/js/admin-main.js" type="text/javascript"></script>
+  <script src="assets/js/admin-main2.js" type="text/javascript"></script>
   <script>
-    $(document).ready(function() {
+  $(document).ready(function() {
 
-      md.initDashboardPageCharts();
+    md.initDashboardPageCharts();
 
-    });
+  });
   </script>
 </body>
 </html>
