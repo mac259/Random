@@ -119,9 +119,9 @@ module.exports = function(app, passport) {
 
     app.get('/elective/:token',functions.isLoggedInfunc, admin_access, functions.elective_stats);
 
-    app.get('/past',functions.isLoggedInfunc, admin_access, functions.past_electives);
+    app.get('/sessions',functions.isLoggedInfunc, admin_access, functions.all_sessions);
 
-    app.get('/present',functions.isLoggedInfunc, admin_access, functions.present_electives);
+    app.get('/session_stats/:id',functions.isLoggedInfunc, admin_access, functions.session_stats);
 
     app.get('/student-data',functions.isLoggedInfunc, admin_access, functions.student_data)
 
@@ -145,22 +145,27 @@ module.exports = function(app, passport) {
     app.post('/create_admin', functions.isLoggedInfunc, admin_access, functions.create_new_admin);
 
     app.get('/upload', (req,res)=>{res.render("upload.ejs")});
-    app.post('/upload',upload.single('media'), functions.upload);
+    app.post('/upload',functions.isLoggedInfunc, admin_access, upload.single('media'), functions.upload_student_data);
 
-    app.get('/broadcast', functions.isLoggedInfunc, admin_access, functions.broadcast);
+    app.get('/broadcast', functions.isLoggedInfunc, admin_access, functions.broadcast_notifications);
+
+    app.get('/notifications', functions.isLoggedInfunc, admin_access, functions.notifications);
+
+    
 
 
   // #########################################################################################
-  // ######################    STUDENT ROUTES   ###########################################
+  // #########################    STUDENT ROUTES   ###########################################
   // #########################################################################################
 
 
-  app.get('/main',functions.isLoggedInfunc, student_access, functions.student_dashboard);
+  app.get('/main',functions.std_isLoggedInfunc, student_access, functions.student_dashboard);
 
-  app.get('/upcoming', functions.isLoggedInfunc, student_access, functions.upcoming_electives);
+  app.get('/upcoming', functions.std_isLoggedInfunc, student_access, functions.upcoming_electives);
 
+  app.post('/submit_oe/:id', functions.std_isLoggedInfunc, student_access, functions.fill_oe_form);
 
-
+  app.get('/check', functions.std_isLoggedInfunc, functions.checked);
 
 }
 

@@ -30,19 +30,19 @@
       <div class="sidebar-wrapper" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="./dashboard-index.html">
+            <a class="nav-link" href="/dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./admins-index.html">
+            <a class="nav-link" href="/create_admin">
               <i class="material-icons">person</i>
               <p>Admins</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./student-data-index.html">
+            <a class="nav-link" href="/student-data">
               <i class="material-icons">library_books</i>
               <p>Student Data</p>
             </a>
@@ -62,13 +62,13 @@
           <div class="collapse" id="collapseExample">
             <ul class="nav nav-inner">
               <li class="nav-item ">
-                <a class="nav-link" href="./create-session-index.html">
+                <a class="nav-link" href="/create-session">
                   <span class="sidebar-mini">CS</span>
                   <span class="sidebar-normal">Create Session</span>
                 </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="./existing-sessions-index.html">
+                <a class="nav-link" href="/sessions">
                   <span class="sidebar-mini">ES</span>
                   <span class="sidebar-normal">Existing Sessions</span>
                 </a>
@@ -76,25 +76,25 @@
             </ul>
           </div>
           <li class="nav-item ">
-            <a class="nav-link" href="./courses-index.html">
+            <a class="nav-link" href="/courses">
               <i class="material-icons">collections_bookmark</i>
               <p>Courses</p>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./broadcast-index.html">
+            <a class="nav-link" href="/broadcast">
               <i class="material-icons">mail_outline</i>
               <p>Broadcast</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications-index.html">
+            <a class="nav-link" href="/notifications">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./settings-index.html">
+            <a class="nav-link" href="/settings">
               <i class="material-icons">settings</i>
               <p>Settings</p>
             </a>
@@ -113,8 +113,8 @@
               <i class="material-icons">more_vert</i>
             </a>
             <div class="dropdown-menu dropdown-menu-justify-right" aria-labelledby="navbarDropdownMenuLink" style="margin-left: 18px; margin-top: -2px;">  <!--offset of 2px top & left-->
-              <a class="dropdown-item" href="#">Download Guide</a>
-              <a class="dropdown-item" href="#">Change Password</a>
+              <a class="dropdown-item" href="#">Upload Files</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal99">Change Password</a>
             </div>
             <a class="navbar-brand" href="">Broadcast</a>
           </div>
@@ -136,7 +136,7 @@
             </form>
             <ul class="navbar-nav">
 <!--              <li class="nav-item">
-                <a class="nav-link" href="./dashboard-index.html">
+                <a class="nav-link" href="/dashboard">
                   <i class="material-icons">dashboard</i>
                   <p class="d-lg-none d-md-block">
                     Dashboard
@@ -152,14 +152,14 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New requests available!</a>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; You have 5 new tasks for today!</a>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; New form created by @admin_1191</a>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal2">&bull; Daily submissions data updated</a>
+                  <a class="dropdown-item" href="./notifications-index.html">&bull; New requests available!</a>
+                  <a class="dropdown-item" href="./notifications-index.html">&bull; You have 5 new tasks for today!</a>
+                  <a class="dropdown-item" href="./notifications-index.html">&bull; New form created by @admin_1191</a>
+                  <a class="dropdown-item" href="./notifications-index.html">&bull; Daily submissions data updated</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Student Pro/login-index.html">
+                <a class="nav-link" href="/logout">
                   <i class="material-icons">lock</i>
                   <p class="d-lg-none d-md-block">
                     Logout
@@ -176,7 +176,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header card-header-rose">
-                  <h4 class="card-title">Broadcast Message</h4>
+                  <h4 class="card-title">Broadcast Message</h4> <!-- REVIEW: After clicking 'send message' the input fields must be reset -->
                   <p class="card-category">Create Message</p>
                 </div>
                 <div class="card-body">
@@ -220,7 +220,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header card-header-info">
-                  <h4 class="card-title">Personal Message</h4>
+                  <h4 class="card-title">Personal Message</h4> <!-- REVIEW: After clicking 'send message' the input fields must be reset -->
                   <p class="card-category">Create Message</p>
                 </div>
                 <div class="card-body">
@@ -262,22 +262,43 @@
         </div>
       </div>
 <!--Modals-->
-      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+      <div class="modal fade" id="myModal99" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Subject</h5>
+              <h5 class="modal-title">Change Password</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <i class="material-icons">clear</i>
               </button>
             </div>
             <div class="modal-body">
-
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec gravida turpis, vel feugiat neque. In quis nisl sit amet neque blandit dapibus eget at neque. Etiam a tellus nulla. Suspendisse feugiat elit lorem, ac sagittis erat porttitor ut. Ut vel mauris blandit, consequat leo a, imperdiet eros. Aliquam tincidunt purus et imperdiet rutrum. Donec nec lacus est. Fusce malesuada hendrerit mi, sit amet sodales dolor mattis in. Duis eget velit nisl. Donec magna dui, blandit ac tellus eu, dictum ullamcorper lectus. Maecenas euismod nisl sit amet est consectetur venenatis. Cras viverra diam in pulvinar convallis.</p>
-
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Current Password</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row space-out-perm">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">New Password</label>
+                    <input type="password" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row space-out-perm">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Confirm New Password</label>
+                    <input type="password" class="form-control">
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-link">Mark as read</button>
+              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "Password Changed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Save</button>
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
           </div>

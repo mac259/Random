@@ -820,7 +820,7 @@
     throw new TypeError("Invalid arguments for DateTimePicker: " + t)
   }, e.fn.datetimepicker.defaults = {
     timeZone: "",
-    format: !1,
+    format: "YYYY-MM-DD HH:mm",
     dayViewHeaderFormat: "MMMM YYYY",
     extraFormats: !1,
     stepping: 1,

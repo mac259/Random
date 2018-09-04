@@ -12,11 +12,11 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
-        console.log('two-two');
+        console.log('two-two',user.regno);
        if(user.userID) 
         done(null, user.userID);
-       else if(user.regNO)
-        done(null, user.regNO);
+       else if(user.regno)
+        done(null, user.regno);
     });
 
     // used to deserialize the user
@@ -85,7 +85,7 @@ module.exports = function(passport) {
         },
         function(req, username, password, done) { 
 
-            connection.query("SELECT * FROM students WHERE regno = ?",[username], function(err, rows){
+            connection.query("SELECT * FROM session_students WHERE regno = ?",[username], function(err, rows){
                 if (err){
                     return done(err);
                 }
@@ -99,9 +99,10 @@ module.exports = function(passport) {
                 }
 
                 else{
-                req.session.regNO = rows[0].regNO;
-                req.session.dept = rows[0].dept;
-                req.session.cgpa = rows[0].cgpa;
+                    console.log("go");
+                req.session.regNO = rows[0].regno;
+                req.session.dept = rows[0].sm_id;
+                req.session.cgpa = rows[0].cgpa1;
                 return done(null, rows[0], "Welcome");}
             });
         })
