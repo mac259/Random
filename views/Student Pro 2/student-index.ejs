@@ -323,14 +323,14 @@
                   <% for(j=0;j<rows.length;j++) { %>
                     <% if(rows[j].current_status == 'live') { %>
                   <option class="resp" value='<%= rows[j].elective_id %>'><%= rows[j].elective_name %></option>
-                  <% }} %> 
+                  <% }} %>
                 </select>
               </div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" id="okay" class="btn btn-primary btn-link" data-toggle="modal" data-target="#myModal">Okay</button>
+          <button type="submit" id="okay" class="btn btn-primary btn-link" onclick="selectSession();">Okay</button><!--data-toggle="modal" data-target="#myModal"-->
           <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
         </div>
       </div>
