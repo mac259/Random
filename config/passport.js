@@ -6,7 +6,10 @@ var dbconfig = require('./database');
 var connection = mysql.createConnection(dbconfig.connection);
 var bcrypt = require('bcrypt-nodejs');
 
-connection.query('USE ' + dbconfig.database);
+connection.query('USE ' + dbconfig.database,(err,res)=>{
+    if(err)
+        throw err;
+});
 
 module.exports = function(passport) {
 
@@ -34,7 +37,7 @@ module.exports = function(passport) {
         }
        else
        {    
-                connection.query("SELECT * FROM students WHERE regNO= ? ",[id], function(err, rows){
+                connection.query("SELECT * FROM session_students WHERE regNO= ? ",[id], function(err, rows){
                     if(err)
                         throw err;
                     else

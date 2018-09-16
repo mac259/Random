@@ -108,16 +108,13 @@ module.exports = function(app, passport) {
     // LOGOUT ==============================
     app.get('/logout', functions.logoutfunc);
 
-    app.get('/create-session', functions.isLoggedInfunc, admin_access, functions.create_elective);
+    app.get('/create-session', functions.isLoggedInfunc, admin_access, functions.create_session);
 
     app.post('/create_session',functions.isLoggedInfunc, admin_access, functions.create_session_post_form);
     // =====================================
 
     app.get('/dashboard', functions.isLoggedInfunc, admin_access, functions.dashboard);
 
-    app.get('/manage', functions.isLoggedInfunc, admin_access, functions.manage);
-
-    app.get('/elective/:token',functions.isLoggedInfunc, admin_access, functions.elective_stats);
 
     app.get('/sessions',functions.isLoggedInfunc, admin_access, functions.all_sessions);
 
@@ -126,10 +123,6 @@ module.exports = function(app, passport) {
     app.get('/student-data',functions.isLoggedInfunc, admin_access, functions.student_data)
 
     app.get('/courses',functions.isLoggedInfunc, admin_access, functions.display_courses);
-
-    app.get('/courses/:id',functions.isLoggedInfunc, admin_access, functions.elective_courses);
-
-    app.get('/admin_activity',functions.isLoggedInfunc, admin_access, functions.admin_activity);
     
     app.get('/reset/:id', functions.isLoggedInfunc, admin_access, functions.reset_archive);
 
@@ -142,12 +135,13 @@ module.exports = function(app, passport) {
 
     app.get('/create_admin', functions.isLoggedInfunc, admin_access, functions.create_admin);
 
-    app.post('/create_admin', functions.isLoggedInfunc, admin_access, functions.create_new_admin);
+    app.post('/create_admin', functions.isLoggedInfunc, admin_access, functions.create_new_admin_post_form);
 
     app.get('/upload', (req,res)=>{res.render("upload.ejs")});
     app.post('/upload',functions.isLoggedInfunc, admin_access, upload.single('media'), functions.upload_student_data);
 
     app.get('/broadcast', functions.isLoggedInfunc, admin_access, functions.broadcast_notifications);
+    app.post('/broadcast', functions.isLoggedInfunc, admin_access, functions.broadcast_post_form);
 
     app.get('/notifications', functions.isLoggedInfunc, admin_access, functions.notifications);
 
@@ -165,7 +159,6 @@ module.exports = function(app, passport) {
 
   app.post('/submit_oe/:id', functions.std_isLoggedInfunc, student_access, functions.fill_oe_form);
 
-  app.get('/check', functions.std_isLoggedInfunc, functions.checked);
 
 }
 

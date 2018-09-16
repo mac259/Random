@@ -72,11 +72,6 @@ module.exports = {
     },
 
 
-    checked: (req,res)=>{
-        res.send("success");
-    },
-
-
 	logoutfunc: function(req, res) {
         admin = false
         if(req.session.user)
@@ -106,17 +101,13 @@ module.exports = {
 
     },
 
-    manage: (req,res)=>{
-        res.render('manage.ejs');
-    },
-
     create_admin: (req,res)=>{
 
         res.render("Admin Pro 4/admins-index.ejs");
     },
 
 
-    create_new_admin: (req,res)=>{
+    create_new_admin_post_form: (req,res)=>{
 
         password = bcrypt.hashSync(req.body.password, null, null);
         insertQuery = "INSERT INTO admin(userID,first_name,last_name,department,privilages,email,pass,SOA) VALUES(?,?,?,?,?,?,?,?)";
@@ -132,7 +123,7 @@ module.exports = {
 
 
 
-    create_elective: (req,res)=>{
+    create_session: (req,res)=>{
 
         connection.query("SELECT * FROM test_streams",(err,rows)=>{
             if(err)
@@ -195,6 +186,7 @@ module.exports = {
                                     }
                                 */
                                     schedule_session_live(rows1.insertId,req.body.slive);
+                                    schedule_session_live(rows1.insertId,req.body.sallott);
                                     res.redirect("/dashboard");
 
                                 }
@@ -203,60 +195,6 @@ module.exports = {
                     });
     },
 
-
-    create_de_post_form: (req,res)=>{
-        date = new Date();
-        year = date.getFullYear();
-        name = req.body.elective_name;
-        allotted_table_name = name.replace(/ /g,'')+"_allotted_"+year;
-        course_table_name = name.replace(/ /g,'')+"_courses_"+year;
-        pref_table_name = name.replace(/ /g,'')+"_pref_"+year;
-        insertQuery = "INSERT INTO electives(userID,elective_name,scheduled_live,scheduled_allottment,course_table,allotted_table,type) VALUES(?,?,?,?,?,?,?)"
-
-                connection.query(insertQuery,[req.session.user,name,req.body.slive,req.body.sallott,course_table_name,allotted_table_name],(err1,rows1)=>{
-                       if(err1)
-                            throw err1;
-                        else{
-                            //To do : create method to insert multiple sm_id maybe in trigger
-                            insertQuery2 = "INSERT INTO elective_data values (?)";
-                            connection.query(insertQuery2,[rows1.insertId],(err2,rows2)=>{
-                                if(err1)
-                                    throw err2;
-                                else{
-                                    res.redirect("/dashboard");
-                                }
-                            });
-                        }
-                    });
-    },
-
-
-    call_oe_allotment:(req,res)=>{
-        connection.query("call oe_allotment()",(err,rows)=>{
-            if(err)
-                throw err;
-            else{
-                res.redirect('/elective/open_2018');
-            }
-        });
-    },
-
-
-
-    elective_stats:(req,res)=>{
-        SelectQuery = "SELECT courseID FROM courses where elective_id = ? ";
-        connection.query(SelectQuery,[req.params.token],(err,rows)=>{
-            if(err)
-                throw err;
-            else{
-                rows = {rows};
-                    res.render('elective_stats.ejs',rows);
-                }
-
-
-        });
-
-    },
 
     display_courses: (req,res)=>{
         SelectQuery = "SELECT * FROM courses";
@@ -284,22 +222,6 @@ module.exports = {
                   res.render('Admin Pro 4/session-redirect-index.ejs',info);
                 }
             
-        });
-    },
-
-
-    elective_courses: (req,res)=>{
-
-        e_id = req.params.id;
-        SelectQuery = "SELECT courseID FROM courses where elective_id = ?";
-        connection.query(SelectQuery,[e_id],(err,rows)=>{
-            if(err)
-                throw err;
-            else{
-                rows.courses = rows;
-                console.log(rows);
-                res.render('courses.ejs',rows);
-            }
         });
     },
 
@@ -331,23 +253,26 @@ module.exports = {
     },
 
 
+    session_student_data : (req,res)=>{
+
+        connection.query("SELECT regno,sname,semester,branch FROM session_students,test_streams,elective_data where session_students.sm_id = test_streams.sm_id and test_streams.sm_id = elective_data.sm_id and elective_data.elective_id = ?  limit 10",[req.params.id],(err,rows)=>{
+            if(err)
+                throw err;
+            else{
+                info = {};
+                info.rows = rows; 
+                 res.render('Admin Pro 4/student-data-index.ejs',info);
+            }
+        });       
+    },
+
+
+
     settings : (req,res)=>{
         res.render('Admin Pro 4/settings-index.ejs');
     },
 
 
-    admin_activity: (req,res)=>{
-
-        SelectQuery = "SELECT courseID from courses";
-        connection.query(SelectQuery,(err,rows)=>{
-            if(err)
-                throw err;
-            else{
-                courses = rows;
-                 res.render('admin_activity.ejs',courses);
-            }
-        });
-    },
 
     broadcast_notifications: (req,res)=>{
 
@@ -356,7 +281,9 @@ module.exports = {
             if(err)
                 throw err;
             else{
-                res.render('Admin Pro 4/broadcast-index.ejs');
+                info = {};
+                info.rows = rows;
+                res.render('Admin Pro 4/broadcast-index.ejs',info);
             }
         });        
     },
@@ -375,6 +302,7 @@ module.exports = {
 
     broadcast_post_form : (req,res)=>{
 
+        console.log("ff"+req.body.elective_id);
         InsertQuery = "INSERT INTO broadcasts(elective_id,userID,subject_,description) VALUES(?,?,?,?)";
         connection.query(InsertQuery,[req.body.elective_id,req.session.user,req.body.subject,req.body.description],(err,rows)=>{
             if(err)
@@ -430,6 +358,26 @@ module.exports = {
                             }
                     });
                 }
+        });
+    },
+
+
+    archive_oe_data: (req,res)=>{
+        InsertQuery = "INSERT INTO previous_oe_preferences SELECT oe_preference.elective_id,session_students.regNO,cgpa1,cgpa2,p_one,p_two,p_three,p_four,p_five,p_six,allotted FROM oe_preference,electives,session_students WHERE oe_preference.elective_id = electives.elective_id and oe_preference.regno = session_students.regno and current_status = 'completed'"
+        connection.query(InsertQuery,(err,rows)=>{
+            if(err)
+                throw err;
+            else{
+                DeleteQuery = "DELETE FROM oe_preference where elective_id in (select elective_id from electives where current_status = 'live')";
+                connection.query(DeleteQuery,(err1,rows1)=>{
+                    if(err)
+                        throw err;
+                    else
+                    {
+                        res.redirect('/settings');
+                    }
+                });
+            }
         });
     },
 
@@ -565,7 +513,7 @@ module.exports = {
 
     fill_oe_form: (req,res)=>{
 
-        SelectQuery = "SELECT * FROM electives,elective_data WHERE electives.elective_id = elective_data.elective_id AND sm_id = ? and elective_id = ?";
+        SelectQuery = "SELECT * FROM electives,elective_data WHERE electives.elective_id = elective_data.elective_id AND sm_id = ? and electives.elective_id = ?";
         connection.query(SelectQuery,[req.session.dept,req.params.id],(err,rows)=>{
             if(err)
                 throw err;
@@ -578,13 +526,22 @@ module.exports = {
                             arr = [];
                             flag = false;
                             arr[1] = req.body.first, arr[2] = req.body.second, arr[3] = req.body.third, arr[4] = req.body.fourth, arr[5] = req.body.fifth, arr[6] = req.body.sixth;
+                            console.log(req.body.sixth);
                             for(i=1;i<=6;i++)
-                                for (j=i+1;j<=6; j++) {
-                                    if(arr[i]==undefined||arr[i]==arr[j])
+                            {   
+                                if(arr[i]==undefined || arr[i].length < 1)
+                                {
+                                    flag = true;
+                                    break;
+                                }
+                                for (j=i+1;j<=6; j++) 
+                                {
+                                    if(arr[i]==arr[j])
                                     {
                                         flag = true;
                                     }
                                 }
+                             }   
                             if(flag)
                             {
                                 res.send("NOT ALLOWED:\n Choices should be distinct");
@@ -595,9 +552,62 @@ module.exports = {
                                     if(err)
                                         throw err;
                                     else{
-                                        res.redirect("/main");
+                                        res.send('Form successfully filled');
                                     }
-                                })
+                                });
+                            }
+    
+                }
+            }
+        });
+
+    },
+
+
+    fill_de_form: (req,res)=>{
+
+        SelectQuery = "SELECT * FROM electives,elective_data WHERE electives.elective_id = elective_data.elective_id AND sm_id = ? and electives.elective_id = ?";
+        connection.query(SelectQuery,[req.session.dept,req.params.id],(err,rows)=>{
+            if(err)
+                throw err;
+            else if(rows.length==0)
+                res.send("NOT FOUND");
+            else{
+                if(rows[0].current_status!="live")
+                    res.send("NOT ALLOWED");
+                else{
+                            arr = [];
+                            flag = false;
+                            arr[1] = req.body.first, arr[2] = req.body.second, arr[3] = req.body.third, arr[4] = req.body.fourth;
+                         
+                            for(i=1;i<=4;i++)
+                            {   
+                                if(arr[i]==undefined || arr[i].length < 1)
+                                {
+                                    flag = true;
+                                    break;
+                                }
+                                for (j=i+1;j<=4; j++) 
+                                {
+                                    if(arr[i]==arr[j])
+                                    {
+                                        flag = true;
+                                    }
+                                }
+                             }   
+                            if(flag)
+                            {
+                                res.send("NOT ALLOWED:\n Choices should be distinct");
+                            }
+                            else{
+                                insertQuery = "INSERT INTO de_preference(elective_id,regno,p_one,p_two,p_three,p_four) VALUES(?,?,?,?,?,?)";
+                                connection.query(insertQuery,[req.params.id,req.session.regNO,arr[1],arr[2],arr[3],arr[4]],(err,rows)=>{
+                                    if(err)
+                                        throw err;
+                                    else{
+                                        res.send('Form successfully filled');
+                                    }
+                                });
                             }
     
                 }
@@ -618,8 +628,21 @@ function schedule_session_live(id,datetime){
             if(err)
                 throw err;
             else{
-                console.log('updated status for elective_id = ',id);
+                console.log('updated status to live for elective_id = ',id);
             }
           });
-});
-    }
+    });
+}
+
+function schedule_session_end(id,datetime){
+        // config things that we need
+        var j = schedule.scheduleJob(datetime, function(){
+          connection.query("update electives set current_status = 'completed' where elective_id = ?",[id],(err,rows)=>{
+            if(err)
+                throw err;
+            else{
+                console.log('updated status to completed for elective_id = ',id);
+            }
+          });
+    });
+}

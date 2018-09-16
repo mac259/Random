@@ -180,12 +180,12 @@
                   <p class="card-category">Create Message</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="/broadcast" method="post">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Subject</label>
-                          <input required="required" type="text" class="form-control">
+                          <input required="required" type="text" class="form-control" name="subject">
                         </div>
                       </div>
                     </div>
@@ -193,18 +193,18 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Description</label>
-                          <textarea class="form-control" rows="4"></textarea>
+                          <textarea class="form-control" rows="4" name="description"></textarea>
                         </div>
                       </div>
                     </div><br>
                     <div class="row">
                       <div class="col-md-4">
-                        <select class="selectpicker contain pull-left" data-style="btn btn-secondary" title="Single Select">
+                        <select class="selectpicker contain pull-left" data-style="btn btn-secondary" title="Single Select" name='elective_id'>
                           <option class="resp" disabled selected>Sessions</option>
-                          <option class="resp" value="2">All Ongoing Sessions</option>
-                          <option class="resp" value="3">OE '18 Even Sem</option>
-                          <option class="resp" value="4">DE '18 Odd Sem</option>
-                          <option class="resp" value="5">OE '19 Odd Sem</option>
+                          <option class="resp" value=0>All Ongoing Sessions</option>
+                          <% for(l=0;l<rows.length;l++) { %>
+                          <option class="resp" value='<%= rows[l].elective_id %>'><%= rows[l].elective_name %></option>
+                          <% } %>
                         </select>
                       </div>
                       <div class="col-md-8 grant-div send-message-div">
