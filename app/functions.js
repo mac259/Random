@@ -26,11 +26,11 @@ module.exports = {
 
   // #########################################################################################
   // ##############################    GENERAL FUNCTIONS   ###################################
-  // #########################################################################################    
+  // #########################################################################################
 
 
 	loginfunc: function(req, res) {
-        
+
         if (req.isAuthenticated())
         {
             res.redirect('/dashboard');
@@ -81,7 +81,7 @@ module.exports = {
             if(err) {
               console.log(err);
             } else {
-                if(admin)  
+                if(admin)
                     res.redirect('/login');
                 else
                     res.redirect('/');
@@ -92,12 +92,12 @@ module.exports = {
 
   // #########################################################################################
   // ##############################    ADMIN FUNCTIONS   #####################################
-  // #########################################################################################     
+  // #########################################################################################
 
     dashboard: function(req, res){
 
           res.render('Admin Pro 4/dashboard-index.ejs');
-                                    
+
 
     },
 
@@ -143,7 +143,7 @@ module.exports = {
                    });
             }
         });
-         
+
 
     },
 
@@ -221,7 +221,7 @@ module.exports = {
                 console.log(info);
                   res.render('Admin Pro 4/session-redirect-index.ejs',info);
                 }
-            
+
         });
     },
 
@@ -246,10 +246,10 @@ module.exports = {
                 throw err;
             else{
                 info = {};
-                info.rows = rows; 
+                info.rows = rows;
                  res.render('Admin Pro 4/student-data-index.ejs',info);
             }
-        });       
+        });
     },
 
 
@@ -260,10 +260,10 @@ module.exports = {
                 throw err;
             else{
                 info = {};
-                info.rows = rows; 
+                info.rows = rows;
                  res.render('Admin Pro 4/student-data-index.ejs',info);
             }
-        });       
+        });
     },
 
 
@@ -285,7 +285,7 @@ module.exports = {
                 info.rows = rows;
                 res.render('Admin Pro 4/broadcast-index.ejs',info);
             }
-        });        
+        });
     },
 
     notifications: (req,res)=>{
@@ -297,7 +297,7 @@ module.exports = {
             else{
                 res.render('Admin Pro 4/notifications-index.ejs');
             }
-        });        
+        });
     },
 
     broadcast_post_form : (req,res)=>{
@@ -310,7 +310,7 @@ module.exports = {
             else{
                 res.redirect('/broadcast');
             }
-        });    
+        });
     },
 
 
@@ -323,7 +323,7 @@ module.exports = {
             else{
                 res.redirect('/broadcast');
             }
-        });    
+        });
     },
 
 
@@ -426,22 +426,22 @@ module.exports = {
             for(k=0;k<sheet_name_list.length;k++)
                         {
                             var mysql_data = [];
-                            
+
                             details = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[k]],{range:0});
                             console.log('done'+k);
                             for(i=0;i<details.length;i++)
-                                 {    
-                                      passwrd = Math.random().toString(36).substring(2, 6) + Math.random().toString(36).substring(6, 8);  
+                                 {
+                                      passwrd = Math.random().toString(36).substring(2, 6) + Math.random().toString(36).substring(6, 8);
                                       mysql_data.push([details[i]["Registration No."],details[i]["Name"],details[i]["II Yr CGPA"],details[i]["I Yr CGPA"],details[i]["Sem."],details[i]["Dept."],details[i]["Branch"],details[i]["Previous OE 1"],details[i]["Previous OE 2"],passwrd]);
                                  }
                          sem.take(function()
                             {connection.query("INSERT INTO test_student(regno,sname,cgpa2,cgpa1,sem,dept,branch,pr_oe1,pr_oe2,pass) values ?",[mysql_data],(err,rows)=>{
-                               
-                              
+
+
                               s++;
-                              console.log('s = ',s);   
+                              console.log('s = ',s);
                                 if(err)
-                                {   
+                                {
                                    if(s>0){
                                      console.log(err.sqlMessage);
                                      info.err = err.sqlMessage;
@@ -452,7 +452,7 @@ module.exports = {
                                      }
                                 }
                                 else if(s==(sheet_name_list.length-1))
-                                {   
+                                {
                                     console.log("kjmnhbgvf");
                                     res.write("Sheet "+s+": "+rows.affectedRows+' rows inserted\n');
                                     res.end();
@@ -466,17 +466,88 @@ module.exports = {
                               sem.leave();
                             });
                         });
-                
-               
+
+
         }
 
-            
+
             fs.unlink(path.resolve('./views/excel/'+fl), (err) => {
                   if (err) throw err;
                   console.log('successfully deleted');
             });
 },
 
+
+
+
+ upload_course_data: function(req,res)
+    {
+
+
+        fl = req.file.filename;
+        const workbook = XLSX.readFile(path.resolve('./views/excel/'+fl));
+            const sheet_name_list = workbook.SheetNames;
+            details = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]],{range:0});
+            console.log(sheet_name_list.length);
+            s = -1;
+            flag = false;
+            info = {};
+            connection.query("SELECT courseId from courses",(err,rows)=>{
+            if(err)
+               throw err;
+            else{
+                for(k=0;k<sheet_name_list.length;k++)
+                   {
+                        var mysql_data = [];
+                        var mysql_data2 = [];
+                                    
+                        details = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[k]],{range:0});
+                        console.log('done'+k);
+        // put this query out of for loop  
+                                  
+                        for(i=0;i<details.length;i++)
+                        {    
+                            for(j=0;j<rows.length;j++)
+                                {
+                                    if(details[i]["Code"]==rows[j].courseId)
+                                        flag = true;
+                                }
+                            if(!flag)
+                                 mysql_data.push([details[i]["Code"],details[i]["Name"],details[i]["Department"],details[i]["Strength"],details[i]["Details"]]);   
+                            mysql_data2.push([details[i]["Code"],req.params.id]);
+                            flag = false;
+                        }                                
+                    }console.log(mysql_data);
+                connection.query("INSERT INTO courses(courseId,course_name,department,max_capacity,course_details) values ?",[mysql_data],(err,rows1)=>{
+                                s++;
+                                  if(err)
+                                    throw err;
+                                    //res.write("ERROR Sheet "+s+": "+err+' in courses\n');
+                                  else{
+                                        console.log(mysql_data2);
+                                        res.write("Sheet "+s+": "+rows1.affectedRows+' rows inserted in courses\n');
+                                         connection.query("INSERT INTO session_courses values ?",[mysql_data2],(err,rows2)=>{
+                                               if(err)
+                                                    throw err; 
+                                                // res.write("ERROR Sheet "+s+": "+err+' in session_courses\n');
+                                               else{
+
+                                                    res.write("Sheet "+s+": "+rows2.affectedRows+' rows inserted in session\n');
+                                                    if(s==sheet_name_list.length-1)
+                                                        res.end();
+                                               }           
+                                        });
+                                  }                                               
+                            });
+
+            }});
+
+
+                fs.unlink(path.resolve('./views/excel/'+fl), (err) => {
+                  if (err) throw err;
+                  console.log('successfully deleted'); });
+       
+},
 
 
 
@@ -488,7 +559,7 @@ module.exports = {
 
     upcoming_electives: (req,res)=>{
         res.render('Student Pro 2/upcoming-redirect-index.ejs');
-    }, 
+    },
 
     student_dashboard: (req,res)=>{
 
@@ -503,7 +574,7 @@ module.exports = {
                 res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
                 res.render('Student Pro 2/student-index.ejs',info);
             }
-        });        
+        });
     },
 
     contact_admin: (req,res)=>{
@@ -528,20 +599,20 @@ module.exports = {
                             arr[1] = req.body.first, arr[2] = req.body.second, arr[3] = req.body.third, arr[4] = req.body.fourth, arr[5] = req.body.fifth, arr[6] = req.body.sixth;
                             console.log(req.body.sixth);
                             for(i=1;i<=6;i++)
-                            {   
+                            {
                                 if(arr[i]==undefined || arr[i].length < 1)
                                 {
                                     flag = true;
                                     break;
                                 }
-                                for (j=i+1;j<=6; j++) 
+                                for (j=i+1;j<=6; j++)
                                 {
                                     if(arr[i]==arr[j])
                                     {
                                         flag = true;
                                     }
                                 }
-                             }   
+                             }
                             if(flag)
                             {
                                 res.send("NOT ALLOWED:\n Choices should be distinct");
@@ -556,7 +627,7 @@ module.exports = {
                                     }
                                 });
                             }
-    
+
                 }
             }
         });
@@ -579,22 +650,22 @@ module.exports = {
                             arr = [];
                             flag = false;
                             arr[1] = req.body.first, arr[2] = req.body.second, arr[3] = req.body.third, arr[4] = req.body.fourth;
-                         
+
                             for(i=1;i<=4;i++)
-                            {   
+                            {
                                 if(arr[i]==undefined || arr[i].length < 1)
                                 {
                                     flag = true;
                                     break;
                                 }
-                                for (j=i+1;j<=4; j++) 
+                                for (j=i+1;j<=4; j++)
                                 {
                                     if(arr[i]==arr[j])
                                     {
                                         flag = true;
                                     }
                                 }
-                             }   
+                             }
                             if(flag)
                             {
                                 res.send("NOT ALLOWED:\n Choices should be distinct");
@@ -609,7 +680,7 @@ module.exports = {
                                     }
                                 });
                             }
-    
+
                 }
             }
         });

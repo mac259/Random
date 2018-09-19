@@ -140,6 +140,8 @@ module.exports = function(app, passport) {
     app.get('/upload', (req,res)=>{res.render("upload.ejs")});
     app.post('/upload',functions.isLoggedInfunc, admin_access, upload.single('media'), functions.upload_student_data);
 
+    app.post('/upload_course_data/:id',functions.isLoggedInfunc, admin_access, upload.single('media'), functions.upload_course_data);
+
     app.get('/broadcast', functions.isLoggedInfunc, admin_access, functions.broadcast_notifications);
     app.post('/broadcast', functions.isLoggedInfunc, admin_access, functions.broadcast_post_form);
 

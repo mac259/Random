@@ -16,6 +16,7 @@
   <link href="/Admin Pro 4/assets/css/admin-style2.css" rel="stylesheet" />
   <link href="/Admin Pro 4/assets/css/bootstrap-select.css" rel="stylesheet" />
   <link href="/Admin Pro 4/assets/css/sweetalert2.css" rel="stylesheet" />
+  <link href="/Admin Pro 4/assets/css/jasny-bootstrap.css" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -450,7 +451,7 @@
                 <a class="dropdown-item" href="#" onclick='swal({ title:"Success!", text: "Allotment Started!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Start Allotment</a>  <!-- REVIEW: Before allotment all student's allotment displays 'Unalloted' -->
                 <a class="dropdown-item" href="#">Download Data</a>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal4">Add Course</a>
-                <a class="dropdown-item" href="#">Upload Course Data</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal96">Upload Course Data</a>
                 <a class="dropdown-item" href="#" data-href="upcoming-redirect-index.html">Upload Student Data</a>
                 <a class="dropdown-item" href="#" onclick='swal({ title:"Success!", text: "Session Terminated!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Terminate Session</a>
               </div>
@@ -622,6 +623,44 @@
           </div>
         </div>
       </div>
+
+      <form action="/upload_course_data/<%= rows[0].elective_id %>" id="uploadstd" enctype="multipart/form-data" method="post" class="dropdown-item">
+      <div class="modal fade" id="myModal96" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Upload Files</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">clear</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                    <div style="font-size: 16px;" class="fileinput-preview fileinput-exists thumbnail"></div>
+                    <div>
+                      <span class="btn btn-link btn-sm btn-raised btn-file">
+                        <span class="fileinput-new">Choose File</span>
+                        <span class="fileinput-exists">Change</span>
+                        <input type="file" name="media" />
+                      </span>
+                      <a href="#" class="btn btn-link btn-sm fileinput-exists" data-dismiss="fileinput">Remove</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" name="submit" class="btn btn-primary btn-link">
+              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+
+
       <div class="modal fade" id="myModal99" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -699,6 +738,7 @@
   <script src="/Admin Pro 4/assets/js/plugins/bootstrap-select.js"></script>
   <script src="/Admin Pro 4/assets/js/plugins/sweetalert2.js"></script>
   <script src="/Admin Pro 4/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <script src="/Admin Pro 4/assets/js/plugins/jasny-bootstrap.js" type="text/javascript"></script>
   <!--  Plugin for Notifications  -->
   <script src="/Admin Pro 4/assets/js/plugins/bootstrap-notify.js"></script>
   <!--  Control Scripts for parallax effects, modals etc.  -->
@@ -710,6 +750,25 @@
     md.initDashboardPageCharts();
 
   });
+  </script>
+    <script type="text/javascript">
+      $("#uploadstd").submit(function(e) {
+          var form = $(this);
+          var url = form.attr('action');
+          $.ajax({
+                 type: "POST",
+                 url: url,
+                 data: new FormData( this ), //serializes the form's elements
+                 processData: false,
+                contentType: false,
+                 success: function(data)
+                 {
+                    alert(data);
+                    // swal({ title:"Success!", text: data, type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})
+                 }
+               });
+         e.preventDefault(); //avoid to execute the actual submit of the form
+      });
   </script>
 </body>
 </html>
