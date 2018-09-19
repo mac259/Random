@@ -684,6 +684,7 @@
           </div>
         </div>
       </div>
+      <form action="/upload" id="uploadstd" enctype="multipart/form-data" method="post" class="dropdown-item">
       <div class="modal fade" id="myModal96" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -702,7 +703,7 @@
                       <span class="btn btn-link btn-sm btn-raised btn-file">
                         <span class="fileinput-new">Choose File</span>
                   	    <span class="fileinput-exists">Change</span>
-                  	    <input type="file" name="..." />
+                  	    <input type="file" name="media" />
                       </span>
                       <a href="#" class="btn btn-link btn-sm fileinput-exists" data-dismiss="fileinput">Remove</a>
                     </div>
@@ -711,12 +712,13 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-link" data-dismiss="modal" onclick='swal({ title:"Success!", text: "File Uploaded!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>Upload</button>
+              <input type="submit" name="submit" class="btn btn-primary btn-link">
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
+      </form>
       <div class="modal fade" id="myModal98" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -829,7 +831,7 @@
                 contentType: false,
                  success: function(data)
                  {
-                     alert(data); //show response from the php script
+                     swal({ title:"Success!", text: data, type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})
                  }
                });
          e.preventDefault(); //avoid to execute the actual submit of the form

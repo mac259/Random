@@ -480,6 +480,77 @@ module.exports = {
 
 
 
+ upload_course_data: function(req,res)
+    {
+
+
+        fl = req.file.filename;
+        const workbook = XLSX.readFile(path.resolve('./views/excel/'+fl));
+            const sheet_name_list = workbook.SheetNames;
+            details = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]],{range:0});
+            console.log(sheet_name_list.length);
+            s = -1;
+            flag = false;
+            info = {};
+            connection.query("SELECT courseId from courses",(err,rows)=>{
+            if(err)
+               throw err;
+            else{
+                for(k=0;k<sheet_name_list.length;k++)
+                   {
+                        var mysql_data = [];
+                        var mysql_data2 = [];
+                                    
+                        details = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[k]],{range:0});
+                        console.log('done'+k);
+        // put this query out of for loop  
+                                  
+                        for(i=0;i<details.length;i++)
+                        {    
+                            for(j=0;j<rows.length;j++)
+                                {
+                                    if(details[i]["Code"]==rows[j].courseId)
+                                        flag = true;
+                                }
+                            if(!flag)
+                                 mysql_data.push([details[i]["Code"],details[i]["Name"],details[i]["Department"],details[i]["Strength"],details[i]["Details"]]);   
+                            mysql_data2.push([details[i]["Code"],req.params.id]);
+                            flag = false;
+                        }                                
+                    }console.log(mysql_data);
+                connection.query("INSERT INTO courses(courseId,course_name,department,max_capacity,course_details) values ?",[mysql_data],(err,rows1)=>{
+                                s++;
+                                  if(err)
+                                    throw err;
+                                    //res.write("ERROR Sheet "+s+": "+err+' in courses\n');
+                                  else{
+                                        console.log(mysql_data2);
+                                        res.write("Sheet "+s+": "+rows1.affectedRows+' rows inserted in courses\n');
+                                         connection.query("INSERT INTO session_courses values ?",[mysql_data2],(err,rows2)=>{
+                                               if(err)
+                                                    throw err; 
+                                                // res.write("ERROR Sheet "+s+": "+err+' in session_courses\n');
+                                               else{
+
+                                                    res.write("Sheet "+s+": "+rows2.affectedRows+' rows inserted in session\n');
+                                                    if(s==sheet_name_list.length-1)
+                                                        res.end();
+                                               }           
+                                        });
+                                  }                                               
+                            });
+
+            }});
+
+
+                fs.unlink(path.resolve('./views/excel/'+fl), (err) => {
+                  if (err) throw err;
+                  console.log('successfully deleted'); });
+       
+},
+
+
+
 
   // #########################################################################################
   // #############################  STUDENT FUNCTIONS   ######################################
