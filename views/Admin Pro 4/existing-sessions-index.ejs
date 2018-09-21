@@ -196,8 +196,8 @@
                         <td><%= rows[k].elective_type %></td>
                         <td><%= rows[k].userID %></td>
                         <td><%= rows[k].current_status %></td>
-                        <td class="text-right"><%= rows[k].scheduled_live %></td>
-                        <td class="text-right"><%= rows[k].scheduled_allottment %></td>
+                        <td class="text-right"><%= (rows[k].scheduled_live+"").substring(0,24) %></td>
+                        <td class="text-right"><%= (rows[k].scheduled_allottment+"").substring(0,24) %></td>
                       </tr>
                       <% } %>
                     </tbody>

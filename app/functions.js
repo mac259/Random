@@ -109,9 +109,9 @@ module.exports = {
 
     create_new_admin_post_form: (req,res)=>{
 
-        password = bcrypt.hashSync(req.body.password, null, null);
+        password = bcrypt.hashSync(req.body.pass, null, null);
         insertQuery = "INSERT INTO admin(userID,first_name,last_name,department,privilages,email,pass,SOA) VALUES(?,?,?,?,?,?,?,?)";
-        connection.query(insertQuery,[req.body.userid,req.body.first,req.body.last,req.body.dept,req.body.privilages,req.body.email,password,req.body.soa],(err,rows)=>{
+        connection.query(insertQuery,[req.body.userID,req.body.first_name,req.body.last_name,req.body.department,req.body.privilages,req.body.email,password,req.body.SOA],(err,rows)=>{
                 if(err)
                     throw err;
                 else{
@@ -186,7 +186,7 @@ module.exports = {
                                     }
                                 */
                                     schedule_session_live(rows1.insertId,req.body.slive);
-                                    schedule_session_live(rows1.insertId,req.body.sallott);
+                                    schedule_session_end(rows1.insertId,req.body.sallott);
                                     res.redirect("/dashboard");
 
                                 }
@@ -216,10 +216,19 @@ module.exports = {
             if(err)
                 throw err;
             else{
-                info = {};
-                info.rows = rows;
-                console.log(info);
-                  res.render('Admin Pro 4/session-redirect-index.ejs',info);
+                    info = {};
+                    info.rows = rows;
+                    connection.query('SELECT courses.courseId,course_name,department,max_capacity,course_details FROM session_courses,courses WHERE courses.courseId = session_courses.courseId and elective_id = ? limit 7',[req.params.id],(err,rows)=>{
+                        if(err)
+                            throw err;
+                        else
+                        {   
+                            info.courses = rows;
+                            console.log(info);
+                            res.render('Admin Pro 4/session-redirect-index.ejs',info);
+                        }
+                    });
+                
                 }
             
         });
@@ -528,14 +537,14 @@ module.exports = {
                                         res.write("Sheet "+s+": "+rows1.affectedRows+' rows inserted in courses\n');
                                          connection.query("INSERT INTO session_courses values ?",[mysql_data2],(err,rows2)=>{
                                                if(err)
-                                                    throw err; 
+                                                    res.write("Sheet "+s+": ERROR "+err.sqlMessage); 
                                                 // res.write("ERROR Sheet "+s+": "+err+' in session_courses\n');
                                                else{
 
                                                     res.write("Sheet "+s+": "+rows2.affectedRows+' rows inserted in session\n');
-                                                    if(s==sheet_name_list.length-1)
-                                                        res.end();
-                                               }           
+                                               }
+                                               if(s==sheet_name_list.length-1)
+                                                        res.end();           
                                         });
                                   }                                               
                             });
@@ -571,8 +580,20 @@ module.exports = {
                 info = {};
                 info.rows = rows;
                 console.log(info);
-                res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-                res.render('Student Pro 2/student-index.ejs',info);
+                connection.query('select max(count) as cnt from (select electives.elective_id, count(courseId) as count from electives natural join session_courses natural join elective_data where current_status = "live" and sm_id = (SELECT sm_id FROM session_students WHERE regno = ?) group by electives.elective_id)a',[req.session.regNO],(err,rows)=>{
+                    if(err)
+                        throw err;
+                    else
+                    {   
+                        if(rows.length>0)
+                            info.cnt = rows[0].cnt;
+                        else
+                            info.cnt = 0;
+
+                        res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+                        res.render('Student Pro 2/student-index.ejs',info);
+                    }
+                });
             }
         });        
     },
@@ -580,6 +601,18 @@ module.exports = {
     contact_admin: (req,res)=>{
 
         insertQuery = "INSERT INTO queries";
+    },
+
+    session_courses: (req,res)=>{
+        SelectQuery = "SELECT courses.courseId,course_name FROM session_courses,courses where courses.courseId = session_courses.courseId and elective_id = ?";
+        connection.query(SelectQuery,[req.params.id],(err,rows)=>{
+            if(err)
+                throw err;
+            else
+            {
+                res.send(rows);
+            }
+        });
     },
 
     fill_oe_form: (req,res)=>{

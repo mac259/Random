@@ -161,6 +161,8 @@ module.exports = function(app, passport) {
 
   app.post('/submit_oe/:id', functions.std_isLoggedInfunc, student_access, functions.fill_oe_form);
 
+  app.get('/session_courses/:id',functions.isLoggedInfunc, student_access, functions.session_courses);
+
 
 }
 

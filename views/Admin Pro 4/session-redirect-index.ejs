@@ -194,12 +194,13 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <% for(i=0;i<courses.length;i++) { %>
                         <tr class="clickable-row sub-info" data-href="#">
-                          <td class="text-left">MA1490</td>
-                          <td><b>Bio-Statistics</b></td>
-                          <td>Maths</td>
+                          <td class="text-left"><%= courses[i].courseId %></td>
+                          <td><b><%= courses[i].course_name %></b></td>
+                          <td><%= courses[i].department %></td>
                           <td class="text-center">3</td>
-                          <td class="text-right">120&nbsp;</td>
+                          <td class="text-right"><%= courses[i].max_capacity %>&nbsp;</td>
                           <td class="td-actions text-right">
                             <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
                               <i class="material-icons">person</i>
@@ -212,78 +213,7 @@
                             </button>
                           </td>
                         </tr>
-                        <tr class="clickable-row sub-info" data-href="#">
-                          <td class="text-left">PS1490</td>
-                          <td><b>Foundations of Positive Psychology</b></td>
-                          <td>Psychology</td>
-                          <td class="text-center">3</td>
-                          <td class="text-right">60&nbsp;</td>
-                          <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
-                              <i class="material-icons">person</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
-                              <i class="material-icons">cloud_upload</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
-                              <i class="material-icons">close</i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr class="clickable-row sub-info" data-href="#">
-                          <td class="text-left">MC1695</td>
-                          <td><b>Composite Materials</b></td>
-                          <td>Mechanical</td>
-                          <td class="text-center">3</td>
-                          <td class="text-right">60&nbsp;</td>
-                          <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
-                              <i class="material-icons">person</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
-                              <i class="material-icons">cloud_upload</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
-                              <i class="material-icons">close</i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr class="clickable-row sub-info" data-href="#">
-                          <td class="text-left">HI3101</td>
-                          <td><b>Hindi</b></td>
-                          <td>Humanities</td>
-                          <td class="text-center">3</td>
-                          <td class="text-right">60&nbsp;</td>
-                          <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
-                              <i class="material-icons">person</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
-                              <i class="material-icons">cloud_upload</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
-                              <i class="material-icons">close</i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr class="clickable-row sub-info" data-href="#">
-                          <td class="text-left">EE1691</td>
-                          <td><b>Electrical Energy Systems</b></td>
-                          <td>Electrical</td>
-                          <td class="text-center">3</td>
-                          <td class="text-right">120&nbsp;</td>
-                          <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" data-placement="top" title="View Data" class="btn btn-info actions" data-toggle="modal" data-target="#myModal">
-                              <i class="material-icons">person</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Upload Data" class="btn btn-success actions">
-                              <i class="material-icons">cloud_upload</i>
-                            </button>
-                            <button type="button" rel="tooltip" data-placement="top" title="Remove Course" class="btn btn-danger actions" onclick='swal({ title:"Success!", text: "Course removed!", type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})'>
-                              <i class="material-icons">close</i>
-                            </button>
-                          </td>
-                        </tr>
+                        <% } %>
                       </tbody>
                     </table>
                   </div>
@@ -624,7 +554,7 @@
         </div>
       </div>
 
-      <form action="/upload_course_data/<%= rows[0].elective_id %>" id="uploadstd" enctype="multipart/form-data" method="post" class="dropdown-item">
+      
       <div class="modal fade" id="myModal96" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -634,9 +564,11 @@
                 <i class="material-icons">clear</i>
               </button>
             </div>
+            
             <div class="modal-body">
               <div class="row">
                 <div class="col-md-12 text-center">
+                  <form action="/upload_course_data/<%= rows[0].elective_id %>" id="uploadstd" enctype="multipart/form-data" method="post" >
                   <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                     <div style="font-size: 16px;" class="fileinput-preview fileinput-exists thumbnail"></div>
                     <div>
@@ -655,10 +587,11 @@
               <input type="submit" name="submit" class="btn btn-primary btn-link">
               <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
             </div>
+             </form>
           </div>
         </div>
       </div>
-      </form>
+     
 
 
       <div class="modal fade" id="myModal99" tabindex="-1" role="dialog">
@@ -761,10 +694,10 @@
                  data: new FormData( this ), //serializes the form's elements
                  processData: false,
                 contentType: false,
-                 success: function(data)
+                 success: function(data,err)
                  {
-                    alert(data);
-                    // swal({ title:"Success!", text: data, type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})
+                    //alert(data);
+                    swal({ title:"Success!", text: data, type: "success", buttonsStyling: false, confirmButtonClass: "btn btn-success"})
                  }
                });
          e.preventDefault(); //avoid to execute the actual submit of the form

@@ -180,7 +180,7 @@
                   <p class="card-category">Create New Admin</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="/create_admin" method="post">
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group">
@@ -191,13 +191,13 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="userID">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Email Address</label>
-                          <input type="email" class="form-control">
+                          <input type="email" class="form-control" name="email">
                         </div>
                       </div>
                     </div>
@@ -205,13 +205,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">First Name</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="first_name">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="last_name">
                         </div>
                       </div>
                     </div>
@@ -219,19 +219,19 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Department</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="department">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="label-control">SOA</label>
-                          <input type="text" class="form-control datetimepicker" value="" />
+                          <input type="text" class="form-control datetimepicker" value="" name="SOA" />
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Password</label>
-                          <input type="password" min="0" class="form-control">
+                          <input type="password" min="0" class="form-control" name="pass">
                         </div>
                       </div>
                     </div>
@@ -245,7 +245,7 @@
                     </div><br>
                     <div class="row">
                       <div class="col-md-4">
-                        <select class="selectpicker contain pull-left" data-style="btn btn-secondary" title="Single Select">
+                        <select class="selectpicker contain pull-left" data-style="btn btn-secondary" title="Single Select" name="privilages">
                           <option class="resp" disabled selected>Privileges</option>
                           <option class="resp" value="2">All Access</option>
                           <option class="resp" value="3">Course Management</option>

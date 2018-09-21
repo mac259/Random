@@ -318,7 +318,7 @@
           <div class="row-sm">
             <div class="col-md-12">
               <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select"> <!-- REVIEW: Reset this modal once priority list is submitted -->
+                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select" id="sess"> <!-- REVIEW: Reset this modal once priority list is submitted -->
                   <option class="resp" disabled selected>Choose Session</option>
                   <% for(j=0;j<rows.length;j++) { %>
                     <% if(rows[j].current_status == 'live') { %>
@@ -330,7 +330,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" id="okay" class="btn btn-primary btn-link" onclick="selectSession();">Okay</button><!--data-toggle="modal" data-target="#myModal"-->
+          <button type="submit" id="okay" class="btn btn-primary btn-link" onclick="selectSession1();">Okay</button><!--data-toggle="modal" data-target="#myModal"-->
           <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -340,90 +340,26 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Open Elective 2018-19 Even Semester</h5>
+          <h5 class="modal-title">Nothing</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <i class="material-icons">clear</i>
           </button>
         </div>
         <div class="modal-body">
+          <% for(i=0;i<6;i++) { %>
           <div class="row-sm">
             <div class="col-md-12">
               <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option class="resp" disabled selected>Priority 1</option>
-                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
-                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
-                  <option class="resp" value="5">EO1491 Sustainable Development</option>
+                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select" disabled>
+                  <option class="resp" disabled selected>Priority <%= i+1 %></option>
+                  <% for(j=0;j<cnt-i;j++) { %>
+                  <option class="resp" value=""><%= j %></option>
+                  <% } %>
                 </select>
               </div>
             </div>
           </div>
-          <div class="row-sm">
-            <div class="col-md-12">
-              <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option class="resp" disabled selected>Priority 2</option>
-                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
-                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
-                  <option class="resp" value="5">EO1491 Sustainable Development</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row-sm">
-            <div class="col-md-12">
-              <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option class="resp" disabled selected>Priority 3</option>
-                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
-                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
-                  <option class="resp" value="5">EO1491 Sustainable Development</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row-sm">
-            <div class="col-md-12">
-              <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option class="resp" disabled selected>Priority 4</option>
-                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
-                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
-                  <option class="resp" value="5">EO1491 Sustainable Development</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row-sm">
-            <div class="col-md-12">
-              <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option class="resp" disabled selected>Priority 5</option>
-                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
-                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
-                  <option class="resp" value="5">EO1491 Sustainable Development</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row-sm">
-            <div class="col-md-12">
-              <div class="form-group dropup">
-                <select class="selectpicker form-control pull-left" data-style="btn btn-secondary" title="Single Select">
-                  <option class="resp" disabled selected>Priority 6</option>
-                  <option class="resp" value="2">CM1493 Social Entrepreneurship</option>
-                  <option class="resp" value="3">EC1792 Hybrid Soft Computing Techniques</option>
-                  <option class="resp" value="4">MC1694 Reliability Engineering</option>
-                  <option class="resp" value="5">EO1491 Sustainable Development</option>
-                </select>
-              </div>
-            </div>
-          </div>
+          <% } %>
         </div>
         <div class="modal-footer">
           <div class="col-md-12 text-right" style="padding-right: 0; padding-left: 0px;">
@@ -560,6 +496,15 @@
         }, 1000);
       }
     }
+
+    function selectSession1(){
+       id = $("#sess").val();
+       $.get("/session_courses/"+id, function(data, status){
+        
+       });
+      $("#myModal").modal();
+  }
+
   </script>
 </body>
 </html>
